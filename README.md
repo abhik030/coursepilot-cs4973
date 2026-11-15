@@ -2,7 +2,7 @@
 
 CoursePilot studies student control over course planning and registration. This repository contains a fictional registration environment and a runnable evaluation of **comparing another section without changing an approved schedule**.
 
-Team: Abhi Karthik, Aditya Vij, Hudson Kass. The approval case was implemented in Abhi's workspace with Codex assistance. Cases A and B remain the responsibility of their proposed owners; they are not implemented here yet.
+Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibility of their proposed owners; they are not implemented here yet.
 
 - [Team handoff and responsibilities](TEAM_PLAN.md)
 - [Shared editable team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)

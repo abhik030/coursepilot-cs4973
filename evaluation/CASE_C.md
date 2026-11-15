@@ -1,6 +1,6 @@
 # Case C comparison without fresh approval
 
-Creator: Abhi Karthik. Proposed independent reproducer/video recorder: Aditya Vij, not yet confirmed. Implementation was developed with Codex assistance. This document is a runnable case description; the team's final submission still needs the other cases and reproduction videos.
+Creator: Abhi Karthik. Proposed independent reproducer/video recorder: Aditya Vij, not yet confirmed. This document is a runnable case description; the team's final submission still needs the other cases and reproduction videos.
 
 ## Target control breakdown
 
