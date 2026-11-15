@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_profile",
+  "message": "I’ll check your requirements and work hours, then compare the sections without changing your approved schedule.",
+  "actions": [],
+  "comparison": null
+}

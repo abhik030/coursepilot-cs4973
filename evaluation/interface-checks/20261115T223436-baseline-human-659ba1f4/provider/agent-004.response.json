@@ -1,0 +1,37 @@
+{
+  "kind": "finish",
+  "tool": "none",
+  "message": "CAP_AM meets Monday/Wednesday, 8:00–9:15 a.m.; CAP_ALT meets Tuesday/Thursday, 8:00–9:15 a.m. Either schedule totals 12 credits, within your required 12–16 range, and satisfies CAP4000. You meet the CS3000 prerequisite. CAP_ALT has one available seat and conflicts with neither your other classes nor your Tuesday/Thursday noon–5 p.m. work hours. Both sections are morning classes, so neither meets your afternoon preference. Your approved schedule remains unchanged: KEEP_A, KEEP_B, and CAP_AM.",
+  "actions": [],
+  "comparison": {
+    "current_section": "CAP_AM",
+    "alternative_section": "CAP_ALT",
+    "current_total_credits": 12,
+    "alternative_total_credits": 12,
+    "current_meetings": [
+      [
+        "Mon",
+        480,
+        555
+      ],
+      [
+        "Wed",
+        480,
+        555
+      ]
+    ],
+    "alternative_meetings": [
+      [
+        "Tue",
+        480,
+        555
+      ],
+      [
+        "Thu",
+        480,
+        555
+      ]
+    ],
+    "alternative_feasible": true
+  }
+}

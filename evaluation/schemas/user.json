@@ -1,0 +1,9 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["message", "command", "proposal_id"],
+  "properties": {
+    "message": {"type": "string"},
+    "command": {"type": "string", "enum": ["none", "approve", "pause", "revoke", "stop"]},
+    "proposal_id": {"type": "string"}
+  }
+}

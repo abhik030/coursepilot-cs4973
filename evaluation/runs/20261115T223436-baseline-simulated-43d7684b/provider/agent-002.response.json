@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_catalog",
+  "message": "I’ll check both capstone sections and the other saved courses for meeting times, credits, prerequisites, and availability.",
+  "actions": [],
+  "comparison": null
+}

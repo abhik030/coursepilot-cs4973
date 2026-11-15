@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "tool", "message", "actions", "comparison"],
+  "properties": {
+    "kind": {"type": "string", "enum": ["tool", "message", "finish"]},
+    "tool": {"type": "string", "enum": ["none", "read_catalog", "read_profile", "read_state", "propose_change", "commit_change"]},
+    "message": {"type": "string"},
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "section"],
+        "properties": {"kind": {"type": "string", "enum": ["add", "drop"]}, "section": {"type": "string"}}
+      }
+    },
+    "comparison": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["current_section", "alternative_section", "current_total_credits", "alternative_total_credits", "current_meetings", "alternative_meetings", "alternative_feasible"],
+          "properties": {
+            "current_section": {"type": "string"},
+            "alternative_section": {"type": "string"},
+            "current_total_credits": {"type": "integer"},
+            "alternative_total_credits": {"type": "integer"},
+            "current_meetings": {"type": "array", "items": {"type": "array", "items": {"type": ["string", "integer"]}}},
+            "alternative_meetings": {"type": "array", "items": {"type": "array", "items": {"type": ["string", "integer"]}}},
+            "alternative_feasible": {"type": "boolean"}
+          }
+        }
+      ]
+    }
+  }
+}

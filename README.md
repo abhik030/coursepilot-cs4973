@@ -1,0 +1,80 @@
+# CoursePilot
+
+CoursePilot studies student control over course planning and registration. This repository contains a fictional registration environment and a runnable evaluation of **comparing another section without changing an approved schedule**.
+
+Team: Abhi Karthik, Aditya Vij, Hudson Kass. The approval case was implemented in Abhi's workspace with Codex assistance. Cases A and B remain the responsibility of their proposed owners; they are not implemented here yet.
+
+- [Team handoff and responsibilities](TEAM_PLAN.md)
+- [Shared editable team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)
+- [Case C setup, protocols, scoring, and limitations](evaluation/CASE_C.md)
+- [Recorded baseline results](evaluation/RESULTS.md)
+- [Shared proposed metrics and participant questions](evaluation/SHARED_METRICS.md)
+
+## Quick start
+
+Requirements: Python 3.10+, Git, and an installed Codex CLI with a signed-in account that can access the selected model. No third-party Python packages, Docker, API key file, university account, or Banner connection are needed by this implementation. Model inference is a real external dependency.
+
+```powershell
+git clone https://github.com/abhik030/coursepilot-cs4973.git
+cd coursepilot-cs4973
+python --version
+codex --version
+codex login status
+python -m unittest discover -s evaluation/tests -v
+```
+
+If the CLI is not signed in, run `codex login` using your own account. The recorded configuration used `codex-cli 0.169.0-alpha.11.1`, model `gpt-6.1-sol`, Medium effort. A different model/version must be recorded as a different configuration. Setup has been checked on Windows with Python 3.13; the code uses the Python standard library.
+
+### Run one LLM simulated-user trial
+
+```powershell
+python -m evaluation run --mode simulated --agent baseline
+```
+
+The same selected model runs two independent roles: the course agent and the simulated student. Each inference is an ephemeral CLI call with the relevant conversation explicitly supplied. Native tool activity is rejected; course actions are executed only by the Python runner. This is a custom conversational baseline, not a reproduction of Codex's complete browser product.
+
+### Run human mode
+
+```powershell
+python -m evaluation run --mode human --agent baseline
+```
+
+Read the instructions and press Enter to send the fixed initial request. Respond if the agent asks a question. Type `/quit` to end early. Both modes use the same case, tools, agent prompt, decision schema, and message interface. Human mode replaces the simulated-student input adapter.
+
+### Run five fresh baseline trials and summarize
+
+```powershell
+python -m evaluation run --mode simulated --agent baseline --runs 5 --output evaluation/new-runs
+python -m evaluation summarize --output evaluation/new-runs
+```
+
+The recorded assignment batch is in `evaluation/runs/`. Use a different output directory for your own trials so the assignment batch stays clearly identifiable. Every new run starts from a fresh fixture and gets a unique folder. No separate reset command is required.
+
+### Improved-agent comparison
+
+```powershell
+python -m evaluation run --mode simulated --agent controlled --output evaluation/controlled-runs
+```
+
+This selects the existing simulator's additional student-rule and exact-approval guards. It provides a concrete comparison path, not the complete proposed CoursePilot review interface. The underlying model, task, course tools, and institutional safe transaction remain shared. No controlled-condition LLM results are claimed in the recorded baseline report.
+
+## What each run saves
+
+```text
+run-id/
+  trajectory.json        # timestamped messages, tool calls/results, state events
+  trajectory.jsonl       # incremental journal
+  reward.json            # objective metrics, named numbers only
+  config.json            # mode, agent, model alias/version information, settings, hashes
+  fixture.json           # exact reset state
+  assessment.json        # independent expected values and scoring details
+  provider/              # exact prompts, schemas, raw CLI JSONL, stderr, responses
+```
+
+Later human sessions should also save survey responses and interview notes in that run's folder. No human responses have been collected here.
+
+## Repository layout
+
+`sandbox/` holds the original simulator and 15 scripted functional checks. `evaluation/` holds the new runner, case, transport, protocols, integrity tests, and real LLM outputs. `evaluation/pilot-runs/` preserves setup trials, including an infrastructure error. `evaluation/interface-checks/` holds a piped-input human-adapter software check. Neither directory is counted in the five-run baseline batch.
+
+All academic records, registration changes, requirements, and seat counts are fictional. The simulator makes no university requests and cannot register a real student.

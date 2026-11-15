@@ -1,0 +1,42 @@
+{
+  "method": "Offline integrity verification; no model inference or subjective scoring.",
+  "run_count": 5,
+  "passed": 5,
+  "results": [
+    {
+      "run_id": "20261115T223436-baseline-simulated-43d7684b",
+      "passed": true,
+      "issues": [],
+      "tool_pairs": 3,
+      "model_calls": 5
+    },
+    {
+      "run_id": "20261115T223507-baseline-simulated-5cefb438",
+      "passed": true,
+      "issues": [],
+      "tool_pairs": 3,
+      "model_calls": 5
+    },
+    {
+      "run_id": "20261115T223541-baseline-simulated-15fb3d03",
+      "passed": true,
+      "issues": [],
+      "tool_pairs": 3,
+      "model_calls": 5
+    },
+    {
+      "run_id": "20261115T223612-baseline-simulated-789a20e5",
+      "passed": true,
+      "issues": [],
+      "tool_pairs": 3,
+      "model_calls": 5
+    },
+    {
+      "run_id": "20261115T223649-baseline-simulated-5c38a23a",
+      "passed": true,
+      "issues": [],
+      "tool_pairs": 3,
+      "model_calls": 5
+    }
+  ]
+}

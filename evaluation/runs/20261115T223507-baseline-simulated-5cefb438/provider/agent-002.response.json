@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_catalog",
+  "message": "I’ll check both sections’ meeting times, credits, prerequisites, and seats to assess the alternative against your requirements and work hours.",
+  "actions": [],
+  "comparison": null
+}

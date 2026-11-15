@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_state",
+  "message": "Verify Maya’s saved enrollment and approval status for the comparison without making any changes.",
+  "actions": [],
+  "comparison": null
+}

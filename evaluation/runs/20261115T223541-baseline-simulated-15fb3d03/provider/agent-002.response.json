@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_catalog",
+  "message": "I’ll check both sections’ meeting times and credits, along with prerequisites and availability. Your 12–16 credit limit, required CAP4000 course, and work hours are hard constraints; afternoon classes are a preference.",
+  "actions": [],
+  "comparison": null
+}

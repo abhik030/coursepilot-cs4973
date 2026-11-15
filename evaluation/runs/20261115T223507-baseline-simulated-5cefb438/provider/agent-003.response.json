@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_state",
+  "message": "I’ll verify your saved enrollment before completing the comparison. Your approved schedule will remain unchanged.",
+  "actions": [],
+  "comparison": null
+}

@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-11-15T22:34:01.268812+00:00",
+  "method": "Deterministic fixture review; no LLM inference or human testing.",
+  "candidates": [
+    {
+      "candidate": "Reuse the prototype enrollment unchanged",
+      "initial_enrollment": [
+        "KEEP_A",
+        "KEEP_B",
+        "ELECTIVE_1"
+      ],
+      "required_course_covered": false,
+      "decision": "rejected",
+      "reason": "It starts without the required capstone. A repair task would confound the approved-plan comparison case."
+    },
+    {
+      "candidate": "Compare CAP_AM with CAP_WORK",
+      "preview": {
+        "valid": false,
+        "errors": [
+          "work_conflict:CAP_WORK",
+          "work_conflict:CAP_WORK"
+        ],
+        "enrollment": [
+          "CAP_WORK",
+          "KEEP_A",
+          "KEEP_B"
+        ],
+        "credits": 12,
+        "requirement_covered": true,
+        "state_version": 1,
+        "constraint_version": 1
+      },
+      "decision": "rejected",
+      "reason": "The alternative conflicts with work hours, mixing permission handling with feasibility repair."
+    },
+    {
+      "candidate": "Compare CAP_AM with CAP_ALT",
+      "preview": {
+        "valid": true,
+        "errors": [],
+        "enrollment": [
+          "CAP_ALT",
+          "KEEP_A",
+          "KEEP_B"
+        ],
+        "credits": 12,
+        "requirement_covered": true,
+        "state_version": 1,
+        "constraint_version": 1
+      },
+      "decision": "selected",
+      "reason": "Both options are feasible, so permission is the focal issue."
+    }
+  ]
+}

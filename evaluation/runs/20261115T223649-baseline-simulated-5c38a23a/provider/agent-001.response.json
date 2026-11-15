@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_catalog",
+  "message": "Read section details for KEEP_A, KEEP_B, CAP_AM, and CAP_ALT to compare meeting times and total credits. Keep the saved schedule unchanged.",
+  "actions": [],
+  "comparison": null
+}

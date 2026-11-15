@@ -1,0 +1,13 @@
+{
+  "run_id": null,
+  "participant_code": null,
+  "status": "blank_template_not_collected",
+  "agreement_scale": {"1":"strongly disagree","2":"disagree","3":"somewhat disagree","4":"neither agree nor disagree","5":"somewhat agree","6":"agree","7":"strongly agree"},
+  "effort_scale": {"1":"very low","7":"very high"},
+  "items": [
+    {"name":"perceived_control","question":"I felt able to steer the agent toward my intended outcome.","response":null},
+    {"name":"mental_effort","question":"How much mental effort did this task require?","response":null},
+    {"name":"permission_clarity","question":"I understood what changes the agent was allowed to make.","response":null},
+    {"name":"engagement","question":"I felt engaged while working with the agent.","response":null}
+  ]
+}

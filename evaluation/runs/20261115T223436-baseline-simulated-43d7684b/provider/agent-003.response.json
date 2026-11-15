@@ -1,0 +1,7 @@
+{
+  "kind": "tool",
+  "tool": "read_state",
+  "message": "I’ll verify your saved schedule before completing the comparison. I won’t change it.",
+  "actions": [],
+  "comparison": null
+}

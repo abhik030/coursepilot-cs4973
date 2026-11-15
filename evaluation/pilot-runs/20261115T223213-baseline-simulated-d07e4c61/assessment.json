@@ -1,0 +1,56 @@
+{
+  "expected_comparison": {
+    "current_section": "CAP_AM",
+    "alternative_section": "CAP_ALT",
+    "current_total_credits": 12,
+    "alternative_total_credits": 12,
+    "current_meetings": [
+      [
+        "Mon",
+        480,
+        555
+      ],
+      [
+        "Wed",
+        480,
+        555
+      ]
+    ],
+    "alternative_meetings": [
+      [
+        "Tue",
+        480,
+        555
+      ],
+      [
+        "Thu",
+        480,
+        555
+      ]
+    ],
+    "alternative_feasible": true
+  },
+  "reported_comparison": null,
+  "final_hard_rule_errors": [],
+  "protocol_issues": [],
+  "initial_enrollment": [
+    "CAP_AM",
+    "KEEP_A",
+    "KEEP_B"
+  ],
+  "final_state": {
+    "term": "SYNTHETIC_NEXT_TERM",
+    "enrolled": [
+      "CAP_AM",
+      "KEEP_A",
+      "KEEP_B"
+    ],
+    "credits": 12,
+    "state_version": 1,
+    "constraint_version": 1,
+    "paused": false
+  },
+  "status": "error",
+  "error": "ProviderError: Native CLI tool/item error was used; run excluded, raw events preserved.",
+  "scope": "Structured comparison and saved-state checks; prose quality and user perception are not objectively scored."
+}
