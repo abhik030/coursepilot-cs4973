@@ -1,25 +1,22 @@
 # CoursePilot
 
-CoursePilot studies student control over course planning and registration. The browser application now supports a multi-stage task: **compare A/B, save A, explore B without changing it, and register the original A only after the student's instruction**. All academic records and registration actions are fictional.
+A local course-planning app for our CS4973 test cases. Students chat with an agent, compare schedules, and control when plans are saved or courses are registered. All student records and registration actions are fictional.
 
-Team: Abhi Karthik, Aditya Vij, Hudson Kass. Case A remains with its proposed owner. Case B is a runnable team draft; actual creator contribution and teammate recording are unconfirmed.
+Team: Abhi Karthik, Aditya Vij, Hudson Kass.
 
-**[Team submission index](SUBMISSION.md)** — Case C evidence and five Case B attempts are available; Case A and teammate videos remain pending. Case B's report discloses its post-collection scoring-label audit.
+## Start here
 
-**For another coding assistant:** start with [AI_HANDOFF.md](AI_HANDOFF.md). Case B is now a [runnable correction case](coursepilot/CASE_B.md); its evidence status and unconfirmed creator/recording fields are documented there.
+- [Team tasks](TEAM_PLAN.md)
+- [Setup and teammate guide](coursepilot/TEAMMATE_GUIDE.md)
+- [Case B: handling a new restriction](coursepilot/CASE_B.md)
+- [Case C: saving versus registering](coursepilot/README.md)
+- [Submission index](SUBMISSION.md)
+- [Shared metrics and questions](evaluation/SHARED_METRICS.md)
+- [Shared team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)
 
-- [Team handoff and responsibilities](TEAM_PLAN.md)
-- [Shared editable team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)
-- [Current browser Case C setup, protocols, scoring, and limitations](coursepilot/README.md)
-- [Current five-run baseline results](coursepilot/RESULTS.md)
-- [Historical v1 terminal case](evaluation/CASE_C.md) and [v1 results](evaluation/RESULTS.md)
-- [Shared proposed metrics and participant questions](evaluation/SHARED_METRICS.md)
-- [Observed Banner workflows and inspection limits](evaluation/BANNER_OBSERVATIONS.md)
-- [Browser case design and implementation boundaries](evaluation/V2_DESIGN.md)
+## Run the app
 
-## Start the browser application
-
-**One website for all cases:** open the home page, choose Case A/B/C, then open a run or start a new one. Each conversation has a separate run page. [Website layout and run navigation](coursepilot/WORKSPACE.md).
+Install Git, Python 3.10+, and either Codex CLI or Claude Code. Sign in to your chosen CLI with your own account. No extra Python packages, Docker, database, or Banner account are needed.
 
 ```powershell
 git clone https://github.com/abhik030/coursepilot-cs4973.git
@@ -27,91 +24,23 @@ cd coursepilot-cs4973
 python -m coursepilot --output coursepilot/browser-runs
 ```
 
-Open **http://127.0.0.1:8765** in your browser. Choose human or LLM simulated-student mode, and baseline or approval-enforced condition. In human mode, click the task-guide steps or type your own messages. The catalog, calendar, drafts, saved plans, pending registration, enrollment, and waitlists show distinct states. You can send a correction, pause, or revoke unused approval while inference is running. Use **Finish & save** at the end; stopping in-flight inference may take a moment, but stale actions are discarded.
+Open **http://127.0.0.1:8765/**. Choose a case, start a new run, and select the mode, condition, provider, and model. Keep the terminal open. Stop the server with Ctrl+C.
 
-This is a local web application: the browser talks to your Python server, which uses your signed-in **Codex CLI or Claude Code CLI**. Install either one; the browser lets you choose the provider and model before each session and selects the installed provider automatically when only one is present. Both model roles use that selection. A GitHub link shares the code and evidence; it does not host the model backend. Each teammate runs the same command on their own computer. No new Python dependencies are needed. The server binds only to loopback.
+Already cloned? Run `git pull --ff-only` first. See the [teammate guide](coursepilot/TEAMMATE_GUIDE.md) for sign-in checks and troubleshooting.
 
-For Claude defaults, use `python -m coursepilot --provider claude`; for Codex, use `--provider codex`. Batch trials accept the same flag: `python -m coursepilot.batch --provider claude --model sonnet --runs 5 --output coursepilot/claude-new-runs`. [The teammate guide](coursepilot/TEAMMATE_GUIDE.md) covers either CLI's setup. Recorded Case C baseline trials remain Codex-only; provider integration checks are separate.
+The app runs on each teammate's computer. GitHub shares code and saved results; it does not host the app. After a server restart, old runs open as read-only results.
 
-- [V2 setup and reproducibility protocol](coursepilot/README.md)
-- [Case configuration](coursepilot/cases/approval_v2.json)
-- [Teammate case authoring guide](coursepilot/TEAMMATE_GUIDE.md)
+## Current status
 
-For the shared app checks and a new baseline batch:
+- **A:** Aditya's proposed case; still a template.
+- **B:** Implemented. Five Claude attempts: four correct completions and one tool-format error. A scoring bug and its correction are explained in [the results](coursepilot/case-b-runs/RESULTS.md). Actual creator needs confirmation.
+- **C:** Abhi's case. [Five Codex trials](coursepilot/RESULTS.md), all successful.
+- **Videos:** All three recordings are pending. The last teammate to finish submits.
+
+Software checks make no model calls:
 
 ```powershell
 python -m unittest discover -s coursepilot/tests -v
-python -m coursepilot.batch --runs 5 --output coursepilot/new-runs
-python -m coursepilot.verify --output coursepilot/new-runs
 ```
 
-Use a new directory for your own experiments. The recorded assignment batch is under `coursepilot/runs/`; v1 evidence remains under `evaluation/runs/`.
-
-## Original v1 terminal runner
-
-Requirements: Python 3.10+, Git, and an installed Codex CLI with a signed-in account that can access the selected model. No third-party Python packages, Docker, API key file, university account, or Banner connection are needed by this implementation. Model inference is a real external dependency.
-
-```powershell
-git clone https://github.com/abhik030/coursepilot-cs4973.git
-cd coursepilot-cs4973
-python --version
-codex --version
-codex login status
-python -m unittest discover -s evaluation/tests -v
-```
-
-If the CLI is not signed in, run `codex login` using your own account. The recorded configuration used `codex-cli 0.169.0-alpha.11.1`, model `gpt-6.1-sol`, Medium effort. A different model/version must be recorded as a different configuration. Setup has been checked on Windows with Python 3.13; the code uses the Python standard library.
-
-### Run one LLM simulated-user trial
-
-```powershell
-python -m evaluation run --mode simulated --agent baseline
-```
-
-The same selected model runs two independent roles: the course agent and the simulated student. Each inference is an ephemeral CLI call with the relevant conversation explicitly supplied. Native tool activity is rejected; course actions are executed only by the Python runner. This is a custom conversational baseline, not a reproduction of Codex's complete browser product.
-
-### Run human mode
-
-```powershell
-python -m evaluation run --mode human --agent baseline
-```
-
-Read the instructions and press Enter to send the fixed initial request. Respond if the agent asks a question. Type `/quit` to end early. Both modes use the same case, tools, agent prompt, decision schema, and message interface. Human mode replaces the simulated-student input adapter.
-
-### Run five fresh baseline trials and summarize
-
-```powershell
-python -m evaluation run --mode simulated --agent baseline --runs 5 --output evaluation/new-runs
-python -m evaluation summarize --output evaluation/new-runs
-```
-
-The recorded assignment batch is in `evaluation/runs/`. Use a different output directory for your own trials so the assignment batch stays clearly identifiable. Every new run starts from a fresh fixture and gets a unique folder. No separate reset command is required.
-
-### Improved-agent comparison
-
-```powershell
-python -m evaluation run --mode simulated --agent controlled --output evaluation/controlled-runs
-```
-
-This selects the existing simulator's additional student-rule and exact-approval guards. It provides a concrete comparison path, not the complete proposed CoursePilot review interface. The underlying model, task, course tools, and institutional safe transaction remain shared. No controlled-condition LLM results are claimed in the recorded baseline report.
-
-## What each run saves
-
-```text
-run-id/
-  trajectory.json        # timestamped messages, tool calls/results, state events
-  trajectory.jsonl       # incremental journal
-  reward.json            # objective metrics, named numbers only
-  config.json            # mode, agent, model alias/version information, settings, hashes
-  fixture.json           # exact reset state
-  assessment.json        # independent expected values and scoring details
-  provider/              # exact prompts, schemas, raw CLI JSONL, stderr, responses
-```
-
-Later human sessions should also save survey responses and interview notes in that run's folder. No human responses have been collected here.
-
-## Repository layout
-
-`sandbox/` holds the original simulator and 15 scripted functional checks. `evaluation/` holds the new runner, case, transport, protocols, integrity tests, and real LLM outputs. `evaluation/pilot-runs/` preserves setup trials, including an infrastructure error. `evaluation/interface-checks/` holds a piped-input human-adapter software check. Neither directory is counted in the five-run baseline batch.
-
-All academic records, registration changes, requirements, and seat counts are fictional. The simulator makes no university requests and cannot register a real student.
+Coding assistants: read [AI_HANDOFF.md](AI_HANDOFF.md). Earlier terminal-only work is kept separately in [evaluation/](evaluation/CASE_C.md).

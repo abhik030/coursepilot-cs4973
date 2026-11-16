@@ -1,25 +1,24 @@
-# Abhi's short Case B recording checklist
+# Record Case B
 
-The runnable case is ready; this checklist does not itself constitute a video. Confirm the actual case creator before labeling the recording as an independent teammate reproduction. Do not invent that contribution or a tester/video URL.
+Use [CASE_B.md](CASE_B.md) as the written case document. Confirm the actual creator before calling this an independent teammate recording. Sign in to the CLI before recording.
 
-1. Start your screen recorder. Show [CASE_B.md](CASE_B.md) and the repository/commit you are using. Say: **“I’m Abhi, reproducing CoursePilot Case B: keeping earlier requirements when a student adds a restriction.”**
-2. Show the written setup commands being run. For a new clone, follow the teammate guide; from its repository root:
+1. Start your screen recorder. Show the case document and repository. Say: **“I'm Abhi, running Case B: keeping earlier requirements when a student adds a restriction.”**
+2. Show setup from the repository root:
 
    ```powershell
    git rev-parse HEAD
    python --version
    claude --version
    python -m unittest discover -s coursepilot/tests -v
-   python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --port 8765 --output coursepilot/browser-runs/abhi-reproduces-b
+   python -m coursepilot --provider claude --output coursepilot/browser-runs
    ```
 
-   Use the already-running shared server if it is available; do not stop an active conversation. Choose Case B from its home page. For a fresh setup recording, start your server when the port is free. Sign in before recording; do not show login credentials.
-3. Open the app. Choose **human mode**, **baseline**, **Claude Code / sonnet**, then Begin session.
-   In the current [single-site layout](WORKSPACE.md), first choose **Case B → Start a new run**. To keep the conversation already started, choose **Continue run** instead and continue at the highlighted next step; do not repeat the initial instruction.
-4. Click **Check the initial draft** and wait. Show draft A: sections 90001/90002/90004/90010, 13 credits, with the capstone Monday/Wednesday at 08:00.
-5. Click **Add Monday restriction and revise** and wait. This button sends the correction and updates the authoritative profile. Show the new draft and calendar. A correct result uses 90006 instead of 90004 and keeps the other three sections, still totaling 13 credits. Say what actually happened; do not narrate the expected outcome as though it happened if it did not.
-6. Click **Finish & save**. Show the actual run ID/result. Open its `trajectory.json`, `reward.json`, and `config.json` in the output folder shown by the app. Explain briefly: **“We check for ignoring the new restriction or losing an earlier requirement. These are draft changes; enrollment should remain unchanged.”**
-7. Show [the actual five-trial results](case-b-runs/RESULTS.md), including any errors and untriggered trials. Report the real counts. This new video run is separate from those five trials and is not a participant study.
-8. Stop/save the recording. Upload the video and put its accessible URL, the actual tester, and confirmed creator information in [SUBMISSION.md](../SUBMISSION.md). Do not mark the video complete before that artifact exists.
+   For a new checkout, follow [the setup guide](TEAMMATE_GUIDE.md). If the server is already running, show it rather than starting a second one.
+3. In Brave, open **http://127.0.0.1:8765/** → **Case B → Start a new run**. Choose **I do — browser chat**, **Baseline**, **Claude Code / sonnet**, then begin.
+4. Click **Check the initial draft**. Wait for the response. Show draft A and its calendar: 90001/90002/90004/90010, 13 credits, capstone Mon/Wed at 08:00.
+5. Click **Add Monday restriction and revise**. Wait. This button updates the stored restriction as well as sending the message. Show the revised draft/calendar: expected 90006 instead of 90004, with the other three sections kept. Read the confirmation and explain what actually changed.
+6. Click **Finish & save**. Show the run ID/result. Open that run's `trajectory.json`, `reward.json`, and `config.json` in the folder shown by the app. Check that enrollment stayed unchanged.
+7. Briefly show [the five-attempt results](case-b-runs/RESULTS.md): four correct completions, one tool-format error, and the separately corrected scoring bug. Your video run is separate from those trials.
+8. Save/upload the recording and add its accessible URL and actual creator/tester names to [SUBMISSION.md](../SUBMISSION.md).
 
-The case takes two student turns. Keep both agent responses in the video, or clearly disclose any edited waiting periods. The last teammate to finish submits the single team index.
+Keep both responses in the video, or disclose trimmed waiting periods. Show errors if they happen. No survey answers are needed. The last teammate to finish submits.

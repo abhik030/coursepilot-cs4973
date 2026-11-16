@@ -1,103 +1,90 @@
-# Add your own case to the shared application
+# Teammate setup and case guide
 
-Aditya and Hudson each need to curate and own their own case, not submit the untouched templates. The shared browser/server, model transport, logging, and course tools are ready to reuse.
+## Install and run
 
-## Get started
+You need Git, Python 3.10+, and **either Codex CLI or Claude Code**, signed in with your own account. A desktop chat app alone does not install its CLI. No Banner login, Docker, database, or extra Python packages are needed.
 
-The app now uses [one website with case and run pages](WORKSPACE.md). Open the home page, choose your case, and continue or start a run. Do not start a separate server for each case. Case A has a pending-work page until its real configuration is implemented.
+Use the official [Codex setup](https://learn.chatgpt.com/docs/cli) or [Claude Code setup](https://code.claude.com/docs/en/setup). Check your chosen CLI:
 
-First install Git, Python 3.10 or newer, and **either Codex CLI or Claude Code CLI**. You do not need both. Use the official [Codex setup](https://learn.chatgpt.com/docs/cli) or [Claude Code setup](https://code.claude.com/docs/en/setup) and sign in with your own account. Either coding assistant can also help you develop your case. The app uses your selected CLI for inference; a desktop app alone is not that command-line dependency. No Banner login, Docker, database, or third-party Python packages are needed.
+```powershell
+# Codex
+codex --version
+codex login status
+# Or Claude
+claude --version
+claude auth status
+```
 
-Run these commands in a terminal, from a folder where you keep projects:
+Sign in with `codex login` or `claude auth login` if needed. Claude support was checked with version 2.1.292.
 
 ```powershell
 git clone https://github.com/abhik030/coursepilot-cs4973.git
 cd coursepilot-cs4973
-python --version
 python -m unittest discover -s coursepilot/tests -v
 python -m coursepilot --output coursepilot/browser-runs
 ```
 
-Before launching, check the CLI you chose: `codex --version` and `codex login status`, or `claude --version` and `claude auth status`. Sign in with `codex login` or `claude auth login` if needed. Claude support was tested with Claude Code 2.1.292; older versions missing the required flags should be updated.
+For an existing clone, run `git pull --ff-only` first. Use `python3` or `py` if that is your Python command.
 
-If you already cloned it, run `git pull --ff-only` first. On systems where Python is named `python3` or `py`, use that command in place of `python` consistently. Keep the server terminal open and visit **http://127.0.0.1:8765 on your own computer**. Select human mode, baseline, and **Codex CLI or Claude Code**. If only one CLI is installed, the app selects it automatically. The default model is `gpt-6.1-sol` for Codex and `sonnet` for Claude; you can edit the model field. Both the course agent and simulated student use that selection. Begin a fresh session and follow Case C's task-guide buttons to understand the workflow. Stop the server with Ctrl+C when finished. If the port is occupied, add `--port 8766` and visit that port instead.
+Open **http://127.0.0.1:8765/** on your computer. Choose a case, start a run, then select human/simulated mode, baseline/controlled, provider, and model. Codex defaults to `gpt-6.1-sol`; Claude to `sonnet`. Both model roles use that selection.
 
-Successful setup means all integrity tests pass and the assistant answers the first comparison request in the browser. Tests do not need model access; an actual agent answer does. If setup fails, send Abhi the command and error text, your OS, and Python/CLI versions. Do not send sign-in credentials. Avoid editing the recorded evidence folders.
+Keep the server terminal open; Ctrl+C stops it. If port 8765 is occupied, reuse the existing app or add `--port 8766` and open that address. All cases use one server.
 
-## Your assignment
+Tests make no model calls; an assistant reply does. If setup fails, send Abhi the command/error and Python/CLI versions. See [website navigation](WORKSPACE.md) for runs and saved results.
 
-Case B is now a runnable team draft: use [its case document](CASE_B.md). Hudson's and Abhi's AI helpers should start with [AI_HANDOFF.md](../AI_HANDOFF.md), which identifies existing artifacts and remaining work. The earlier [Case B brief](HUDSON_CASE_B.md) is design history, not a reason to rebuild the implemented case.
+## Who does what
 
-| Person | Create | Starting template | Final case filename |
-| --- | --- | --- | --- |
-| Aditya | Case A: preserve required courses while optimizing preferences | `planning_template.json` | `coursepilot/cases/aditya_a.json` |
-| Hudson | Case B: review the implemented correction case and record actual contribution | Already implemented: read `CASE_B.md` | `coursepilot/cases/hudson_b.json` |
+- **Aditya:** Implement Case A, where a preference tempts the agent to drop a required course.
+- **Hudson:** Review the implemented [Case B](CASE_B.md), its [five attempts](case-b-runs/RESULTS.md), and actual contribution/ownership. Do not overwrite it with a template or rerun the batch.
+- **Videos:** Aditya records C, Hudson records A, Abhi records B, subject to confirming actual creators. The recorder must be someone other than the creator.
 
-For A, include a tempting preference-satisfying option that misses a hard requirement and at least one valid solution. For B, define a restriction introduced after the first draft, preserve the original rules, and independently verify a feasible revised schedule. These are the proposed assignments; confirm ownership with Abhi. You reuse the shared app and curate your own task, fixture, protocol, and outcomes.
+## Build Case A
 
-Create a named branch before editing, for example `git switch -c case-a-aditya` or `git switch -c case-b-hudson`. Copy the chosen template and, if changing academic data, copy the fixture to your own filename. From the repository root, Aditya can start with:
+Create a branch, then copy the starting files:
 
 ```powershell
+git switch -c case-a-aditya
 Copy-Item coursepilot/cases/planning_template.json coursepilot/cases/aditya_a.json
 Copy-Item coursepilot/fixtures/approval_v2.json coursepilot/fixtures/aditya_a.json
 ```
 
-The copy example is for Aditya. Hudson should use the implemented Case B files rather than copying over them. In a new case JSON, set `fixture` to the actual fixture path, replace the template ID/name/status, then curate and check the scenario. A renamed template alone is not a finished case.
+1. In the case JSON, set a unique ID, title, actual creator, and `fixture` path (`../fixtures/aditya_a.json`). Replace template status.
+2. Edit the starting data: courses, requirements, work blocks, grades, and seats. Include a tempting invalid option and independently check at least one valid schedule.
+3. Set the stage titles/messages. Human task buttons and the simulated student use the same stages. `chat` asks/discusses; `save` and `register` grant permission for the named `target`.
+4. For corrections, `profile_update` changes the stored rules when that task button is sent. Include the change in the visible message and retain earlier rules.
+5. Set the success rule. A draft-only task uses `"success": {"final_draft": "A"}`. Add `expected_sections` only if the task requires one exact set; otherwise accept all valid drafts.
 
-## Define your case
+Course-section keys are five-digit CRNs. `requires_sections` lists linked labs. Prerequisite groups are AND across groups, OR within each group, with minimum grades. Enrollment seats and waitlist places are different.
 
-Copy `cases/planning_template.json` or `cases/correction_template.json` to a new file. Set your creator name, unique case ID, title, and fixture path. These are starting structures, not finished student-created test cases.
+## Check and collect results
 
-Each stage has a human-readable title, student message, `intent`, and `target`. The browser task guide and simulated student use those same stages. `chat` conveys information or questions. `save` and `register` issue real user-channel permission for the named plan. Do not give the baseline deliberately irresponsible instructions.
-
-For a correction stage, `profile_update` records the scenario's authoritative change to `work`, credit limits, or soft preferences when the student sends that task step. Include the change in the visible message. Keep prior hard rules unless the student explicitly replaces them. Both modes update the same truth; neither condition gets different academic information. Document that participants use the task-guide step to issue a scenario correction.
-
-Copy and edit the fixture if your case needs different courses, blocked times, grades, requirements, or seats. Independently verify a valid solution. Section keys are synthetic five-digit CRNs; the term is stored separately. Prerequisite groups are AND across groups, OR within a group, with minimum letter grades. Linked section CRNs use `requires_sections`. `seats_available`, `waitlist_capacity`, and `waitlist_actual` describe different resources.
-
-## Choose success criteria
-
-For a planning/correction task:
-
-```json
-"success": {"final_draft": "A"}
-```
-
-This scores the final draft against the active rules, without demanding enrollment changes. You may add `expected_sections` if your case intentionally requires one exact valid set; otherwise accept all rule-satisfying final drafts. Required courses, credit rules, protected sections, work conflicts, and corequisites come from the fixture. If your task needs another success rule or breakdown flag, extend the scorer and add a meaningful integrity check before collecting trials.
-
-For the approval case, the configuration instead identifies the reference final enrollment, saved plan, and required comparison after saving. The general stage controller does not automatically assume every case is a registration task.
-
-## Run your case in both modes
+First try your case in human mode:
 
 ```powershell
-python -m coursepilot --case coursepilot/cases/YOUR_CASE.json --output coursepilot/your-interface-checks
-python -m coursepilot.batch --case coursepilot/cases/YOUR_CASE.json --runs 5 --output coursepilot/your-recorded-runs
-python -m coursepilot.verify --output coursepilot/your-recorded-runs
+python -m coursepilot --case coursepilot/cases/aditya_a.json --output coursepilot/a-development
 ```
 
-The commands above default to Codex. For Claude, add `--provider claude` to both the server and batch commands, for example:
+After the case is final and model use is authorized, collect five baseline simulated-user trials:
 
 ```powershell
-python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --output coursepilot/browser-runs/hudson
-python -m coursepilot.batch --provider claude --model sonnet --case coursepilot/cases/hudson_b.json --runs 5 --output coursepilot/hudson-recorded-runs
-python -m coursepilot.verify --output coursepilot/hudson-recorded-runs
+python -m coursepilot.batch --case coursepilot/cases/aditya_a.json --provider codex --model gpt-6.1-sol --effort medium --runs 5 --output coursepilot/a-recorded-runs
+python -m coursepilot.verify --output coursepilot/a-recorded-runs
 ```
 
-Aditya substitutes his case and output paths. Use `--provider codex` for an explicit Codex selection. Choose a model available to your own account. Keep the provider/model/effort fixed across your final five trials and report them; comparing cases run on different providers does not isolate an interface effect. There is no automatic provider fallback. CLI failures remain visible rather than silently switching models.
+For Claude, use `--provider claude --model sonnet`. Keep provider/model/settings and case data fixed. Use new output folders; retain failures and keep development runs separate.
 
-Use the same configuration for human and simulated modes. Freeze it before the final five-run batch, retain successes/failures, and preserve any development trials separately. The templates have been checked with deterministic adapter tests; their presence is not evidence that your own case has been run or is final.
+Write a short case document covering setup, task/initial prompt, starting data/reset, both user-mode protocols and stopping rules, valid outcomes, shared metrics/questions, actual five-run results and failure counts, rejected alternatives, mocked/external systems, and how the proposed agent would use the same case. [B](CASE_B.md) and [C](README.md) are examples.
 
-Add your short case document explaining setup, breakdown, protocols, valid outcomes, actual metrics, rejected candidates, mocked/external systems, and the proposed-agent comparison path. Reuse the shared subjective questions. Exchange cases for the reproduction videos, then add accessible repository/document/video links and creator/tester names to the team index.
+## Share your work
 
-## Return your work
+Send a branch or pull request containing your case, starting data, document, five complete run folders, and result table. Do not overwrite existing evidence. Each run needs `trajectory.json`, `reward.json`, and `config.json`.
 
-Send Abhi a link containing your case JSON, fixture, case document, five complete baseline output folders, and a short result table with actual breakdown counts. Do not overwrite Abhi's `coursepilot/runs/` or change your fixture midway through the final batch. Share a case draft and at least one valid solution early so setup problems can be resolved before the five-run collection.
-
-Public read access does not grant push access. If you are not a repository collaborator, click **Fork** on GitHub, then push your named branch to your own fork and open a pull request back to `abhik030/coursepilot-cs4973`. If you cloned the shared repository above, keep `origin` and add your fork as a separate remote, replacing `YOUR_USERNAME`:
+Public read access does not grant push access. If needed, fork the repo on GitHub and add your fork:
 
 ```powershell
 git remote add mine https://github.com/YOUR_USERNAME/coursepilot-cs4973.git
 ```
 
-Stage only your intended case/document/evidence files, commit them, and push with `git push -u mine YOUR_BRANCH_NAME`, replacing the branch placeholder. Then use GitHub's pull-request button. If pushing is blocked, send the fork/branch link so Abhi can retrieve your work; do not wait silently.
+Commit only your intended files, then `git push -u mine YOUR_BRANCH_NAME` and open a pull request to `abhik030/coursepilot-cs4973`. If blocked, send Abhi the branch/fork link.
 
-After the cases are ready, the proposed video rotation is Aditya records Case C, Hudson records Case A, and Abhi records Case B. Confirm that rotation. Follow [the recording guide](REPRODUCTION.md) and add the actual creator/tester names and accessible video URLs to [the team index](../SUBMISSION.md). Each case requires five baseline runs, its written handoff, and a reproduction video by a different teammate. No human-study responses are due now.
+Use the [shared metrics/questions](../evaluation/SHARED_METRICS.md) and [recording guides](REPRODUCTION.md). Add completed case/video links and actual creator/tester names to [the submission index](../SUBMISSION.md). The last teammate to finish submits. Human-study responses are not due now.

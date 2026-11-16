@@ -1,38 +1,32 @@
-# CoursePilot — curated test cases
+# CoursePilot submission
 
 CS4973 · Abhi Karthik, Aditya Vij, Hudson Kass
 
-Submission agreement: **the last teammate to finish submits** this single team index.
+**In progress:** Case A, creator/tester confirmations, and all three videos remain. The last teammate to finish submits this single index.
 
-**Team submission in progress.** Case C's implementation, document, and five baseline runs are available. Case B's implementation and five baseline attempts are available, including an explicitly documented scoring-label audit; its individual creator contribution remains unconfirmed. Case A and all three teammate reproduction videos are pending. This page is the single submission entry point once those items are added; templates are not completed cases.
+## Cases
 
-## Case index
-
-| Case and target breakdown | Creator | Setup and protocol | Five baseline runs and results | Independent tester and video |
+| Case | Creator | Document and code | Baseline results | Tester/video |
 | --- | --- | --- | --- | --- |
-| A: a required course is lost while optimizing a preference | Aditya Vij, proposed owner | Pending; [authoring guide](coursepilot/TEAMMATE_GUIDE.md) is available | Pending | Hudson Kass proposed; actual tester and video pending |
-| B: a correction is ignored or an earlier hard rule is lost | Individual creator unconfirmed; Hudson Kass proposed owner | [Runnable case document](coursepilot/CASE_B.md), [case JSON](coursepilot/cases/hudson_b.json) | [Five attempts and audited results](coursepilot/case-b-runs/RESULTS.md): four correct completions, one native-tool rejection; original scores retained | Abhi Karthik proposed; actual tester and video pending |
-| C v2: saving one plan is treated as permission for a different plan or registration action | Abhi Karthik | [Case document](coursepilot/README.md), [frozen stages](coursepilot/cases/approval_v2.json), [fixture](coursepilot/fixtures/approval_v2.json) | [Results](coursepilot/RESULTS.md), [five output folders](coursepilot/runs/), [verification](coursepilot/runs/verification.json) | Aditya Vij proposed; actual tester and video pending |
+| A: losing a required course while optimizing preferences | Aditya proposed | Pending; [guide](coursepilot/TEAMMATE_GUIDE.md) | Pending | Hudson proposed; video pending |
+| B: ignoring a new restriction or forgetting an earlier rule | Unconfirmed; Hudson proposed | [Document](coursepilot/CASE_B.md), [case](coursepilot/cases/hudson_b.json), [starting data](coursepilot/fixtures/hudson_b.json) | [Five attempts](coursepilot/case-b-runs/RESULTS.md): four correct completions, one tool-format error; original and corrected scores shown separately | Abhi proposed; video pending |
+| C: treating discussion or save permission as registration permission | Abhi Karthik | [Document](coursepilot/README.md), [case](coursepilot/cases/approval_v2.json), [starting data](coursepilot/fixtures/approval_v2.json) | [Five trials](coursepilot/RESULTS.md): 5/5 successful, no approval failures | Aditya proposed; video pending |
 
-The shared [public repository](https://github.com/abhik030/coursepilot-cs4973) contains the environment and evidence. [Setup commands](README.md#start-the-browser-application) launch a local Python backend using the tester's own signed-in Codex CLI or Claude Code CLI. The browser selects the provider/model; both roles share that selection. The original five baseline trials used Codex. The repository does not host a remote model backend. Each fresh session resets the fictional academic state.
+[Public repository](https://github.com/abhik030/coursepilot-cs4973) · [Setup](coursepilot/TEAMMATE_GUIDE.md) · [Recording guides](coursepilot/REPRODUCTION.md)
 
-## Shared measurement and human-testing materials
+The app runs locally using the tester's signed-in Codex CLI or Claude Code. Student data and university actions are mocked; model calls are real. C's recorded trials used Codex; B's used Claude.
 
-- [Core objective and subjective metrics, survey, and interview questions](evaluation/SHARED_METRICS.md).
-- Blank [survey response template](evaluation/templates/survey.json) and [interview notes](evaluation/templates/interview-notes.md). No subjective responses are required for this submission or have been collected.
-- [Reproduction instructions](coursepilot/REPRODUCTION.md), including the independent Case C recording and the handoff Abhi needs from Hudson.
+## Shared materials
 
-Every run includes ordered timestamped `trajectory.json`, numeric `reward.json`, and model/mode/settings `config.json`. Academic records and registration are mocked; model inference through the CLI is real. Case-specific documents state their reset, stopping rules, success criteria, and any additional external dependencies.
+- [Objective metrics, survey, and interview questions](evaluation/SHARED_METRICS.md)
+- [Blank survey](evaluation/templates/survey.json) and [interview notes](evaluation/templates/interview-notes.md)
 
-## Case C findings
+Each run saves timestamped messages/tools in `trajectory.json`, numeric metrics in `reward.json`, and mode/model/settings in `config.json`. No human-study responses have been collected or are due now.
 
-The baseline completed all five multi-stage trials successfully, with five student turns per trial, zero unauthorized commits, and zero final hard-rule errors. No approval breakdown was observed. The same task can be run with `controlled` permission enforcement, but no controlled-condition LLM comparison is claimed. Software checks and the development pilot are separate from the five baseline trials and required reproduction video. Historical [v1 evidence](evaluation/RESULTS.md) is retained separately.
+## Before submitting
 
-## Items required before submission
-
-1. Confirm each actual creator and independent tester. Proposed case assignments above are not confirmations. Record who actually finishes last and submits, following the team agreement.
-2. Add A/B's finished documents, fixed fixtures, both-mode protocols, curated/rejected-case notes, and five baseline output folders per case. Report actual breakdown counts, including zero.
-3. Add all three accessible reproduction videos, with actual recorder names. A case's recorder must be a teammate other than its creator and must use the written instructions.
-4. Confirm that all three cases use the shared core metrics and participant questions. Preserve each case's actual model/settings and any extra metrics.
-5. Check the repository and every video link without an owner login. Keep the required material accessible to the grader; the editable coordination document is optional supplementary material.
-6. Remove the in-progress notice only when the missing items above are present, then submit this page's URL or an equivalent single index. Submit once for the team by the assignment deadline.
+1. Finish A's case, document, five trials, and results. Keep B/C's existing evidence and report failures honestly.
+2. Confirm who created/tested each case. Each video must be recorded by someone other than the creator.
+3. Add three setup/run videos and check grader access to every link.
+4. Check that all cases use shared metrics/questions and document considered/rejected alternatives and the proposed-agent comparison.
+5. Remove the in-progress notice when complete, then submit this index once by the deadline.
