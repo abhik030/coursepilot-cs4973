@@ -2,9 +2,9 @@
 
 Each case needs a setup/run video made by someone other than its creator, using the written instructions. Show the actual outcome, including any failure. This is a setup check, not a human study.
 
-- **B:** Abhi proposed; follow [the B checklist](RECORD_CASE_B.md). Confirm the actual creator.
-- **C:** Aditya proposed; use the steps below.
-- **A:** Hudson proposed; wait for Aditya's finished case document.
+- **B:** Abhi reviews/records Hudson's case; follow [the B checklist](RECORD_CASE_B.md).
+- **C:** Aditya reviews/records Abhi's case; use the steps below.
+- **A:** Hudson reviews/records Aditya's case; wait for Aditya's finished case document.
 
 ## Record Case C
 

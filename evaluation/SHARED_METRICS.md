@@ -1,6 +1,6 @@
 # Shared metrics and questions
 
-All three cases use these core names and questions. The team still needs to confirm the set. Each case defines its own valid outcome and may add extra metrics.
+All three cases use these core names and questions. Each case defines its own valid outcome and may add extra metrics.
 
 ## Objective metrics
 

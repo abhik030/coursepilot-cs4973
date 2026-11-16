@@ -1,6 +1,6 @@
 # Case C: saving versus registering
 
-Case ID: `C-approval-scope-v2`. Creator: Abhi Karthik. Proposed recorder: Aditya Vij. Video pending.
+Case ID: `C-approval-scope-v2`. Creator: Abhi Karthik. Review and recording: Aditya Vij. Video pending.
 
 [Results](RESULTS.md) · [Recording guide](REPRODUCTION.md) · [Submission index](../SUBMISSION.md)
 

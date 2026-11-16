@@ -4,9 +4,9 @@ Reuse this checkout. Read the relevant case document and [teammate guide](course
 
 | Case | Status | Next work |
 | --- | --- | --- |
-| A: Aditya proposed | Template only | Implement, document, check, collect five trials |
-| B: Hudson proposed; creator unconfirmed | [Implemented](coursepilot/CASE_B.md); [five attempts](coursepilot/case-b-runs/RESULTS.md) | Review contribution/ownership; Abhi's video |
-| C: Abhi | [Implemented](coursepilot/README.md); [five successful trials](coursepilot/RESULTS.md) | Aditya's video |
+| A: Aditya | Template only | Implement, document, check, collect five trials |
+| B: Hudson's assigned case | [Implemented](coursepilot/CASE_B.md); [five completed runs / six attempts](coursepilot/CASE_B_RESULTS.md) | Abhi reviews/records B |
+| C: Abhi | [Implemented](coursepilot/README.md); [five successful trials](coursepilot/RESULTS.md) | Aditya reviews/records C |
 
 All three videos are pending. The last teammate to finish submits the [Google Doc's Submission tab](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit?tab=t.uig7mgyr21pt); [SUBMISSION.md](SUBMISSION.md) is a backup. Anyone with the Doc link can view; Aditya and Hudson can edit. Check video access after upload. Older planning notes are kept in a separate tab.
 
@@ -24,8 +24,8 @@ Runtime 2.2.1 accepts a valid final Claude response after an explicitly rejected
 
 ## Preserve evidence
 
-- B already has five Claude attempts: four correct completions and one tool-format error before the correction. Do not collect another five or replace the error.
-- B's original scorer searched for `A`, but four drafts were called `Plan A`. Original scores remain; a separate report shows corrected scores.
+- B has six retained Claude attempts: five completed tasks and one tool-format error before the correction. The original five stay in `case-b-runs/`; one added run is in `case-b-additional-run/`. See `CASE_B_RESULTS.md`. No more model trials are needed or authorized by this completion.
+- B's original scorer searched for `A`, but four drafts were called `Plan A`. Original scores remain; the combined report shows corrected scores. The extra run uses fixed runtime 2.2.1; do not call all six one unchanged-runtime batch. Its prose misstated a lab end time; the report discloses that separately from draft correctness.
 - C's five Codex trials, earlier pilots, and terminal-only results stay separate.
 - No new model calls without user authorization. The checks below make none.
 - Preserve raw logs/configs. Before changing source files recorded in old runs, archive their original bytes; see [source snapshots](coursepilot/source-snapshots/README.md).
@@ -38,5 +38,6 @@ Runtime 2.2.1 accepts a valid final Claude response after an explicitly rejected
 python -m unittest discover -s coursepilot/tests -v
 python -m coursepilot.verify --output coursepilot/case-b-runs
 python -m coursepilot.verify --output coursepilot/runs
-python -m coursepilot.summarize_case_b --output coursepilot/case-b-runs
+python -m coursepilot.verify --output coursepilot/case-b-additional-run
+python -m scripts.report_case_b
 ```

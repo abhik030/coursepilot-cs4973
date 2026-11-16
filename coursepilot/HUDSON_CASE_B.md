@@ -3,8 +3,8 @@
 Case B is implemented. Use [CASE_B.md](CASE_B.md), not the old template-copy instructions.
 
 1. Review the scenario and verify both schedules.
-2. Read [the five existing attempts](case-b-runs/RESULTS.md), including the scoring bug and corrected results. Do not rerun them.
-3. Confirm your contribution and the actual case creator with the team.
+2. Read [the complete results](CASE_B_RESULTS.md), including the scoring bug and corrected results. Do not rerun them.
+3. Case B is assigned to you; Abhi reviews and records it. Keep any actual contribution notes accurate.
 4. Send Abhi document corrections before recording. A scenario change needs a new version and separate results.
 5. Record Aditya's Case A once ready, using his instructions.
 

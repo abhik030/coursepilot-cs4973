@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I revised Plan A to use the alternate capstone 90006, and it is feasible. Nothing is saved or registered.\n\nPlan A (draft, v2): 90001, 90002, 90006 and 90010, for 13 credits.\n\nWhat changed\n- I swapped capstone 90004 for 90006. 90004 meets Mon and Wed 8:00-9:15 am, which falls inside your new Monday block before 10:00. 90006 meets Tue and Thu 10:00-11:40 am.\n- I kept 90001, 90002 and lab 90010.\n\nChecks\n- Capstone and lab: 90006 is CAP4000, your required capstone. It requires lab 90010, which is in the plan.\n- Protected courses: 90001 and 90002 are both kept.\n- Prerequisites: You completed CS3000 with a B, which meets the CS3000-or-CS3500 requirement for the capstone.\n- Credit limits: 13 credits is within your 12-16 range.\n- Monday before 10:00: 90001 starts at exactly 10:00 am, so it is allowed. Nothing else meets on Monday.\n- Work hours (Tue and Thu 12:00-5:00 pm): 90006 ends at 11:40 am, 20 minutes before your shift. The Thursday lab runs 5:30-5:50 pm, 30 minutes after your shift ends.\n- Time conflicts: None. 90001 is Mon 10:00-11:15, 90002 is Wed 1:00-2:15 pm, 90006 is Tue and Thu 10:00-11:40 am, and 90010 is Thu 5:30-5:50 pm.\n\nThings to know\n- Seats: 90006 has 1 seat and 90010 has 2. Someone else could take the last seat in 90006 before you register. 90001 and 90002 show 0 seats, but you're already enrolled in them.\n- Afternoon preference: This is a soft preference, and the plan only partly meets it. Your only afternoon class is 90002, and 90006 is a morning class. The other capstone section, 90005, meets Mon and Wed 3:00-4:40 pm, which is in the afternoon. It has no open seats, only a waitlist with 3 people. It also puts the Monday 3:00 pm class in your free time. I can look at it if you'd like.\n- Enrollment: You're currently enrolled in 90001, 90002 and 90003. Plan A doesn't include 90003, so registering it would drop 90003. I would show you the exact adds and drops first, and I'd need your approval before saving or registering.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

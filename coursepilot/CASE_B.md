@@ -1,6 +1,6 @@
 # Case B: handling a new restriction
 
-Case ID: `B-correction-preservation-v1`. Hudson is the proposed owner; the actual creator still needs confirmation. Abhi is the proposed recorder. Video pending.
+Case ID: `B-correction-preservation-v1`. Case owner: Hudson Kass. Review and recording: Abhi Karthik. Video pending.
 
 ## Task
 
@@ -58,7 +58,7 @@ The run ends after the second response and Finish & save, or an early stop/error
 
 A separate model context plays Maya, follows the same two stages, invents no academic facts or extra permissions, and gives no subjective ratings. Both modes share the environment, course tools, messages, and profile update. Each stage allows 24 agent decisions; each model call has a 120-second timeout. The run finishes after the second response, or keeps any error/limit as a failed attempt.
 
-The five existing attempts used Claude Code, `sonnet`, Medium effort. Both model roles used that selection. To repeat the batch **only when authorized**, use a new directory:
+All six retained attempts used Claude Code, `sonnet`, Medium effort. Both model roles used that selection. To repeat the batch **only when authorized**, use a new directory:
 
 ```powershell
 python -m coursepilot.batch --provider claude --model sonnet --effort medium --case coursepilot/cases/hudson_b.json --runs 5 --output coursepilot/case-b-new-runs
@@ -80,9 +80,9 @@ The separate report counts:
 
 A trial is eligible for the correction check when the requested initial draft and correction update occurred. Missing drafts and errors remain task failures in the full five-attempt count; they are not automatically called memory failures. Explanations need manual review against the actual schedule.
 
-[Results](case-b-runs/RESULTS.md): **four correct completions and one tool-format error before the correction**. No correction failure was observed in the four eligible trials.
+[Complete results](CASE_B_RESULTS.md): **five completed tasks across six attempts**, keeping the original tool-format error. No correction failure was observed in five eligible trials. The original five attempts remain separate from one added baseline run using runtime 2.2.1. Both groups use the same task/data and provider/model/effort; the runtime difference is disclosed. Manual review found one prose error in the added run: it said the lab ends at 17:50, while the actual end is 18:20. The structured draft and calendar are correct.
 
-The original scorer searched for `A`, but the four completed drafts were called `Plan A`, so it incorrectly reported five failures. Original reward files are unchanged. A separate audit reports **4/5 successes** and records how scores were corrected. No attempt was rerun or replaced. Runtime 2.1.1 fixed this label lookup for future runs.
+The original scorer searched for `A`, but the four completed drafts were called `Plan A`, so it incorrectly reported five failures. Original reward files are unchanged. A separate audit reports **4/5 successes** and records how scores were corrected. No original attempt was replaced. Runtime 2.1.1 fixed this label lookup for future runs. The later added run passed the current scorer without an audit.
 
 Each folder contains ordered, timestamped `trajectory.json`, numeric `reward.json`, and model/mode/settings in `config.json`, plus starting data, final checks, and raw model inputs/outputs.
 

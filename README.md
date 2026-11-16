@@ -31,8 +31,8 @@ The app runs on each teammate's computer. GitHub shares code and saved results; 
 
 ## Current status
 
-- **A:** Aditya's proposed case; still a template.
-- **B:** Implemented. Five Claude attempts: four correct completions and one tool-format error. A scoring bug and its correction are explained in [the results](coursepilot/case-b-runs/RESULTS.md). Actual creator needs confirmation.
+- **A:** Aditya's case; still a template.
+- **B:** Hudson's assigned case, implemented. [Five completed runs across six retained attempts](coursepilot/CASE_B_RESULTS.md), including the original tool-format error and scoring audit.
 - **C:** Abhi's case. [Five Codex trials](coursepilot/RESULTS.md), all successful.
 - **Videos:** All three recordings are pending. The last teammate to finish submits.
 

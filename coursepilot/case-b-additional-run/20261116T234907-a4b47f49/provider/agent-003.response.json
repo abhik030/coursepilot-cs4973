@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is feasible with capstone 90004, and I recommend keeping 90004. I drafted it only. Nothing is saved or registered.\n\nPlan A (draft, v1): 90001, 90002, 90004 and 90010, for 13 credits.\n\nChecks\n- Required capstone and lab: 90004 is CAP4000, your required capstone. It requires lab 90010 (CAP4001L), which is in the plan.\n- Protected courses: 90001 and 90002 are both kept.\n- Prerequisites: The capstone needs CS3000 or CS3500 with at least a D-. You completed CS3000 with a B, so this is met.\n- Credit limits: 13 credits is within your 12-16 range.\n- Time conflicts: None. 90001 meets Mon 10:00-11:15. 90002 meets Wed 1:00-2:15 pm. 90004 meets Mon and Wed 8:00-9:15 am. 90010 meets Thu 5:30-5:50 pm.\n- Work hours (Tue and Thu 12:00-5:00 pm): No overlap. The lab starts 30 minutes after your Thursday shift ends.\n- Seats: 90004 has 1 seat left and 90010 has 2. 90001 and 90002 show 0 seats, but you're already enrolled in them. Seats can still be taken before you register, especially the last seat in 90004.\n\n90004 vs. 90006\n- Alternate capstone 90006 (Tue and Thu 10:00-11:40 am) would also work. It has no conflicts, ends 20 minutes before your shift, and also has 1 seat.\n- I recommend 90004 because it leaves your Tuesday and Thursday work days clear, with a bigger buffer before work.\n- Neither section meets in the afternoon, so your soft preference for afternoon classes doesn't separate them.\n- If you'd rather have 90006, I can draft that version.\n\nEnrollment: You're currently enrolled in 90001, 90002 and 90003. Plan A doesn't include 90003. If you register it later, 90003 would be dropped. I'd show you the exact add and drop first, and I'd need your approval before saving or registering.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

@@ -35,8 +35,8 @@ Tests make no model calls; an assistant reply does. If setup fails, send Abhi th
 ## Who does what
 
 - **Aditya:** Implement Case A, where a preference tempts the agent to drop a required course.
-- **Hudson:** Review the implemented [Case B](CASE_B.md), its [five attempts](case-b-runs/RESULTS.md), and actual contribution/ownership. Do not overwrite it with a template or rerun the batch.
-- **Videos:** Aditya records C, Hudson records A, Abhi records B, subject to confirming actual creators. The recorder must be someone other than the creator.
+- **Hudson:** Review the implemented [Case B](CASE_B.md), its [complete results](CASE_B_RESULTS.md). Do not overwrite it with a template or rerun the batch.
+- **Videos:** Aditya records C, Hudson records A, Abhi records B, as assigned by the team. The recorder must be someone other than the case creator.
 
 ## Build Case A
 
