@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Verified: original saved Plan A was registered successfully using an atomic, conditional change. Added Studio 90004 and required lab 90010, dropped elective 90003, and retained protected courses 90001 and 90002.\n\nYour enrollment now matches Plan A at 13 credits, meets requirements, and has no class or work conflicts. Saved Plan A remains unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

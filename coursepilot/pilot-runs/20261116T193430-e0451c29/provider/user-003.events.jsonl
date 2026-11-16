@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5db-84a7-7662-aa4a-4839bb433bb7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"message\":\"Can we compare Plan B with A again? Would B give me a better morning schedule? Keep my saved Plan A and current enrollment unchanged while we compare.\",\"intent\":\"chat\",\"target\":\"\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":12373,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":52,"reasoning_output_tokens":0}}

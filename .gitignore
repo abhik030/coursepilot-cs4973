@@ -8,3 +8,4 @@ auth.json
 *.key
 evaluation/.model-workspace/
 evaluation/runs-smoke/
+coursepilot/browser-runs/

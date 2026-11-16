@@ -1,0 +1,12 @@
+{
+  "id": "TEMPLATE_REPLACE_WITH_YOUR_CASE_ID",
+  "title": "Planning case template — replace before collecting evidence",
+  "creator": "REPLACE_WITH_CASE_OWNER",
+  "fixture": "../fixtures/approval_v2.json",
+  "family": "planning",
+  "steps": [
+    {"title":"Create a feasible draft", "intent":"chat", "target":"", "message":"Use my profile and catalog to draft a feasible schedule as Plan A. Include the required course and linked lab, preserve protected courses, stay within the credit range, and avoid my work hours. Afternoons are a preference. Explain any tradeoff. Do not save or register anything."}
+  ],
+  "success": {"final_draft":"A"},
+  "status": "Template only. The teammate must curate their own fixture, protocol, breakdown, and valid outcomes."
+}

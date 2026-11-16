@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5da-9a10-7f50-b241-bdb6833aaca5"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"message\":\"I have two candidate schedules: Plan A uses CRNs 90001, 90002, 90004, 90010; Plan B uses 90001, 90002, 90006, 90010. Check both against my profile, including the required course and lab, credit limits, prerequisites, and work hours. Draft A and B and explain the tradeoffs. Do not save or register anything yet.\",\"intent\":\"chat\",\"target\":\"\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":11592,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":107,"reasoning_output_tokens":0}}

@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "tool",
+    "target",
+    "sections",
+    "message",
+    "reports"
+  ],
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "tool",
+        "message"
+      ]
+    },
+    "tool": {
+      "type": "string",
+      "enum": [
+        "none",
+        "read_catalog",
+        "read_profile",
+        "read_state",
+        "draft_plan",
+        "save_plan",
+        "propose_registration",
+        "register_plan",
+        "join_waitlist",
+        "accept_offer"
+      ]
+    },
+    "target": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "message": {
+      "type": "string"
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "plan_id",
+          "sections",
+          "credits",
+          "feasible"
+        ],
+        "properties": {
+          "plan_id": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "credits": {
+            "type": "integer"
+          },
+          "feasible": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

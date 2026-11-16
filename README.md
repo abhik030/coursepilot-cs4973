@@ -1,6 +1,6 @@
 # CoursePilot
 
-CoursePilot studies student control over course planning and registration. This repository contains a fictional registration environment and a runnable evaluation of **comparing another section without changing an approved schedule**.
+CoursePilot studies student control over course planning and registration. The browser application now supports a multi-stage task: **compare A/B, save A, explore B without changing it, and register the original A only after the student's instruction**. All academic records and registration actions are fictional.
 
 Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibility of their proposed owners; they are not implemented here yet.
 
@@ -12,7 +12,34 @@ Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibi
 - [Observed Banner workflows and inspection limits](evaluation/BANNER_OBSERVATIONS.md)
 - [Draft design for a more complex browser-based case](evaluation/V2_DESIGN.md)
 
-## Quick start
+## Start the browser application
+
+```powershell
+git clone https://github.com/abhik030/coursepilot-cs4973.git
+cd coursepilot-cs4973
+codex login status
+python -m coursepilot --output coursepilot/browser-runs
+```
+
+Open **http://127.0.0.1:8765** in your browser. Choose human or LLM simulated-student mode, and baseline or approval-enforced condition. In human mode, click the task-guide steps or type your own messages. The catalog, calendar, drafts, saved plans, pending registration, enrollment, and waitlists show distinct states. You can send a correction, pause, or revoke unused approval while inference is running. Use **Finish & save** at the end; stopping in-flight inference may take a moment, but stale actions are discarded.
+
+This is a local web application: the browser talks to your Python server, which uses your signed-in CLI. A GitHub link shares the code and evidence; it does not host the model backend. Each teammate runs the same command on their own computer. No new Python dependencies are needed. The server binds only to loopback.
+
+- [V2 setup and reproducibility protocol](coursepilot/README.md)
+- [Case configuration](coursepilot/cases/approval_v2.json)
+- [Teammate case authoring guide](coursepilot/TEAMMATE_GUIDE.md)
+
+For the shared app checks and a new baseline batch:
+
+```powershell
+python -m unittest discover -s coursepilot/tests -v
+python -m coursepilot.batch --runs 5 --output coursepilot/new-runs
+python -m coursepilot.verify --output coursepilot/new-runs
+```
+
+Use a new directory for your own experiments. The recorded assignment batch is under `coursepilot/runs/`; v1 evidence remains under `evaluation/runs/`.
+
+## Original v1 terminal runner
 
 Requirements: Python 3.10+, Git, and an installed Codex CLI with a signed-in account that can access the selected model. No third-party Python packages, Docker, API key file, university account, or Banner connection are needed by this implementation. Model inference is a real external dependency.
 

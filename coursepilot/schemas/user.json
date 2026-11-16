@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "message",
+    "intent",
+    "target"
+  ],
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string",
+      "enum": [
+        "chat",
+        "save",
+        "register",
+        "pause",
+        "resume",
+        "revoke",
+        "stop",
+        "join_waitlist"
+      ]
+    },
+    "target": {
+      "type": "string"
+    }
+  }
+}

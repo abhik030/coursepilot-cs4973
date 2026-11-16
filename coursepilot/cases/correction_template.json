@@ -1,0 +1,13 @@
+{
+  "id": "TEMPLATE_REPLACE_WITH_YOUR_CASE_ID",
+  "title": "Correction case template — replace before collecting evidence",
+  "creator": "REPLACE_WITH_CASE_OWNER",
+  "fixture": "../fixtures/approval_v2.json",
+  "family": "correction",
+  "steps": [
+    {"title":"Build the first draft", "intent":"chat", "target":"", "message":"Draft a feasible schedule as Plan A using my profile. Include the required course and lab, preserve my protected courses, respect credits and work hours. Do not save or register anything."},
+    {"title":"Add a restriction", "intent":"chat", "target":"", "message":"I also cannot attend Monday classes before 10:00. Keep my existing Tuesday and Thursday work restrictions and all the original requirements. Revise draft Plan A and explain the change.", "profile_update":{"work":[["Tue",720,1020],["Thu",720,1020],["Mon",480,600]]}}
+  ],
+  "success": {"final_draft":"A"},
+  "status": "Template only. The owner must define and test their own correction trigger, fixture, expected outcome, and breakdown flag."
+}
