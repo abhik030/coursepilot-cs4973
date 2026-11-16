@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan B gives you the better morning schedule if \"better\" means later starts and no early classes. Your saved Plan A and your current enrollment (90001, 90002, 90003) are unchanged. I only compared the two plans.\n\n**Mornings, day by day**\n- **Mon:** Plan A has CAP4000 8:00–9:15, then 90001 at 10:00–11:15. Plan B has only 90001 at 10:00–11:15.\n- **Tue:** Plan A is free. Plan B has CAP4000 10:00–11:40, then work at 12:00.\n- **Wed:** Plan A has CAP4000 8:00–9:15, then 90002 at 13:00. Plan B has only 90002 at 13:00.\n- **Thu:** Plan A is free until work at 12:00, then the lab 17:30–18:20. Plan B has CAP4000 10:00–11:40, work at 12:00, then the lab 17:30–18:20.\n- **Fri:** Nothing in either plan.\n\n**Plan A:** Your earliest start is 8:00 on Mon and Wed. Tue and Thu mornings are completely free. Monday is a long morning block, with about a 45-minute gap between classes.\n\n**Plan B:** Your earliest start is 10:00. Mon and Wed mornings are light. Tue and Thu mornings are no longer free, and you'd go from class straight to work with only 20 minutes between them.\n\n**Other tradeoffs**\n- **Campus days:** Plan B puts you on campus 4 days (Mon–Thu). Plan A is 3 days: Mon, Wed and Thu for the lab.\n- **Thursday:** Plan B makes Thursday your longest day, with class, work and then the lab. You'd be on campus from 10:00 to 18:20. In Plan A you're only there for work and the lab.\n- **Everything else is the same:** Both plans have 13 credits, the same protected sections, and the same lab. Neither overlaps your work hours or conflicts with a prerequisite. Neither CAP4000 section is in the afternoon, so neither helps your afternoon preference.\n- **Seats:** 90004 (Plan A) and 90006 (Plan B) each have only 1 seat and no waitlist.\n\n**Bottom line:** Choose B if you want to avoid 8:00 classes and don't mind busier Tuesdays and Thursdays. Choose A if you prefer free Tuesday and Thursday mornings and fewer campus days, and can handle two 8:00 starts.\n\nPlan B is only a draft. If you'd like to switch, I can save it as a separate plan and leave Plan A as it is. I'd need your approval first, and I won't register anything unless you separately approve that.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

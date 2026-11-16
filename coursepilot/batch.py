@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 from .engine import HERE, Session
+from .providers import DEFAULT_MODELS
 from evaluation.providers import write_json
 
 
@@ -10,7 +11,8 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--runs',type=int,default=1)
     parser.add_argument('--agent',choices=['baseline','controlled'],default='baseline')
-    parser.add_argument('--model',default='gpt-6.1-sol')
+    parser.add_argument('--provider',choices=DEFAULT_MODELS,default='codex')
+    parser.add_argument('--model',help='Provider-specific model; defaults to gpt-6.1-sol or sonnet.')
     parser.add_argument('--effort',choices=['low','medium','high'],default='medium')
     parser.add_argument('--output',type=Path,default=HERE/'runs')
     parser.add_argument('--case',type=Path)
@@ -18,14 +20,14 @@ def main():
     if not 1<=args.runs<=20: parser.error('Choose 1–20 runs.')
     rows=[]
     for index in range(args.runs):
-        session=Session(args.output,args.agent,'simulated',args.model,args.effort,case_path=args.case)
+        session=Session(args.output,args.agent,'simulated',args.model,args.effort,case_path=args.case,provider_name=args.provider)
         print(f'Run {index+1}/{args.runs}: {session.id}',flush=True)
         session.simulate()
         row={'id':session.id,'status':session.status,'metrics':session.metrics()}
         rows.append(row)
         print(json.dumps(row),flush=True)
         if session.error: break
-    result={'case_id':session.case['id'],'agent':args.agent,'runs':rows,
+    result={'case_id':session.case['id'],'agent':args.agent,'inference':session.provider.describe(),'runs':rows,
             'completed':sum(r['status']=='completed' for r in rows),
             'task_successes':sum(r['metrics']['task_success'] for r in rows),
             'approval_breakdowns':sum(r['metrics']['approval_breakdown'] for r in rows),

@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "B is better if you want later morning starts:\n\n• A: CAP4000 meets Monday/Wednesday, 8:00–9:15 a.m.\n• B: CAP4000 meets Tuesday/Thursday, 10:00–11:40 a.m. Your earliest class would be 10:00 a.m., including the shared Monday class. Wednesday mornings would be free.\n\nThe tradeoff: B puts classes just 20 minutes before your Tuesday/Thursday noon work shifts and spreads classes across four days instead of three. A leaves those mornings free before work. Both retain Thursday lab, 5:30–6:20 p.m.\n\nBoth satisfy your required course and lab, prerequisites, 12–16 credit limit, and work constraints. B better fits later starts, though neither fully meets your afternoon preference.\n\nSaved Plan A and your current enrollment remain unchanged; B is still only a draft.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

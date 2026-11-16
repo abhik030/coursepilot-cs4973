@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is saved. It's version 1, with sections 90001, 90002, 90004 and 90010, for 13 credits. I haven't registered anything.\n\nYour current enrollment is still 90001, 90002 and 90003. Registering Plan A would change that. As I understand it, 90003 (Open Elective, Fri 13:00–14:15) would be dropped and 90004 and 90010 added. I'd confirm that with a registration preview before anything is submitted.\n\nIf you want to go ahead, tell me and I'll preview the exact adds and drops for you to review. Registration needs your separate approval. Seats in 90004 are limited to 1, so it could fill before you register.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

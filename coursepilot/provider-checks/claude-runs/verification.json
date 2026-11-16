@@ -1,0 +1,16 @@
+{
+  "method": "Offline trace and source verification, no model calls.",
+  "checked": 1,
+  "passed": 1,
+  "runs": [
+    {
+      "id": "20261116T201517-cce4ee4f",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 5,
+      "tool_pairs": 8,
+      "archived_sources": []
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "message": "Please save Plan A. I approve saving the plan only, not registration.",
+  "intent": "save",
+  "target": "A"
+}

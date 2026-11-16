@@ -4,26 +4,29 @@ import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import secrets
-import shutil
 import threading
 from urllib.parse import urlparse, parse_qs
 
 from .engine import HERE, Session, load_case
+from .providers import DEFAULT_MODELS, model_for, provider_options
 
 
 class App:
-    def __init__(self, output, model, effort, case_path=None):
+    def __init__(self, output, model, effort, case_path=None, provider_name='codex'):
         self.output, self.model, self.effort = Path(output).resolve(), model, effort
         self.sessions = {}
         self.lock = threading.Lock()
         self.token = secrets.token_urlsafe(32)
         self.case_path=case_path
+        self.provider_name=provider_name
         self.case,self.fixture=load_case(case_path)
 
     def create(self, data):
         agent, mode = data.get('agent','baseline'), data.get('mode','human')
         if agent not in ('baseline','controlled') or mode not in ('human','simulated'): raise ValueError('Invalid condition or mode.')
-        session = Session(self.output, agent, mode, self.model, self.effort,case_path=self.case_path)
+        provider=data.get('provider',self.provider_name)
+        model=model_for(provider,data.get('model') or (self.model if provider==self.provider_name else None))
+        session = Session(self.output, agent, mode, model, self.effort,case_path=self.case_path,provider_name=provider)
         with self.lock: self.sessions[session.id] = session
         if mode == 'simulated': threading.Thread(target=session.simulate, daemon=True).start()
         return session.view()
@@ -47,8 +50,9 @@ def handler_for(app):
         def do_GET(self):
             path = urlparse(self.path).path
             if path == '/api/bootstrap':
-                self.reply(200,{'token':app.token,'fixture':app.fixture,'case':app.case,'model':app.model,
-                                'cli_available':shutil.which('codex') is not None})
+                self.reply(200,{'token':app.token,'fixture':app.fixture,'case':app.case,
+                                'provider':app.provider_name,'model':model_for(app.provider_name,app.model),
+                                'providers':provider_options()})
             elif path == '/api/session':
                 sid = parse_qs(urlparse(self.path).query).get('id',[''])[0]
                 session = app.sessions.get(sid)
@@ -95,12 +99,13 @@ def handler_for(app):
 def main():
     parser = argparse.ArgumentParser(description='CoursePilot local browser evaluation')
     parser.add_argument('--port',type=int,default=8765)
-    parser.add_argument('--model',default='gpt-6.1-sol')
+    parser.add_argument('--provider',choices=DEFAULT_MODELS,default='codex')
+    parser.add_argument('--model',help='Provider-specific model; defaults to gpt-6.1-sol or sonnet.')
     parser.add_argument('--effort',default='medium',choices=['low','medium','high'])
     parser.add_argument('--output',type=Path,default=HERE/'runs')
     parser.add_argument('--case',type=Path,help='Case JSON; defaults to the approval case.')
     args = parser.parse_args()
-    app = App(args.output,args.model,args.effort,args.case)
+    app = App(args.output,args.model,args.effort,args.case,args.provider)
     server = ThreadingHTTPServer(('127.0.0.1',args.port),handler_for(app))
     print(f'CoursePilot: http://127.0.0.1:{args.port}\nFictional records only. Press Ctrl+C to stop.',flush=True)
     try: server.serve_forever()

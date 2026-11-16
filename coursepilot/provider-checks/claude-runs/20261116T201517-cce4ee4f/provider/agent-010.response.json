@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "A",
+  "sections": [],
+  "message": "Previewing the exact add/drop for saved Plan A before submitting registration.",
+  "reports": [],
+  "tool": "propose_registration"
+}

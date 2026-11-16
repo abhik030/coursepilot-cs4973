@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "A",
+  "sections": [],
+  "message": "The preview matches what you approved. It adds 90004 and 90010 and drops 90003. It keeps 90001 and 90002. I'm submitting saved Plan A now.",
+  "reports": [],
+  "tool": "register_plan"
+}

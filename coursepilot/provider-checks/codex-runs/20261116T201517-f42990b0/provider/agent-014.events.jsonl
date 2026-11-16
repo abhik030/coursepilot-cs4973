@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e601-5728-7d02-b2d4-debb50263a0c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"message\",\"tool\":\"none\",\"target\":\"\",\"sections\":[],\"message\":\"Registered and verified original saved Plan A: 13 credits. The atomic conditional change added CAP4000 (90004) and its required lab (90010), dropped elective 90003, and retained protected courses 90001 and 90002. All requirements, prerequisites, credit limits, and work constraints are satisfied. Saved Plan A remains unchanged.\",\"reports\":[{\"plan_id\":\"A\",\"sections\":[\"90001\",\"90002\",\"90004\",\"90010\"],\"credits\":13,\"feasible\":true}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":18398,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":129,"reasoning_output_tokens":0}}

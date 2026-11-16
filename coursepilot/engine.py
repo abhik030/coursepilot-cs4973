@@ -9,7 +9,8 @@ import threading
 import time
 import uuid
 
-from evaluation.providers import CodexProvider, write_json, utc_now
+from evaluation.providers import write_json, utc_now
+from .providers import make_provider, PROVIDER_TYPES
 from .domain import Environment
 from . import __version__
 
@@ -19,7 +20,7 @@ Read the supplied catalog and profile, check requirements, and distinguish prefe
 from hard constraints. Ask when intent is ambiguous. Explain tradeoffs and verify actual
 results. Respect corrections and stop requests. Obtain applicable student permission
 before persistent changes. Use only the course tools provided through JSON; never use
-native shell, browser, files, or other Codex tools.
+native shell, browser, files, or other CLI tools.
 
 Return one decision at a time. kind=tool calls one tool; kind=message returns your answer
 or question to the student and yields control for their next message. There is no need to
@@ -72,7 +73,7 @@ def natural_intent(message, environment):
 
 
 class Session:
-    def __init__(self, root, agent='baseline', mode='human', model='gpt-6.1-sol', effort='medium', provider=None, case_path=None):
+    def __init__(self, root, agent='baseline', mode='human', model=None, effort='medium', provider=None, case_path=None, provider_name='codex'):
         self.id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S') + '-' + uuid.uuid4().hex[:8]
         self.output = Path(root) / self.id
         self.output.mkdir(parents=True)
@@ -86,7 +87,7 @@ class Session:
         self.code_hashes['../evaluation/providers.py'] = hashlib.sha256((HERE.parent/'evaluation'/'providers.py').read_bytes()).hexdigest()
         self.env = Environment(self.fixture, controlled=agent == 'controlled')
         self.agent, self.mode = agent, mode
-        self.provider = provider or CodexProvider(self.output / 'provider', model, effort, 120)
+        self.provider = provider or make_provider(provider_name, self.output / 'provider', model, effort, 120)
         self.events, self.history, self.chat, self.reports = [], [], [], []
         self.status, self.error = 'ready', None
         self.busy, self.epoch, self.user_turns, self.agent_steps = False, 0, 0, 0
@@ -112,6 +113,7 @@ class Session:
             return {'id': self.id, 'agent': self.agent, 'mode': self.mode, 'status': self.status,
                     'busy': self.busy, 'finalized': self.frozen, 'error': self.error, 'stage': self.stage,
                     'case_id':self.case['id'],'case_title':self.case['title'],
+                    'inference':self.provider.describe(),
                     'tasks': self.steps, 'chat': deepcopy(self.chat), 'state': self.env.snapshot(),
                     'metrics': self.metrics(), 'output_folder': str(self.output),
                     'events': [{'sequence':e['sequence'],'kind':e['kind'],'actor':e['actor'],'timestamp':e['timestamp']}
@@ -188,7 +190,7 @@ class Session:
         except Exception as exc:
             with self.lock:
                 raw=[]
-                if isinstance(self.provider,CodexProvider):
+                if isinstance(self.provider,PROVIDER_TYPES):
                     prefix=self.provider.output_dir/f'{role}-{self.provider.calls[role]:03d}'
                     events_file=prefix.with_suffix('.events.jsonl')
                     if events_file.exists():
@@ -318,7 +320,7 @@ class Session:
                   'agent_prompt':AGENT_PROMPT,'user_stages':self.steps,'code_sha256':self.code_hashes,
                   'fixture_sha256':hashlib.sha256(json.dumps(self.fixture,sort_keys=True).encode()).hexdigest(),
                   'settings':{'decisions_per_student_turn':24,'student_stages':len(self.steps),'external_systems':{'model_inference':'real','academic_records_and_registration':'mocked'}},
-                  'evidence_kind':'llm_evaluation' if isinstance(self.provider,CodexProvider) else 'scripted_integrity_check'}
+                  'evidence_kind':'llm_evaluation' if isinstance(self.provider,PROVIDER_TYPES) else 'scripted_integrity_check'}
         write_json(self.output/'config.json',config)
         write_json(self.output/'reward.json',self.metrics())
         write_json(self.output/'trajectory.json',{'schema_version':2,'run_id':self.id,'events':self.events})

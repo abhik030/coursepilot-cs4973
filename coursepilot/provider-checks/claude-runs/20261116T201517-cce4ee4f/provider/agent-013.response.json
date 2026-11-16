@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is registered, and I checked your enrollment afterward to confirm it.\n\n**What changed**\n- Added 90004 (CAP4000, Mon/Wed 8:00–9:15) and 90010 (CAP4001L lab, Thu 17:30–18:20).\n- Dropped 90003 (Open Elective, Fri).\n- Kept your protected courses, 90001 and 90002.\n\n**Verified enrollment:** 90001, 90002, 90004 and 90010, for 13 credits. That is within your 12–16 range. Your required course CAP4000 and its lab are both in place. The preview showed no rule errors. Plan A is still saved as version 1, and nothing is waitlisted.\n\n**Things to know**\n- Seats in 90004 and 90010 are now taken. The lab has 1 seat left, and 90004 has none.\n- 90003 now has 1 open seat. If you want to take it back later, you could add it. That would bring you to 17 credits, which is over your 16-credit maximum. It would only work if you dropped something else.\n- Plan B is still only a draft. It was never saved or registered.\n\nI haven't made any other changes.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

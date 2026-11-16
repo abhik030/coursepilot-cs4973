@@ -9,3 +9,5 @@ auth.json
 evaluation/.model-workspace/
 evaluation/runs-smoke/
 coursepilot/browser-runs/
+coursepilot/provider-checks/claude-probe/
+coursepilot/provider-checks/claude-probe-2/

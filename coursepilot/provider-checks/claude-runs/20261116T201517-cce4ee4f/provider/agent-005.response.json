@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Both plans are drafted as A and B. I haven't saved or registered anything, and your enrollment is unchanged.\n\n**Checks that apply to both plans**\n- **CAP4000:** Plan A uses section 90004 and Plan B uses section 90006. Either one satisfies your required course.\n- **Prerequisite:** CAP4000 needs CS3000 or CS3500 with a D- or better. You completed CS3000 with a B, so you qualify.\n- **Lab:** CAP4000 requires the lab, CAP4001L (90010). It meets Thursday 17:30–18:20 and is in both plans. It starts 30 minutes after your Thursday work shift ends at 17:00, so you'd need to get there quickly.\n- **Credits:** Each plan has 13 credits, within your 12–16 range.\n- **Protected sections:** 90001 (Mon 10:00–11:15) and 90002 (Wed 13:00–14:15) are in both plans.\n- **Conflicts:** Neither plan has a time conflict or an overlap with your Tue/Thu 12:00–17:00 work hours. The draft tool reported no rule errors for either.\n\n**Plan A (90001, 90002, 90004, 90010): 13 credits, feasible**\n- CAP4000 meets Mon and Wed 8:00–9:15.\n- Your Tuesdays are free. On Thursday you only have work and the lab.\n- The drawback is the 8:00 start on Mondays and Wednesdays.\n\n**Plan B (90001, 90002, 90006, 90010): 13 credits, feasible**\n- CAP4000 meets Tue and Thu 10:00–11:40.\n- Your Mondays and Wednesdays are lighter, with no 8:00 class.\n- The drawback is that Tuesday and Thursday get longer. You'd have class from 10:00 to 11:40 and then 20 minutes before work starts at 12:00. On Thursday you'd also have the lab after work, so you'd be on campus until 18:20.\n\n**Other points**\n- **Afternoon preference:** Neither plan's CAP4000 section is in the afternoon. The afternoon section, 90005, is Mon/Wed 15:00–16:40. It's full with 3 people on the waitlist, so I didn't include it.\n- **Seats:** 90004 and 90006 each have only 1 seat left and no waitlist. The lab has 2 seats. Seats could be gone by the time you register, so don't wait too long to decide.\n- **Credits:** At 13 credits you have room for one more course (up to 16 credits) if you want one.\n\nWhich plan do you prefer? When you're ready, I can save it and preview the exact registration before submitting anything.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

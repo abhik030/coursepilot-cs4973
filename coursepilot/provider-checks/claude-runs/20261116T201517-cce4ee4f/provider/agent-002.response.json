@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading the course catalog to check CAP4000, its lab, credits, prerequisites, and meeting times.",
+  "reports": [],
+  "tool": "read_catalog"
+}

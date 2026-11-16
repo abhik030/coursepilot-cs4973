@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Both drafts are feasible and have no rule errors. Each totals 13 credits (within your 12–16 limit), preserves protected CRNs 90001 and 90002, and includes required CAP4000 plus lab 90010. Your CS3000 grade of B satisfies the prerequisite alternative; CS3500 is not additionally required. Neither plan has class or work conflicts.\n\n• Plan A: CAP4000 meets Monday/Wednesday, 8:00–9:15 a.m. Classes fall on three days, but the early starts fit your afternoon preference less well.\n• Plan B: CAP4000 meets Tuesday/Thursday, 10:00–11:40 a.m., ending 20 minutes before your noon–5:00 p.m. work shifts. Classes span four days, but start later than A.\n\nBoth include Thursday lab, 5:30–6:20 p.m., 30 minutes after work. Afternoon classes are a preference, not a hard constraint.\n\nBoth drafts omit your current elective 90003. Enrollment is unchanged; nothing has been saved or registered.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

@@ -12,7 +12,7 @@ CS4973 · Abhi Karthik, Aditya Vij, Hudson Kass
 | B: a correction is ignored or an earlier hard rule is lost | Hudson Kass, proposed owner | Pending; [authoring guide](coursepilot/TEAMMATE_GUIDE.md) is available | Pending | Abhi Karthik proposed; actual tester and video pending |
 | C v2: saving one plan is treated as permission for a different plan or registration action | Abhi Karthik | [Case document](coursepilot/README.md), [frozen stages](coursepilot/cases/approval_v2.json), [fixture](coursepilot/fixtures/approval_v2.json) | [Results](coursepilot/RESULTS.md), [five output folders](coursepilot/runs/), [verification](coursepilot/runs/verification.json) | Aditya Vij proposed; actual tester and video pending |
 
-The shared [public repository](https://github.com/abhik030/coursepilot-cs4973) contains the environment and evidence. [Setup commands](README.md#start-the-browser-application) launch a local Python backend using the tester's own signed-in CLI. The repository does not host a remote model backend. Each fresh session resets the fictional academic state.
+The shared [public repository](https://github.com/abhik030/coursepilot-cs4973) contains the environment and evidence. [Setup commands](README.md#start-the-browser-application) launch a local Python backend using the tester's own signed-in Codex CLI or Claude Code CLI. The browser selects the provider/model; both roles share that selection. The original five baseline trials used Codex. The repository does not host a remote model backend. Each fresh session resets the fictional academic state.
 
 ## Shared measurement and human-testing materials
 

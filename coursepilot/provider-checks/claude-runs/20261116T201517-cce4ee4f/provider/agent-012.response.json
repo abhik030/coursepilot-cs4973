@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Verifying your enrollment after registering Plan A.",
+  "reports": [],
+  "tool": "read_state"
+}

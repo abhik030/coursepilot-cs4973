@@ -1,0 +1,5 @@
+{
+  "intent": "chat",
+  "target": "",
+  "message": "I have two candidate schedules. Plan A is CRNs 90001, 90002, 90004, 90010. Plan B is CRNs 90001, 90002, 90006, 90010. Can you check both against my profile? Please look at the required course CAP4000 and its lab, credits, prerequisites, and my work hours (Tue and Thu, 12:00-17:00). Then draft them as A and B and explain the tradeoffs. Please don't save or register anything yet."
+}

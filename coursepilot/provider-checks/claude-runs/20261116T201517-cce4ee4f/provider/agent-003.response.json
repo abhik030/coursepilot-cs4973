@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "target": "B",
+  "sections": [
+    "90001",
+    "90002",
+    "90006",
+    "90010"
+  ],
+  "message": "Drafting Plan B (not saving or registering).",
+  "reports": [],
+  "tool": "draft_plan"
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "tool": "draft_plan",
+  "target": "A",
+  "sections": [
+    "90001",
+    "90002",
+    "90004",
+    "90010"
+  ],
+  "message": "",
+  "reports": []
+}

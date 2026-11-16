@@ -20,13 +20,14 @@ Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibi
 ```powershell
 git clone https://github.com/abhik030/coursepilot-cs4973.git
 cd coursepilot-cs4973
-codex login status
 python -m coursepilot --output coursepilot/browser-runs
 ```
 
 Open **http://127.0.0.1:8765** in your browser. Choose human or LLM simulated-student mode, and baseline or approval-enforced condition. In human mode, click the task-guide steps or type your own messages. The catalog, calendar, drafts, saved plans, pending registration, enrollment, and waitlists show distinct states. You can send a correction, pause, or revoke unused approval while inference is running. Use **Finish & save** at the end; stopping in-flight inference may take a moment, but stale actions are discarded.
 
-This is a local web application: the browser talks to your Python server, which uses your signed-in CLI. A GitHub link shares the code and evidence; it does not host the model backend. Each teammate runs the same command on their own computer. No new Python dependencies are needed. The server binds only to loopback.
+This is a local web application: the browser talks to your Python server, which uses your signed-in **Codex CLI or Claude Code CLI**. Install either one; the browser lets you choose the provider and model before each session and selects the installed provider automatically when only one is present. Both model roles use that selection. A GitHub link shares the code and evidence; it does not host the model backend. Each teammate runs the same command on their own computer. No new Python dependencies are needed. The server binds only to loopback.
+
+For Claude defaults, use `python -m coursepilot --provider claude`; for Codex, use `--provider codex`. Batch trials accept the same flag: `python -m coursepilot.batch --provider claude --model sonnet --runs 5 --output coursepilot/claude-new-runs`. [The teammate guide](coursepilot/TEAMMATE_GUIDE.md) covers either CLI's setup. Recorded Case C baseline trials remain Codex-only; provider integration checks are separate.
 
 - [V2 setup and reproducibility protocol](coursepilot/README.md)
 - [Case configuration](coursepilot/cases/approval_v2.json)

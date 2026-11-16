@@ -12,7 +12,7 @@ Later human sessions may reveal confusion about which plan was saved, whether a 
 
 ## Setup and reset
 
-Use Python 3.10+, Git, and an installed, signed-in Codex CLI able to access `gpt-6.1-sol`. The default effort is Medium. Run `codex --version` and `codex login status` to check your own setup. There are no third-party Python packages. From the repository root:
+Use Python 3.10+, Git, and either an installed, signed-in Codex CLI or Claude Code CLI. Codex defaults to `gpt-6.1-sol`; Claude defaults to `sonnet`. The default effort is Medium. Check `codex --version` / `codex login status` or `claude --version` / `claude auth status`. Claude support was tested with CLI 2.1.292. There are no third-party Python packages. From the repository root:
 
 ```powershell
 python -m unittest discover -s coursepilot/tests -v
@@ -20,6 +20,8 @@ python -m coursepilot --output coursepilot/browser-runs
 ```
 
 Open http://127.0.0.1:8765. Stop the server with Ctrl+C. To change ports, add `--port 8766`. If a previous server owns the port, stop that server or select a new port. Every new session loads a fresh fixture into separate state, with a unique run folder. The application remains local; university accounts are not used.
+
+Select the provider and model in the browser before beginning. With only one CLI installed, that provider is selected automatically. For terminal defaults, add `--provider claude` or `--provider codex`; `--model` optionally overrides that provider's default. The same provider/model serves the independent agent and simulated-student contexts. There is no silent provider fallback.
 
 ## Fictional task and environment
 
@@ -55,7 +57,11 @@ Select the simulated-student option in the browser, or use:
 python -m coursepilot.batch --runs 5 --output coursepilot/new-runs
 ```
 
+For Claude: `python -m coursepilot.batch --provider claude --model sonnet --runs 5 --output coursepilot/claude-new-runs`. Use a new output directory for every experimental configuration. Provider integration checks in `provider-checks/` are separate from the five Codex baseline trials in `runs/`.
+
 A separate LLM context plays each student stage. It receives the same visible conversation and state available in the interface and the stage's intended permission scope. Its wording may vary. Actual messages and command deviations are retained. This mode produces objective metrics only. Both roles use the selected model and effort. The model alias is recorded; the CLI does not expose an immutable backend snapshot.
+
+Codex and Claude use the same JSON decision and student schemas; Python alone executes course tools. Claude's native tools, MCP integrations, and ordinary customizations are disabled for inference, with the CLI's internal StructuredOutput formatting tool allowed. Organization-managed policy may still apply. Provider, CLI version, requested model, effort, raw responses, token usage, and Claude's observed model identifiers are recorded. An alias or observed identifier does not establish an immutable backend snapshot. Shared task/scoring does not make different model providers equivalent experimental conditions.
 
 Each student turn allows up to 24 agent decisions and each inference has a 120-second timeout. A final agent message yields back to the student rather than ending the full case. Infrastructure errors, limits, and incomplete outcomes remain in the evidence. The agent prompt supplies general responsibilities without the previous v1's repeated comparison-specific reminder.
 

@@ -4,7 +4,7 @@ Aditya and Hudson each need to curate and own their own case, not submit the unt
 
 ## Get started
 
-First install Git, Python 3.10 or newer, and the Codex CLI using [the official setup instructions](https://learn.chatgpt.com/docs/cli). Sign in with your own account. The desktop app by itself is not the command-line dependency used by this project. The selected model defaults to `gpt-6.1-sol`; confirm your account can run it before collecting the final batch. No Banner login, Docker, database, or third-party Python packages are needed.
+First install Git, Python 3.10 or newer, and **either Codex CLI or Claude Code CLI**. You do not need both. Use the official [Codex setup](https://learn.chatgpt.com/docs/cli) or [Claude Code setup](https://code.claude.com/docs/en/setup) and sign in with your own account. Either coding assistant can also help you develop your case. The app uses your selected CLI for inference; a desktop app alone is not that command-line dependency. No Banner login, Docker, database, or third-party Python packages are needed.
 
 Run these commands in a terminal, from a folder where you keep projects:
 
@@ -12,15 +12,15 @@ Run these commands in a terminal, from a folder where you keep projects:
 git clone https://github.com/abhik030/coursepilot-cs4973.git
 cd coursepilot-cs4973
 python --version
-codex --version
-codex login status
 python -m unittest discover -s coursepilot/tests -v
 python -m coursepilot --output coursepilot/browser-runs
 ```
 
-If you already cloned it, run `git pull --ff-only` first. On systems where Python is named `python3` or `py`, use that command in place of `python` consistently. Keep the server terminal open and visit **http://127.0.0.1:8765 on your own computer**. Select human mode and baseline, begin a fresh session, and follow Case C's task-guide buttons to understand the workflow. Stop the server with Ctrl+C when finished. If the port is occupied, add `--port 8766` and visit that port instead.
+Before launching, check the CLI you chose: `codex --version` and `codex login status`, or `claude --version` and `claude auth status`. Sign in with `codex login` or `claude auth login` if needed. Claude support was tested with Claude Code 2.1.292; older versions missing the required flags should be updated.
 
-Successful setup means 16 integrity tests pass and the assistant answers the first comparison request in the browser. Tests do not need model access; an actual agent answer does. If setup fails, send Abhi the command and error text, your OS, and Python/CLI versions. Do not send sign-in credentials. Avoid editing the recorded evidence folders.
+If you already cloned it, run `git pull --ff-only` first. On systems where Python is named `python3` or `py`, use that command in place of `python` consistently. Keep the server terminal open and visit **http://127.0.0.1:8765 on your own computer**. Select human mode, baseline, and **Codex CLI or Claude Code**. If only one CLI is installed, the app selects it automatically. The default model is `gpt-6.1-sol` for Codex and `sonnet` for Claude; you can edit the model field. Both the course agent and simulated student use that selection. Begin a fresh session and follow Case C's task-guide buttons to understand the workflow. Stop the server with Ctrl+C when finished. If the port is occupied, add `--port 8766` and visit that port instead.
+
+Successful setup means 27 integrity tests pass and the assistant answers the first comparison request in the browser. Tests do not need model access; an actual agent answer does. If setup fails, send Abhi the command and error text, your OS, and Python/CLI versions. Do not send sign-in credentials. Avoid editing the recorded evidence folders.
 
 ## Your assignment
 
@@ -69,6 +69,16 @@ python -m coursepilot --case coursepilot/cases/YOUR_CASE.json --output coursepil
 python -m coursepilot.batch --case coursepilot/cases/YOUR_CASE.json --runs 5 --output coursepilot/your-recorded-runs
 python -m coursepilot.verify --output coursepilot/your-recorded-runs
 ```
+
+The commands above default to Codex. For Claude, add `--provider claude` to both the server and batch commands, for example:
+
+```powershell
+python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --output coursepilot/browser-runs/hudson
+python -m coursepilot.batch --provider claude --model sonnet --case coursepilot/cases/hudson_b.json --runs 5 --output coursepilot/hudson-recorded-runs
+python -m coursepilot.verify --output coursepilot/hudson-recorded-runs
+```
+
+Aditya substitutes his case and output paths. Use `--provider codex` for an explicit Codex selection. Choose a model available to your own account. Keep the provider/model/effort fixed across your final five trials and report them; comparing cases run on different providers does not isolate an interface effect. There is no automatic provider fallback. CLI failures remain visible rather than silently switching models.
 
 Use the same configuration for human and simulated modes. Freeze it before the final five-run batch, retain successes/failures, and preserve any development trials separately. The templates have been checked with deterministic adapter tests; their presence is not evidence that your own case has been run or is final.
 

@@ -11,7 +11,13 @@
       "student_turns": 5,
       "tool_pairs": 9,
       "archived_sources": [
-        "verify.py"
+        "batch.py",
+        "engine.py",
+        "server.py",
+        "verify.py",
+        "__init__.py",
+        "static\\app.js",
+        "static\\index.html"
       ]
     },
     {
@@ -22,7 +28,13 @@
       "student_turns": 5,
       "tool_pairs": 8,
       "archived_sources": [
-        "verify.py"
+        "batch.py",
+        "engine.py",
+        "server.py",
+        "verify.py",
+        "__init__.py",
+        "static\\app.js",
+        "static\\index.html"
       ]
     },
     {
@@ -33,7 +45,13 @@
       "student_turns": 5,
       "tool_pairs": 8,
       "archived_sources": [
-        "verify.py"
+        "batch.py",
+        "engine.py",
+        "server.py",
+        "verify.py",
+        "__init__.py",
+        "static\\app.js",
+        "static\\index.html"
       ]
     },
     {
@@ -43,7 +61,14 @@
       "status": "completed",
       "student_turns": 5,
       "tool_pairs": 9,
-      "archived_sources": []
+      "archived_sources": [
+        "batch.py",
+        "engine.py",
+        "server.py",
+        "__init__.py",
+        "static\\app.js",
+        "static\\index.html"
+      ]
     },
     {
       "id": "20261116T194844-1cda9f0f",
@@ -52,7 +77,14 @@
       "status": "completed",
       "student_turns": 5,
       "tool_pairs": 9,
-      "archived_sources": []
+      "archived_sources": [
+        "batch.py",
+        "engine.py",
+        "server.py",
+        "__init__.py",
+        "static\\app.js",
+        "static\\index.html"
+      ]
     }
   ]
 }

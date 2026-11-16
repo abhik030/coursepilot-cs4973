@@ -1,0 +1,8 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Sounds good. I won't change anything while you check your work schedule. Plan A stays saved as version 1, and your current enrollment is still 90001, 90002 and 90003. Nothing is registered.\n\nHere's what to compare against your schedule:\n- **Work hours I have on file:** Tue and Thu, 12:00–17:00.\n- **Plan A:** CAP4000 meets Mon and Wed 8:00–9:15. The lab meets Thu 17:30–18:20, which is 30 minutes after your shift ends.\n- **Plan B:** CAP4000 meets Tue and Thu 10:00–11:40, which is 20 minutes before your shift starts. The lab is the same as in Plan A.\n\nIf your hours have changed, tell me the new times. I'll re-check both plans against them. Also, 90004 and 90006 each have only 1 seat left, so either could fill while you decide. Let me know when you're ready.",
+  "reports": [],
+  "tool": "none"
+}

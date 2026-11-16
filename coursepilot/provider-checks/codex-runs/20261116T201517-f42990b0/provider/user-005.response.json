@@ -1,0 +1,5 @@
+{
+  "message": "Go ahead and register the original saved Plan A, replacing my current elective as shown in that plan. Keep my two protected courses, use a safe conditional change, and verify the result.",
+  "intent": "register",
+  "target": "A"
+}

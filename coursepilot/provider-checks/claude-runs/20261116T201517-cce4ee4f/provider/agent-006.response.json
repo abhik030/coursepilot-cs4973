@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "A",
+  "sections": [],
+  "message": "Saving Plan A as approved. I will not register it.",
+  "reports": [],
+  "tool": "save_plan"
+}
