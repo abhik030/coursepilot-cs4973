@@ -2,7 +2,9 @@
 
 CS4973 · Abhi Karthik, Aditya Vij, Hudson Kass
 
-**In progress:** Case A, creator/tester confirmations, and all three videos remain. The last teammate to finish submits this single index.
+**Submit the [Google Doc's Submission tab](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit?tab=t.uig7mgyr21pt).** It links the materials below and is viewable by anyone with the link. Aditya and Hudson retain edit access. This Markdown page is a backup.
+
+**In progress:** Case A, creator/tester confirmations, and all three videos remain. The last teammate to finish submits the Google Doc linked above.
 
 ## Cases
 
@@ -29,4 +31,4 @@ Each run saves timestamped messages/tools in `trajectory.json`, numeric metrics 
 2. Confirm who created/tested each case. Each video must be recorded by someone other than the creator.
 3. Add three setup/run videos and check grader access to every link.
 4. Check that all cases use shared metrics/questions and document considered/rejected alternatives and the proposed-agent comparison.
-5. Remove the in-progress notice when complete, then submit this index once by the deadline.
+5. Update the Google Doc and remove its in-progress notice when complete. Submit that Doc link once by the deadline. Check video sharing after the recordings are uploaded.

@@ -8,7 +8,7 @@ Reuse this checkout. Read the relevant case document and [teammate guide](course
 | B: Hudson proposed; creator unconfirmed | [Implemented](coursepilot/CASE_B.md); [five attempts](coursepilot/case-b-runs/RESULTS.md) | Review contribution/ownership; Abhi's video |
 | C: Abhi | [Implemented](coursepilot/README.md); [five successful trials](coursepilot/RESULTS.md) | Aditya's video |
 
-All three videos are pending. The last teammate to finish submits [the index](SUBMISSION.md).
+All three videos are pending. The last teammate to finish submits the [Google Doc's Submission tab](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit?tab=t.uig7mgyr21pt); [SUBMISSION.md](SUBMISSION.md) is a backup. Anyone with the Doc link can view; Aditya and Hudson can edit. Check video access after upload. Older planning notes are kept in a separate tab.
 
 ## Runtime
 

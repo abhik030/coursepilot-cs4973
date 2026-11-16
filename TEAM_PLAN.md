@@ -1,6 +1,6 @@
 # Team tasks
 
-Due **Monday, November 16, 2026, at 11:59 p.m.** One team submission; the last person to finish submits [SUBMISSION.md](SUBMISSION.md).
+Due **Monday, November 16, 2026, at 11:59 p.m.** One team submission; the last person to finish submits the [Google Doc's Submission tab](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit?tab=t.uig7mgyr21pt). [SUBMISSION.md](SUBMISSION.md) is a backup.
 
 Each person creates one case with both user modes, five baseline trials, shared metrics/questions, a written case document, and a setup/run video recorded by another teammate. Human-study responses are not due now. There is no required failure rate.
 

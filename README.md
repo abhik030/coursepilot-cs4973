@@ -10,9 +10,8 @@ Team: Abhi Karthik, Aditya Vij, Hudson Kass.
 - [Setup and teammate guide](coursepilot/TEAMMATE_GUIDE.md)
 - [Case B: handling a new restriction](coursepilot/CASE_B.md)
 - [Case C: saving versus registering](coursepilot/README.md)
-- [Submission index](SUBMISSION.md)
+- [Submission Google Doc](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit?tab=t.uig7mgyr21pt) · [Markdown backup](SUBMISSION.md)
 - [Shared metrics and questions](evaluation/SHARED_METRICS.md)
-- [Shared team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)
 
 ## Run the app
 
