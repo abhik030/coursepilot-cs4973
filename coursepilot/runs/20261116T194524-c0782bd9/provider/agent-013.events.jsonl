@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e6-01ac-7540-8f03-4bbf7f3469ee"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"message\",\"tool\":\"none\",\"target\":\"\",\"sections\":[],\"message\":\"Plan A was successfully registered using the atomic, version-checked change. Verified enrollment: protected courses 90001 and 90002 were retained, 90004 and required lab 90010 were added, and elective 90003 was dropped. You are enrolled in 13 credits. Saved Plan A remains unchanged.\",\"reports\":[{\"plan_id\":\"A\",\"sections\":[\"90001\",\"90002\",\"90004\",\"90010\"],\"credits\":13,\"feasible\":true}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":16151,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":122,"reasoning_output_tokens":0}}

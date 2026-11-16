@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Both drafts are feasible: each has 13 credits within your 12–16 limit, includes required CAP4000 and lab 90010, and preserves protected sections 90001 and 90002. Your B in CS3000 satisfies CAP4000’s prerequisite alternative; CS3500 is not also required. Neither plan has class overlaps or conflicts with your Tuesday/Thursday noon–5 p.m. work hours.\n\nPlan A: CAP4000 meets Monday/Wednesday 8–9:15 a.m., leaving your workday mornings free.\n\nPlan B: CAP4000 meets Tuesday/Thursday 10–11:40 a.m., leaving 20 minutes before work. I recommend B if that transition is practical because it avoids 8 a.m. classes. Neither fully meets your afternoon preference, which is a preference rather than a hard constraint.\n\nBoth include Thursday lab 5:30–6:20 p.m., 30 minutes after work. Either plan would replace your current elective 90003. Both are drafted only; nothing has been saved or registered, and enrollment is unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

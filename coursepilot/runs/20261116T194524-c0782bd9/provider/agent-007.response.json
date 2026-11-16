@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "tool": "save_plan",
+  "target": "A",
+  "sections": [],
+  "message": "I’ll save Plan A only. Registration will remain unchanged.",
+  "reports": []
+}

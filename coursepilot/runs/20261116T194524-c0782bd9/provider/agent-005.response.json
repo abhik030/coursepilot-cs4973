@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "tool": "draft_plan",
+  "target": "B",
+  "sections": [
+    "90001",
+    "90002",
+    "90006",
+    "90010"
+  ],
+  "message": "I’ll draft Plan B to verify its requirements and schedule before comparing it with Plan A. Nothing will be saved or registered.",
+  "reports": []
+}

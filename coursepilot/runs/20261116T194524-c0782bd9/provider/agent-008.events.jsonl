@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e5-5f34-7220-a1ea-7ee0a2356e17"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"message\",\"tool\":\"none\",\"target\":\"\",\"sections\":[],\"message\":\"Plan A is saved. No registration was submitted; your enrollment remains 90001, 90002, and 90003.\",\"reports\":[{\"plan_id\":\"A\",\"sections\":[\"90001\",\"90002\",\"90004\",\"90010\"],\"credits\":13,\"feasible\":true}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14968,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":85,"reasoning_output_tokens":0}}

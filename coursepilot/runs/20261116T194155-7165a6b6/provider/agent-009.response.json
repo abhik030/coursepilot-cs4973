@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Plan B gives you later starts:\n\n- Monday: 10 a.m. instead of 8 a.m.\n- Wednesday: 1 p.m. instead of 8 a.m.\n- Tuesday/Thursday: adds 10–11:40 a.m. classes, leaving 20 minutes before your noon work start.\n\nB is better if avoiding early mornings matters most and that work transition is practical. A keeps Tuesday/Thursday mornings free. Both have the same Thursday 5:30–6:20 p.m. lab and satisfy all hard requirements at 13 credits.\n\nYour saved Plan A and current enrollment remain unchanged. Plan B remains a draft.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Saved Plan A was successfully registered: added 90004 and lab 90010, dropped elective 90003, and kept 90001 and 90002. You’re enrolled in 13 credits.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e4-d1db-7a20-9e2b-c432ef78a385"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"tool\",\"tool\":\"read_state\",\"target\":\"\",\"sections\":[],\"message\":\"I’ll check your current enrollment so I can evaluate both drafts, including the full sections you want to retain.\",\"reports\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":11882,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":72,"reasoning_output_tokens":18}}

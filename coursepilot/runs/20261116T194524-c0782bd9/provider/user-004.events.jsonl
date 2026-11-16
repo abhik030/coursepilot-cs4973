@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e5-a3d0-7dd1-a8a9-73d6aba1dd52"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"message\":\"Looks good, but let me check my work schedule before changing anything.\",\"intent\":\"chat\",\"target\":\"\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":12960,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":35,"reasoning_output_tokens":0}}

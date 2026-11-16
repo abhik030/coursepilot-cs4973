@@ -6,11 +6,12 @@ Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibi
 
 - [Team handoff and responsibilities](TEAM_PLAN.md)
 - [Shared editable team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)
-- [Case C setup, protocols, scoring, and limitations](evaluation/CASE_C.md)
-- [Recorded baseline results](evaluation/RESULTS.md)
+- [Current browser Case C setup, protocols, scoring, and limitations](coursepilot/README.md)
+- [Current five-run baseline results](coursepilot/RESULTS.md)
+- [Historical v1 terminal case](evaluation/CASE_C.md) and [v1 results](evaluation/RESULTS.md)
 - [Shared proposed metrics and participant questions](evaluation/SHARED_METRICS.md)
 - [Observed Banner workflows and inspection limits](evaluation/BANNER_OBSERVATIONS.md)
-- [Draft design for a more complex browser-based case](evaluation/V2_DESIGN.md)
+- [Browser case design and implementation boundaries](evaluation/V2_DESIGN.md)
 
 ## Start the browser application
 

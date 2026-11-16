@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Both drafts are feasible: each has 13 credits (within your 12–16 limit), includes required CAP4000 and lab 90010, preserves protected sections 90001/90002, and has no class or work conflicts. Your CS3000 grade of B satisfies the prerequisite alternative; CS3500 is not also required. Seats are currently available for both proposed additions.\n\nPlan A: Studio Monday/Wednesday 8–9:15 a.m. Classes span three days, but the early starts fit your afternoon preference less well.\n\nPlan B: Studio Tuesday/Thursday 10–11:40 a.m., leaving 20 minutes before work starts at noon. Later starts, but classes span four days.\n\nBoth include Thursday lab 5:30–6:20 p.m., after work ends at 5 p.m. Your afternoon preference is soft; neither morning studio violates a hard constraint.\n\nA and B are drafted only. Nothing was saved or registered; your enrollment is unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

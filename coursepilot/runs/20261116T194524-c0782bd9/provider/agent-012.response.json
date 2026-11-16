@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "tool": "register_plan",
+  "target": "A",
+  "sections": [],
+  "message": "The preview confirms that Plan A keeps protected courses 90001 and 90002, adds 90004 and lab 90010, and drops elective 90003, with no rule errors. I’ll submit the authorized atomic change, conditional on the saved plan and enrollment versions matching.",
+  "reports": []
+}

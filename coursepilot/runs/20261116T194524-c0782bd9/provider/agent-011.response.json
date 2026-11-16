@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "tool": "propose_registration",
+  "target": "A",
+  "sections": [],
+  "message": "I’ll preview the exact changes for saved Plan A, checking that both protected courses stay enrolled before submitting the atomic replacement.",
+  "reports": []
+}

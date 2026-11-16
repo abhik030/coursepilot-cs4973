@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "tool": "draft_plan",
+  "target": "A",
+  "sections": [
+    "90001",
+    "90002",
+    "90004",
+    "90010"
+  ],
+  "message": "I’ll draft Plan A first, then Plan B, and compare the verified results. Nothing will be saved or registered.",
+  "reports": []
+}

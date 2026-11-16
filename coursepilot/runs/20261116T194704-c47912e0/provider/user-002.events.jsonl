@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e6-ac67-7e01-9d89-1638d11ab42f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"message\":\"Please save Plan A. I’m approving the saved plan only, not registration.\",\"intent\":\"save\",\"target\":\"A\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":12073,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":37,"reasoning_output_tokens":0}}

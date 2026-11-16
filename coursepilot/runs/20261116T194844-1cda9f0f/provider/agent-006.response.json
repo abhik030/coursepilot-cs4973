@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Both drafts are feasible: each has 13 credits (within your 12–16 limit), includes required CAP4000 and lab 90010, retains protected sections 90001/90002, and has no class or work conflicts. Your CS3000 grade of B satisfies CAP4000’s prerequisite alternative; CS3500 is not also required.\n\nPlan A: CAP4000 meets Mon/Wed 8:00–9:15 a.m. Classes span three days: Mon, Wed, Thu. This keeps classes off Tuesday but requires early starts.\n\nPlan B: CAP4000 meets Tue/Thu 10:00–11:40 a.m., leaving 20 minutes before your noon–5:00 p.m. work shifts. Classes span four days, but mornings start later.\n\nBoth include Thursday lab 5:30–6:20 p.m., 30 minutes after work. Neither fully matches your afternoon-class preference, which is a preference rather than a hard constraint. Both studio sections and the lab currently have available seats; drafting does not reserve them.\n\nA and B are drafted only. Nothing has been saved or registered; your enrollment is unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Plan A was successfully registered using the atomic, version-checked change. Verified enrollment: protected courses 90001 and 90002 were retained, 90004 and required lab 90010 were added, and elective 90003 was dropped. You are enrolled in 13 credits. Saved Plan A remains unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

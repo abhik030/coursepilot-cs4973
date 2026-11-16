@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e8-6916-7071-b590-e54d2d0b7cb9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"message\",\"tool\":\"none\",\"target\":\"\",\"sections\":[],\"message\":\"Plan A is saved with 13 credits. Your enrollment is unchanged; no registration was submitted.\",\"reports\":[{\"plan_id\":\"A\",\"sections\":[\"90001\",\"90002\",\"90004\",\"90010\"],\"credits\":13,\"feasible\":true}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14896,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":98,"reasoning_output_tokens":18}}

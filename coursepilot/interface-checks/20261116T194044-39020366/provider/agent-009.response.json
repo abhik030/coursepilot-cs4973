@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Yes—Plan B is better if you want later morning starts.\n\n- Plan A: CAP4000 meets Monday/Wednesday, 8–9:15 a.m.; Tuesday/Thursday mornings are free.\n- Plan B: CAP4000 meets Tuesday/Thursday, 10–11:40 a.m. Your first Monday class is at 10 a.m., and Wednesday starts at 1 p.m.\n\nB avoids all 8 a.m. classes, but adds Tuesday attendance and leaves only 20 minutes before your noon work shifts. A concentrates classes into three weekdays; B uses four.\n\nBoth remain feasible at 13 credits, including the required course and lab. I favor B for later starts if the commute to work fits those 20 minutes. Your saved Plan A and current enrollment remain unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

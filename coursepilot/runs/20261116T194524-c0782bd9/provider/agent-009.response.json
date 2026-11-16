@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "tool": "none",
+  "target": "",
+  "sections": [],
+  "message": "Yes—Plan B gives you later morning starts:\n\n- A: CAP4000 Monday/Wednesday, 8–9:15 a.m.\n- B: CAP4000 Tuesday/Thursday, 10–11:40 a.m., leaving 20 minutes before your noon work shift.\n\nB avoids 8 a.m. classes, but adds Tuesday classes and puts Thursday class before work. A concentrates classes on fewer days. Both keep the Thursday 5:30–6:20 p.m. lab.\n\nBoth satisfy the required course, lab, prerequisites, and 12–16 credit limit, with no class or work overlaps. B is better if later mornings matter most and 20 minutes is enough to reach work.\n\nYour saved Plan A and current enrollment remain unchanged.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "B",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ]
+}

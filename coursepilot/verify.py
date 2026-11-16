@@ -19,7 +19,7 @@ def main():
         read=lambda name:json.loads((folder/name).read_text(encoding='utf-8'))
         config,reward,trace,fixture=map(read,['config.json','reward.json','trajectory.json','fixture.json'])
         if not config['finalized']:continue
-        events=trace['events'];issues=[]
+        events=trace['events'];issues=[];archived_sources=[]
         def check(test,detail):
             if not test:issues.append(detail)
         check([e['sequence'] for e in events]==list(range(len(events))),'Event ordering')
@@ -28,7 +28,12 @@ def main():
         check(all(type(value) in (int,float) for value in reward.values()),'Numeric metrics')
         check(signature(fixture)==config['fixture_sha256'],'Fixture hash')
         for name,expected in config['code_sha256'].items():
-            check(hashlib.sha256((HERE/name).read_bytes()).hexdigest()==expected,'Source hash: '+name)
+            matches=hashlib.sha256((HERE/name).read_bytes()).hexdigest()==expected
+            if not matches:
+                archive=HERE/'source-snapshots'/(expected+'.txt')
+                matches=archive.exists() and hashlib.sha256(archive.read_bytes()).hexdigest()==expected
+                if matches:archived_sources.append(name)
+            check(matches,'Source hash: '+name)
         calls={e['call_id']:e for e in events if e['kind']=='tool_call'}
         results={e['call_id']:e for e in events if e['kind']=='tool_result'}
         check(set(calls)==set(results),'Paired course tools')
@@ -55,11 +60,11 @@ def main():
             prefix=folder/'provider'/response['provider']['request_prefix']
             if not prefix.with_suffix('.response.json').exists():
                 check(config['evidence_kind']!='llm_evaluation','Missing raw response');continue
-            check(json.loads(prefix.with_suffix('.response.json').read_text())==response['response'],'Raw response differs')
-            raw=[json.loads(line) for line in prefix.with_suffix('.events.jsonl').read_text().splitlines() if line.strip()]
+            check(json.loads(prefix.with_suffix('.response.json').read_text(encoding='utf-8'))==response['response'],'Raw response differs')
+            raw=[json.loads(line) for line in prefix.with_suffix('.events.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()]
             check(raw==response['provider']['events'],'Raw provider event completeness')
         rows.append({'id':folder.name,'passed':not issues,'issues':issues,'status':config['status'],
-                     'student_turns':reward['user_turns'],'tool_pairs':len(calls)})
+                     'student_turns':reward['user_turns'],'tool_pairs':len(calls),'archived_sources':archived_sources})
     report={'method':'Offline trace and source verification, no model calls.','checked':len(rows),
             'passed':sum(r['passed'] for r in rows),'runs':rows}
     write_json(args.output/'verification.json',report)

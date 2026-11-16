@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e5-d6ea-7830-b66c-12be45a09d36"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"tool\",\"tool\":\"propose_registration\",\"target\":\"A\",\"sections\":[],\"message\":\"I’ll preview the exact changes for saved Plan A, checking that both protected courses stay enrolled before submitting the atomic replacement.\",\"reports\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15651,"cached_input_tokens":9728,"cache_write_input_tokens":0,"output_tokens":80,"reasoning_output_tokens":21}}

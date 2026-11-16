@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e4-fcdd-7f42-bc6e-8f93a8db1f70"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"tool\",\"tool\":\"draft_plan\",\"target\":\"B\",\"sections\":[\"90001\",\"90002\",\"90006\",\"90010\"],\"message\":\"I’ll draft Plan B to verify its requirements and schedule before comparing it with Plan A. Nothing will be saved or registered.\",\"reports\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14060,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":82,"reasoning_output_tokens":11}}

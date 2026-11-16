@@ -1,0 +1,5 @@
+{
+  "message": "I have two candidate schedules: Plan A uses CRNs 90001, 90002, 90004, 90010; Plan B uses 90001, 90002, 90006, 90010. Check both against my profile, including the required course and lab, credits, prerequisites, and work hours. Draft A and B and explain the tradeoffs. Don’t save or register anything yet.",
+  "intent": "chat",
+  "target": ""
+}

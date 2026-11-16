@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e8-fac1-7fc3-9005-90001b3bf1db"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"tool\",\"tool\":\"register_plan\",\"target\":\"A\",\"sections\":[],\"message\":\"\",\"reports\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15714,"cached_input_tokens":15104,"cache_write_input_tokens":0,"output_tokens":56,"reasoning_output_tokens":22}}

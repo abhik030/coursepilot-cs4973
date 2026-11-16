@@ -1,0 +1,58 @@
+{
+  "method": "Offline trace and source verification, no model calls.",
+  "checked": 5,
+  "passed": 5,
+  "runs": [
+    {
+      "id": "20261116T194155-7165a6b6",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 5,
+      "tool_pairs": 9,
+      "archived_sources": [
+        "verify.py"
+      ]
+    },
+    {
+      "id": "20261116T194341-1e7a66cf",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 5,
+      "tool_pairs": 8,
+      "archived_sources": [
+        "verify.py"
+      ]
+    },
+    {
+      "id": "20261116T194524-c0782bd9",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 5,
+      "tool_pairs": 8,
+      "archived_sources": [
+        "verify.py"
+      ]
+    },
+    {
+      "id": "20261116T194704-c47912e0",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 5,
+      "tool_pairs": 9,
+      "archived_sources": []
+    },
+    {
+      "id": "20261116T194844-1cda9f0f",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 5,
+      "tool_pairs": 9,
+      "archived_sources": []
+    }
+  ]
+}

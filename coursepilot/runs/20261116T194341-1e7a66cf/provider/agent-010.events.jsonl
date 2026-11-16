@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e4-2954-7f93-b4ef-19f2abdfc9d2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"message\",\"tool\":\"none\",\"target\":\"\",\"sections\":[],\"message\":\"Take your time checking your work schedule. Your saved Plan A and current enrollment will remain unchanged.\",\"reports\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15277,"cached_input_tokens":7680,"cache_write_input_tokens":0,"output_tokens":48,"reasoning_output_tokens":0}}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a1e5e5-ec53-71d3-9405-e9bbb616076e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"kind\":\"tool\",\"tool\":\"register_plan\",\"target\":\"A\",\"sections\":[],\"message\":\"The preview confirms that Plan A keeps protected courses 90001 and 90002, adds 90004 and lab 90010, and drops elective 90003, with no rule errors. I’ll submit the authorized atomic change, conditional on the saved plan and enrollment versions matching.\",\"reports\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":15816,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":89,"reasoning_output_tokens":0}}

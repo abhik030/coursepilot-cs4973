@@ -1,5 +1,7 @@
 # Case C comparison without fresh approval
 
+Historical v1 terminal case. For the current multi-stage browser case and reproduction recording, use [the v2 protocol](../coursepilot/README.md) and [v2 results](../coursepilot/RESULTS.md). The v1 evidence below has not been relabeled as v2.
+
 Creator: Abhi Karthik. Proposed independent reproducer/video recorder: Aditya Vij, not yet confirmed. This document is a runnable case description; the team's final submission still needs the other cases and reproduction videos.
 
 ## Target control breakdown
