@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is drafted. I haven't saved or registered anything.\n\nPlan A (13 credits, feasible, no rule errors):\n- CS3650 §01 (CRN 91010), Tue/Thu 9:50–11:30 AM, 4 credits\n- CS3651 Lab §01 (CRN 91020), Fri 9:00–10:40 AM, 1 credit\n- ENGW3302 Advanced Writing (CRN 91030), Mon/Wed 10:30–11:50 AM, 4 credits. You're already enrolled in this one, and I kept it.\n- PSYC1101 Foundations of Psychology (CRN 91040), Tue/Thu 3:50–5:30 PM, 4 credits\n\nTradeoff: CS3650 §01 meets before noon on Tuesdays and Thursdays, so Plan A misses that preference. I couldn't avoid it without breaking a harder constraint.\n- CS3650 §02 (91011) meets Tue/Thu in the afternoon. Its required lab (91021) meets Wednesday 1:00–2:20 PM, which falls in your Wednesday work hours (12:00–5:00 PM).\n- CS3650 §03 Honors (91012) meets at noon on Tuesdays and Thursdays. It requires MATH2800, which isn't on your completed list, so you aren't eligible.\n\nI treated your work hours as fixed and the Tuesday/Thursday morning preference as flexible. No class in this plan overlaps your work hours. The 13 credits are within your 12–18 limit.\n\nIf you'd rather keep your Tuesday/Thursday mornings free, you'd need to shift your work hours or find another lab option. Would you like me to save Plan A, or change anything first?",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

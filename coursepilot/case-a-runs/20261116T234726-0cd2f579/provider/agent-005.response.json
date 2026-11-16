@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "No, I can't fully free your Tuesday and Thursday mornings, so I haven't changed Plan A. I checked every CS3650 section, and CS3650 is required.\n\n- §01 (91010): Tue/Thu 9:50–11:30 AM. It falls in the morning, and Plan A uses it.\n- §02 (91011): Tue/Thu 2:00–3:40 PM. It requires lab §02 (91021) on Wed 12:00–1:10 PM, which overlaps your Wednesday work shift (starts 1:00 PM) by 10 minutes.\n- Honors §03 (91012): Tue/Thu 12:00–1:40 PM. It requires MATH2800, which isn't in your completed courses.\n\nLab §02 is the only lab that §02 accepts. Your work hours are a fixed constraint, so I didn't build a plan with that overlap. Your Tuesday/Thursday preference is softer than your work schedule.\n\nPlan A is unchanged: 13 credits, feasible, with 91010, 91020, 91030 and 91040. Its only tradeoff is the 9:50 AM Tuesday/Thursday CS3650 class. I haven't saved or registered anything.\n\nYour options:\n1. Keep Plan A. You'd have the 9:50 AM class, and everything else fits.\n2. Switch to §02 and lab §02. That frees your Tuesday/Thursday mornings completely, but only if you can start work 10 minutes late on Wednesdays, or your employer can move your shift. I'd draft it as a separate comparison and mark it infeasible until the overlap is resolved.\n3. Check whether you meet the MATH2800 prerequisite. If you've completed it or can get an override, Honors §03 starts at noon and avoids both the morning and the work conflict. Nothing in your profile shows this.\n\nWhich would you like? I can draft option 2 for comparison if you want.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

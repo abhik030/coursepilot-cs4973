@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading the catalog to start drafting Plan A.",
+  "reports": [],
+  "tool": "read_catalog"
+}

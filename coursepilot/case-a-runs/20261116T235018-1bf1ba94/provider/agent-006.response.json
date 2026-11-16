@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I couldn't keep your Tuesday and Thursday mornings free with a valid plan. The revised Plan A (version 2) failed the rules check, so please don't use it.\n\n**What I changed:** I removed CS3650 and its lab and added PHIL1145 and ARTH1110. That cleared your Tuesday/Thursday mornings. But CS3650 and CS3651 are both required, so the plan failed with a required_course error. Nothing was saved or registered.\n\n**Why there's no clean option:** CS3650 has three sections, and each one has a problem.\n- Section 01 (91010) meets Tue/Thu 9:50-11:30 AM. That breaks your morning preference.\n- Section 02 (91011) meets Tue/Thu 2:00-3:40 PM, so it keeps your mornings free. It requires lab 91021, which meets Wed 12:00-1:10 PM. That overlaps the first 10 minutes of your Wednesday shift, which starts at 1:00 PM.\n- Honors section 03 (91012) meets Tue/Thu 12:00-1:40 PM. It requires MATH2800, which you haven't completed.\n\n**Your options:**\n1. Sections 91011 and 91021. Your Tuesday/Thursday mornings stay free. You would need to start your Wednesday shift about 10 minutes late, or leave the lab 10 minutes early. I'd also pair them with ENGW3302 (91030) and an afternoon elective.\n2. Section 91010 and lab 91020. This is the original Plan A. It has no work conflict, but CS3650 meets Tue/Thu mornings.\n\nWhich would you like me to draft? I won't save or register anything unless you tell me to.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91030",
+        "91040",
+        "91042",
+        "91043"
+      ],
+      "credits": 16,
+      "feasible": false
+    }
+  ],
+  "tool": "none"
+}

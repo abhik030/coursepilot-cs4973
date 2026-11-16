@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I drafted Plan A, but it doesn't meet your Tuesday/Thursday preference. It's a draft only, so nothing is saved or registered.\n\nPlan A (13 credits):\n- CS3650 §01 (CRN 91010), Tue/Thu 9:50–11:30\n- CS3651 lab §01 (CRN 91020), Fri 9:00–10:40\n- ENGW3302 (CRN 91030), Mon/Wed 10:30–11:50. This is your protected section.\n- PSYC1101 (CRN 91040), Tue/Thu 3:50–5:30 pm\n\nThe tradeoff: CS3650 is required, and the only section that works is the 9:50 am Tue/Thu one. That breaks your no-classes-before-noon preference. These are the other options:\n- CS3650 §02 (91011), Tue/Thu 2:00–3:40 pm: it needs lab 91021, Wed 12:00–1:10 pm. That overlaps your Wednesday work shift, which starts at 1:00 pm, by 10 minutes.\n- Honors §03 (91012), Tue/Thu noon: you don't meet its MATH2800 prerequisite, so you can't take it.\n\nThe plan meets the 12-credit minimum and has no rule errors or conflicts with your work hours. Every other course I included also falls after noon on Tuesdays and Thursdays.\n\nShould I keep Plan A as is, or would you rather I try the §02 option? That one would conflict with your work shift, so I'd only do it if you can shift the Wednesday hours. I won't save or register anything unless you tell me to.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading profile",
+  "reports": [],
+  "tool": "read_profile"
+}

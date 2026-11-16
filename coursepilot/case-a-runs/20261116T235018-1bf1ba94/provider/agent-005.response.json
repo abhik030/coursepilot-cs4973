@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "target": "Plan A",
+  "sections": [
+    "91030",
+    "91043",
+    "91040",
+    "91042"
+  ],
+  "message": "Drafting a revised Plan A with Tuesday/Thursday mornings free (not saving or registering).",
+  "reports": [],
+  "tool": "draft_plan"
+}

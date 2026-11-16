@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading current state.",
+  "reports": [],
+  "tool": "read_state"
+}

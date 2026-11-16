@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading your profile to check requirements and completed courses.",
+  "reports": [],
+  "tool": "read_profile"
+}

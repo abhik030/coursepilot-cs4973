@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I checked again, and there's no way to keep your Tuesday and Thursday mornings completely free without breaking one of your hard constraints. So I haven't revised Plan A, and nothing has been saved or registered.\n\nCS3650 is required, and it has three sections:\n- §01 (91010), Tue/Thu 9:50–11:30 am: This is what Plan A uses. It is the only option that fits your work schedule, but it takes up your Tuesday and Thursday mornings.\n- §02 (91011), Tue/Thu 2:00–3:40 pm: This keeps your mornings free, but it requires lab 91021 on Wednesday 12:00–1:10 pm. Your Wednesday shift starts at 1:00 pm, so you'd overlap by 10 minutes.\n- Honors §03 (91012), Tue/Thu noon: You can't take it, because it requires MATH2800 and you haven't completed that.\n\nCS3650 §02 would work with the rest of the plan. The swap would be:\n- CS3650 §02 (91011) replaces §01.\n- Lab 91021 replaces lab 91020.\n- ENGW3302 (91030) stays, since it's protected.\n- PSYC1101 (91040) stays. It starts at 3:50 pm, 10 minutes after §02 ends.\n\nThat plan comes to 13 credits and keeps every Tuesday and Thursday morning free. Its only problem is the 10-minute overlap with your Wednesday shift.\n\nYou have two choices:\n1. Keep Plan A as drafted. It's valid, but your Tuesday and Thursday mornings aren't free.\n2. Switch to the §02 version. Your mornings are free, but you'd need to start your Wednesday shift at 1:10 pm or later, or leave the lab 10 minutes early. I'd only use this if your employer agrees.\n\nTell me which you prefer. If you choose the second, I can draft the §02 version as a draft only.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

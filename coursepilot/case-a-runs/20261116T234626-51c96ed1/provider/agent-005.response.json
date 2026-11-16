@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I drafted Plan A. It isn't saved or registered, and your enrollment is unchanged.\n\nPlan A (draft, 13 credits, no rule errors):\n- 91030, ENGW3302 Advanced Writing for CS. It meets Mon and Wed 10:30–11:50. You're already enrolled in it, and it's a protected section.\n- 91010, CS3650 Computer Systems, section 01. It meets Tue and Thu 9:50–11:30.\n- 91020, CS3651 Lab, section 01. It meets Fri 9:00–10:40.\n- 91040, PSYC1101 Foundations of Psychology. It meets Tue and Thu 3:50–5:30 pm.\n\nTradeoff: This plan doesn't fully meet your no-classes-before-noon preference on Tuesdays and Thursdays. CS3650 section 01 starts at 9:50 am on both days. Here is why I didn't use the other CS3650 options:\n- Section 02 (91011) meets Tue and Thu 2:00–3:40 pm, which fits your preference. It requires lab 91021, which meets Wed 12:00–1:10 pm. That overlaps your Wednesday work shift, which starts at 1:00 pm, by 10 minutes.\n- Honors section 03 (91012) requires MATH2800, which isn't in your completed courses, so you're not eligible.\n\nThe rest of the plan avoids your work hours and has no time conflicts. It also meets your 12–18 credit range and includes the required CS3650 and CS3651.\n\nOptions:\n1. Keep Plan A as drafted, with the early Tuesday and Thursday class.\n2. Switch to section 02 and lab 91021 to get afternoon Tuesdays and Thursdays. You would need to adjust your Wednesday shift by about 10 minutes or confirm it's flexible.\n\nTell me which option you want, or whether to save the plan. I won't save or register anything without your go-ahead.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Unfortunately, I can't keep your Tuesday and Thursday mornings completely free without breaking a hard rule. I didn't revise Plan A, because every alternative fails. Nothing was saved or registered.\n\nWhy Plan A can't change:\n- CS3650 is required. It has three sections:\n  - §01 (91010) meets Tue/Thu 9:50–11:30 am. That is the morning conflict in the current Plan A.\n  - §02 (91011) meets Tue/Thu 2:00–3:40 pm, which fits your preference. It requires lab 91021 on Wednesday 12:00–1:10 pm. Your work shift starts at 1:00 pm, so there is a 10-minute overlap.\n  - §03 (91012, Honors) meets Tue/Thu 12:00–1:40 pm. It requires MATH2800, which isn't on your record. I only see CS2800 and MATH1365, so I can't count it.\n- Each CS3650 section is tied to a specific lab. §02 can't be paired with the Friday labs (91020 or 91022).\n- Dropping CS3650 or CS3651 isn't possible, since you need both.\n\nWhat would make it work:\n1. Work around the 10-minute overlap. Take CS3650 §02 with lab 91021. Both Tue/Thu mornings would be free, but you'd need to start your Wednesday shift about 10 minutes late or leave the lab 10 minutes early. This is your decision, since I've treated your work hours as fixed.\n2. Keep Plan A as drafted. CS3650 §01 stays at 9:50 am on Tue/Thu, and the plan has no rule errors.\n3. Check the MATH2800 prerequisite. If you've completed it or it's equivalent to something you've taken, tell me. Honors §03 with lab 91022 on Friday would then work with your Tue/Thu preference.\n\nIf you pick option 1, I'd draft this version:\n- CS3650 §02 (91011), Tue/Thu 2:00–3:40 pm\n- CS3651 lab §02 (91021), Wed 12:00–1:10 pm\n- ENGW3302 (91030), Mon/Wed 10:30–11:50 am (your protected section)\n- A replacement for PSYC1101 if needed. PSYC1101 (Tue/Thu 3:50–5:30 pm) would sit right after CS3650 §02 with a 10-minute gap, so I'd check it.\n\nThat draft would total 13 credits. Which option do you want?",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

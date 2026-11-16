@@ -54,8 +54,7 @@ class WorkspaceRoutingTests(unittest.TestCase):
         with urlopen(base+'/api/bootstrap?case=b') as response:data=json.load(response)
         self.assertEqual(2,len(data['case']['steps']))
         self.assertEqual({'a','b','c'},{c['key'] for c in data['cases']})
-        self.assertFalse(next(c for c in data['cases'] if c['key']=='a')['ready'])
-        with self.assertRaisesRegex(ValueError,'not ready'):self.app.create({'case_key':'a'})
+        self.assertTrue(next(c for c in data['cases'] if c['key']=='a')['ready'])
         with self.assertRaises(HTTPError):urlopen(base+'/runs/../../auth.json')
 
     def test_existing_live_conversation_can_continue_through_explicit_loopback_bridge(self):

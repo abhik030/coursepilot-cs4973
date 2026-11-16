@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I drafted Plan A, but it breaks your Tuesday/Thursday noon preference. I didn't save or register anything.\n\nPlan A (draft, not saved): 13 credits, no rule errors\n- CS3650 §01 (CRN 91010), Tue/Thu 9:50–11:30\n- CS3651 lab §01 (CRN 91020), Fri 9:00–10:40. CS3650 §01 requires this lab.\n- ENGW3302 (CRN 91030), Mon/Wed 10:30–11:50. This is your protected section.\n- PSYC1101 (CRN 91040), Tue/Thu 3:50–5:30 pm\n\nTradeoff: CS3650 §01 meets Tuesday and Thursday at 9:50 am, which is before noon. I couldn't find a CS3650 option that meets your preference and also fits the rest of your constraints:\n- CS3650 §02 (Tue/Thu 2:00 pm): It requires the Wednesday lab at 12:00–1:10 pm. That overlaps your Wednesday work shift, which starts at 1:00 pm.\n- CS3650 §03 (Honors, Tue/Thu noon): It requires MATH2800, which isn't on your record.\n\nI treated your preference as soft and your work schedule as fixed. I also kept the prerequisites and required lab pairing intact. Both CS3650 and CS3651 are required, so I couldn't drop either one.\n\nPlan A has 13 credits, which is within your 12–18 range. I picked PSYC1101 as the fourth course because it falls after noon on Tuesday and Thursday.\n\nOptions:\n1. Keep Plan A as drafted, with the 9:50 am Tue/Thu class.\n2. Use CS3650 §02 with lab §02, if you can adjust or skip the 10 minutes of overlap with work on Wednesdays.\n\nWhich would you like? I can also draft a different elective combination.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

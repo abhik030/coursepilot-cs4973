@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Checking your current registration state.",
+  "reports": [],
+  "tool": "read_state"
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading the catalog.",
+  "reports": [],
+  "tool": "read_catalog"
+}

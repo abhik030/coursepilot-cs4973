@@ -1,0 +1,419 @@
+{
+  "state": {
+    "term": "SYNTHETIC_SPRING_2027",
+    "student": {
+      "name": "Maya",
+      "completed": {
+        "CS2510": "B",
+        "CS2800": "B",
+        "MATH1365": "B-"
+      },
+      "min_credits": 12,
+      "max_credits": 18,
+      "required_courses": [
+        "CS3650",
+        "CS3651"
+      ],
+      "protected_sections": [
+        "91030"
+      ],
+      "work": [
+        [
+          "Mon",
+          720,
+          1020
+        ],
+        [
+          "Wed",
+          720,
+          1020
+        ],
+        [
+          "Fri",
+          720,
+          1020
+        ]
+      ],
+      "soft_preferences": [
+        "no classes before 12:00 on Tuesday or Thursday"
+      ]
+    },
+    "catalog": {
+      "91010": {
+        "crn": "91010",
+        "course": "CS3650",
+        "title": "Computer Systems",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Tue",
+            590,
+            690
+          ],
+          [
+            "Thu",
+            590,
+            690
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [
+          [
+            {
+              "course": "CS2510",
+              "minimum_grade": "C"
+            }
+          ]
+        ],
+        "requires_sections": [
+          "91020"
+        ]
+      },
+      "91011": {
+        "crn": "91011",
+        "course": "CS3650",
+        "title": "Computer Systems",
+        "section": "02",
+        "credits": 4,
+        "meetings": [
+          [
+            "Tue",
+            840,
+            940
+          ],
+          [
+            "Thu",
+            840,
+            940
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [
+          [
+            {
+              "course": "CS2510",
+              "minimum_grade": "C"
+            }
+          ]
+        ],
+        "requires_sections": [
+          "91021"
+        ]
+      },
+      "91012": {
+        "crn": "91012",
+        "course": "CS3650",
+        "title": "Computer Systems (Honors)",
+        "section": "03",
+        "credits": 4,
+        "meetings": [
+          [
+            "Tue",
+            720,
+            820
+          ],
+          [
+            "Thu",
+            720,
+            820
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [
+          [
+            {
+              "course": "CS2510",
+              "minimum_grade": "C"
+            }
+          ],
+          [
+            {
+              "course": "MATH2800",
+              "minimum_grade": "C"
+            }
+          ]
+        ],
+        "requires_sections": [
+          "91022"
+        ]
+      },
+      "91020": {
+        "crn": "91020",
+        "course": "CS3651",
+        "title": "Computer Systems Lab",
+        "section": "01",
+        "credits": 1,
+        "meetings": [
+          [
+            "Fri",
+            540,
+            640
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91021": {
+        "crn": "91021",
+        "course": "CS3651",
+        "title": "Computer Systems Lab",
+        "section": "02",
+        "credits": 1,
+        "meetings": [
+          [
+            "Wed",
+            780,
+            880
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91022": {
+        "crn": "91022",
+        "course": "CS3651",
+        "title": "Computer Systems Lab",
+        "section": "03",
+        "credits": 1,
+        "meetings": [
+          [
+            "Fri",
+            600,
+            700
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91030": {
+        "crn": "91030",
+        "course": "ENGW3302",
+        "title": "Advanced Writing for Computer Science",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Mon",
+            630,
+            710
+          ],
+          [
+            "Wed",
+            630,
+            710
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 0,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91040": {
+        "crn": "91040",
+        "course": "PSYC1101",
+        "title": "Foundations of Psychology",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Tue",
+            950,
+            1050
+          ],
+          [
+            "Thu",
+            950,
+            1050
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91041": {
+        "crn": "91041",
+        "course": "MUSC1001",
+        "title": "Music in Everyday Life",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Tue",
+            480,
+            580
+          ],
+          [
+            "Thu",
+            480,
+            580
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91042": {
+        "crn": "91042",
+        "course": "ARTH1110",
+        "title": "Art and Visual Culture",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Tue",
+            1080,
+            1180
+          ],
+          [
+            "Thu",
+            1080,
+            1180
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91043": {
+        "crn": "91043",
+        "course": "PHIL1145",
+        "title": "Technology and Human Values",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Mon",
+            480,
+            580
+          ],
+          [
+            "Wed",
+            480,
+            580
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      },
+      "91044": {
+        "crn": "91044",
+        "course": "ECON1116",
+        "title": "Principles of Macroeconomics",
+        "section": "01",
+        "credits": 4,
+        "meetings": [
+          [
+            "Fri",
+            780,
+            960
+          ]
+        ],
+        "campus": "Fictional Boston",
+        "seats_available": 10,
+        "waitlist_capacity": 0,
+        "waitlist_actual": 0,
+        "prerequisite_groups": [],
+        "requires_sections": []
+      }
+    },
+    "drafts": {
+      "Plan A": {
+        "id": "Plan A",
+        "version": 1,
+        "sections": [
+          "91010",
+          "91020",
+          "91030",
+          "91040"
+        ],
+        "credits": 13,
+        "rule_errors": []
+      }
+    },
+    "saved_plans": {},
+    "pending_registration": null,
+    "enrollment": [
+      "91030"
+    ],
+    "enrollment_version": 1,
+    "registered_credits": 4,
+    "waitlists": {},
+    "permissions": [],
+    "paused": false,
+    "registration_open": true
+  },
+  "reports": [
+    {
+      "stage": 0,
+      "report": {
+        "plan_id": "Plan A",
+        "sections": [
+          "91010",
+          "91020",
+          "91030",
+          "91040"
+        ],
+        "credits": 13,
+        "feasible": true
+      },
+      "after_a_saved": false
+    },
+    {
+      "stage": 1,
+      "report": {
+        "plan_id": "Plan A",
+        "sections": [
+          "91010",
+          "91020",
+          "91030",
+          "91040"
+        ],
+        "credits": 13,
+        "feasible": true
+      },
+      "after_a_saved": false
+    }
+  ],
+  "protocol_issues": [],
+  "success_rules": {
+    "final_draft": "A"
+  },
+  "prose_quality": "Requires human review; structured reports are checked automatically."
+}

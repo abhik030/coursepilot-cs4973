@@ -1,0 +1,31 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Short answer: no. I can't keep your Tuesday and Thursday mornings completely free without a conflict with your work schedule, so I haven't changed Plan A.\n\nCS3650 is required, and it has only three sections:\n- Section 01 (91010): Tue/Thu 9:50–11:30 am. This is the section in the current Plan A, and it takes your mornings.\n- Section 03 (91012, Honors): Tue/Thu 12:00–1:40 pm. It requires MATH2800, which isn't in your completed courses, so you can't take it.\n- Section 02 (91011): Tue/Thu 2:00–3:40 pm. This is the only section that keeps your mornings free. It requires lab 91021, which meets Wed 12:00–1:10 pm. Your Wednesday work shift starts at 1:00 pm, so they overlap by 10 minutes.\n\nLab 91021 is the only lab that goes with section 02. The other labs (91020 and 91022) are on Fridays and are tied to sections 01 and 03.\n\nIf you switch to section 02 and lab 91021, the revised plan would be:\n- 91030 ENGW3302, Mon/Wed 10:30–11:50 am (your protected section)\n- 91011 CS3650 section 02, Tue/Thu 2:00–3:40 pm\n- 91021 CS3651 lab 02, Wed 12:00–1:10 pm\n- 91040 PSYC1101, Tue/Thu 3:50–5:30 pm. This now starts only 10 minutes after CS3650 ends, so there is little time between them.\n\nThat plan totals 13 credits and has no Tuesday or Thursday classes before noon. I'm treating your work hours as fixed, so I'd count it as not feasible until the 10-minute overlap is sorted out.\n\nHere are your options:\n1. Keep the current Plan A. It has no conflicts, but CS3650 starts at 9:50 am on Tuesdays and Thursdays.\n2. Switch to section 02 and lab 91021. This keeps your mornings free, but you'd need to start your Wednesday shift about 10 minutes late, or leave the lab 10 minutes early, if your employer or instructor allows it. I can draft this version if you want to compare. I won't save or register it.\n\nWhich would you like? Nothing has been saved or registered.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    },
+    {
+      "plan_id": "Plan A (alternative, not drafted)",
+      "sections": [
+        "91011",
+        "91021",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": false
+    }
+  ],
+  "tool": "none"
+}

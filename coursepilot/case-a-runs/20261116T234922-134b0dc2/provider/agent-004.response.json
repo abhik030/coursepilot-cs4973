@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I drafted Plan A (not saved or registered). It meets your requirements, but it doesn't fully meet your Tuesday/Thursday preference.\n\nPlan A has 13 credits and no rule errors:\n- CS3650 Computer Systems, section 01 (CRN 91010), Tue/Thu 9:50–11:30 AM\n- CS3651 Lab, section 01 (CRN 91020), Fri 9:00–10:40 AM\n- ENGW3302 Advanced Writing (CRN 91030), Mon/Wed 10:30–11:50 AM. This is your protected section.\n- PSYC1101 Foundations of Psychology (CRN 91040), Tue/Thu 3:50–5:30 PM\n\nThe tradeoff: CS3650 section 01 meets before noon on Tuesdays and Thursdays. CS3650 and its lab are both required, and the other options don't work:\n- Section 02 (Tue/Thu 2:00–3:40 PM): It requires lab section 02 on Wednesday 12:00–1:10 PM. That overlaps your Wednesday work shift, which starts at 1:00 PM, by 10 minutes.\n- Honors section 03 (Tue/Thu noon–1:40 PM): It requires MATH2800, which isn't on your completed list.\n\nI treated your work hours as fixed and the noon preference as flexible, so I kept section 01. Every other class in the plan avoids work and avoids Tuesday/Thursday mornings.\n\nOptions:\n1. Keep Plan A as it is.\n2. Switch to section 02 and lab 02, which gives you no Tuesday/Thursday mornings. You would need to adjust your Wednesday shift or confirm the 10-minute overlap is workable.\n\nTell me which you prefer. I won't save or register anything until you say so.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

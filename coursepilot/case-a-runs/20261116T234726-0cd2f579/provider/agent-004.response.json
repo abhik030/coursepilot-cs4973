@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I drafted Plan A. It's a draft only, and I haven't saved or registered anything.\n\nPlan A (13 credits):\n- CS3650 Computer Systems §01 (CRN 91010): Tue/Thu 9:50–11:30 AM\n- CS3651 Lab §01 (CRN 91020): Fri 9:00–10:40 AM\n- ENGW3302 Advanced Writing for CS (CRN 91030): Mon/Wed 10:30–11:50 AM. This is your protected section.\n- PSYC1101 Foundations of Psychology (CRN 91040): Tue/Thu 3:50–5:30 PM\n\nThe draft meets your requirements and credit range (12–18), has no work conflicts, and has no rule errors.\n\nTradeoff: it doesn't meet your Tue/Thu noon preference. CS3650 §01 meets Tuesday and Thursday at 9:50 AM. Here is why I couldn't avoid that:\n- CS3650 §02 (91011) meets Tue/Thu 2:00–3:40 PM, but it requires lab §02 (91021) on Wed 12:00–1:10 PM. That overlaps your Wednesday work shift, which starts at 1:00 PM, by 10 minutes.\n- CS3650 Honors §03 (91012) meets Tue/Thu 12:00–1:40 PM. It requires MATH2800, which isn't on your completed list, so you aren't eligible.\n\nCS3650 and CS3651 are both required, so there's no way to drop CS3650 to avoid the morning meeting.\n\nYour options:\n1. Keep Plan A as drafted, with the 9:50 AM Tue/Thu class.\n2. Switch to CS3650 §02 plus lab §02. That gives you no Tue/Thu morning classes, but the lab overlaps your work shift by 10 minutes. You could ask your employer whether you can start 10 minutes late on Wednesdays.\n\nWhich would you like? I can draft option 2 as a comparison without saving anything.",
+  "reports": [
+    {
+      "plan_id": "A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

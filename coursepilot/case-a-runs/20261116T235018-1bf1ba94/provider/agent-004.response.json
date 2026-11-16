@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is drafted. I haven't saved or registered anything.\n\n**Plan A (13 credits, feasible)**\n- CS3650 Computer Systems, section 01 (CRN 91010): Tue/Thu 9:50–11:30\n- CS3651 Lab, section 01 (CRN 91020): Fri 9:00–10:40\n- ENGW3302 Advanced Writing (CRN 91030): Mon/Wed 10:30–11:50. This is your protected section.\n- PSYC1101 Foundations of Psychology (CRN 91040): Tue/Thu 3:50–5:30 PM\n\n**Tradeoff:** This plan doesn't meet your Tuesday/Thursday preference. CS3650 section 01 meets before noon on both days. I couldn't find a way to avoid that for your required course:\n- **CS3650 section 02 (91011)** meets Tue/Thu 2:00–3:40 PM. It needs lab section 02 (91021), which meets Wed 12:00–1:10 PM. That overlaps your Wednesday work shift, which starts at 1:00 PM.\n- **Honors section 03 (91012)** meets Tue/Thu 12:00–1:40 PM. It requires MATH2800, which isn't on your completed list.\n\nI treated your work hours as fixed and the Tuesday/Thursday request as a preference. So I chose the only conflict-free option for CS3650.\n\nThe plan has 13 credits, which is within your 12–18 range. PSYC1101 is an elective I picked because it meets in the afternoon. I can swap it for another course.\n\nIf you can shift your Wednesday shift by about 10 minutes, or skip the first 10 minutes of the lab, I can draft a version with sections 91011 and 91021. That version has no Tuesday/Thursday classes before noon. Do you want me to draft it?",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "91010",
+        "91020",
+        "91030",
+        "91040"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}
