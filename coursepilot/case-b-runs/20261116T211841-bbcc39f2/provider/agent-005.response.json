@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "target": "Plan A",
+  "sections": [
+    "90001",
+    "90002",
+    "90006",
+    "90010"
+  ],
+  "message": "Revising Plan A with capstone 90006 in place of 90004 (nothing will be saved or registered).",
+  "reports": [],
+  "tool": "draft_plan"
+}

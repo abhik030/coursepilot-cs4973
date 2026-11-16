@@ -16,7 +16,7 @@ Submission agreement: the last teammate to finish submits the single team index.
 | Aditya | A: required courses versus preferences | Record Abhi's C |
 | Hudson | B: correction during planning | Record Aditya's A |
 
-These assignments still need teammate confirmation. Case C v2 and the reusable browser/server are implemented, with five completed real baseline trials. Case B is now a runnable team draft with five Claude baseline attempts being collected; actual creator contribution remains unconfirmed. Case A is still a template. No teammate video is claimed as complete.
+These assignments still need teammate confirmation. Case C v2 and the reusable browser/server are implemented, with five completed real baseline trials. Case B is a runnable team draft with five retained Claude attempts: four semantically correct completions and one native-tool rejection. Its report separates original literal-label scores from audited metrics. Actual creator contribution remains unconfirmed. Case A is still a template. No teammate video is claimed as complete.
 
 ## What Aditya and Hudson can do now
 

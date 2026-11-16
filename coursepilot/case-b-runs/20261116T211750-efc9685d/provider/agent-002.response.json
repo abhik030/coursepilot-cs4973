@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading the catalog for section times, credits, prerequisites, and the capstone's linked lab.",
+  "reports": [],
+  "tool": "read_catalog"
+}

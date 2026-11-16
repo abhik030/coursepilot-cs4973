@@ -8,7 +8,7 @@ The shared app supports Codex CLI and Claude Code for inference. Teammates can u
 | --- | --- | --- |
 | Shared app | `coursepilot/engine.py`, `server.py`, `providers.py`, `static/` | Working; both providers passed full integration checks |
 | Case C (Abhi) | [Case document](coursepilot/README.md), [results](coursepilot/RESULTS.md) | Five original Codex trials complete; independent teammate video pending |
-| Case B (proposed owner Hudson) | [Final runnable document](coursepilot/CASE_B.md), `coursepilot/cases/hudson_b.json`, `coursepilot/fixtures/hudson_b.json` | Runnable team draft; see actual five-run status/results under `coursepilot/case-b-runs/`; creator contribution and recording unconfirmed |
+| Case B (proposed owner Hudson) | [Final runnable document](coursepilot/CASE_B.md), `coursepilot/cases/hudson_b.json`, `coursepilot/fixtures/hudson_b.json` | Five attempts retained: four correct completions and one native-tool rejection; original label-sensitive scores and audited metrics are separately reported; creator contribution and recording unconfirmed |
 | Case A (Aditya proposed) | `coursepilot/cases/planning_template.json` and [authoring guide](coursepilot/TEAMMATE_GUIDE.md) | Still a template; do not mark finished |
 | Final index | [SUBMISSION.md](SUBMISSION.md) | In progress; last teammate to finish submits |
 
@@ -16,6 +16,7 @@ The shared app supports Codex CLI and Claude Code for inference. Teammates can u
 
 1. Read `coursepilot/CASE_B.md` and the case JSON. The case is already implemented; do not re-scaffold or overwrite it with the correction template.
 2. Check whether `coursepilot/case-b-runs/RESULTS.md` and `case-b-summary.json` exist and whether all five actual trial folders are present. Completed evidence should be reviewed, not regenerated. Ask before consuming more inference quota.
+   All five attempts have now been collected. Do not run another five. Read the post-collection `Plan A`/`A` scoring-label audit; never present audited values as the unmodified contents of the original reward.json files. Runtime 2.1.1 fixes the label lookup for new sessions.
 3. Help Hudson review the scenario/results and record his actual contribution. The creator field remains unconfirmed; do not automatically rename it to Hudson or claim independent creation based only on assigned ownership. Any later design change requires a new version/output directory, not relabeling these trials.
 4. Hand the final case document and commit to Abhi for the reproduction. Hudson's separate video assignment is reproducing Aditya's Case A once available.
 

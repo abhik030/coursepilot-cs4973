@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is revised as a draft only. Nothing is saved or registered, and your enrollment is unchanged. The revised plan is feasible.\n\n**Plan A, version 2: 90001, 90002, 90006, 90010 (13 credits, feasible)**\n\n**What changed**\n- I swapped capstone 90004 for 90006. 90004 met Mon and Wed at 8:00-9:15, which falls inside your new no-Monday-before-10:00 restriction.\n- 90001, 90002 and lab 90010 are unchanged.\n\n**Checks**\n- **Capstone and lab:** 90006 is CAP4000, your required capstone. It requires lab 90010, which is in the plan.\n- **Protected courses:** 90001 and 90002 are both still included.\n- **Prerequisites:** You completed CS3000 with a B, and the capstone accepts CS3000 or CS3500.\n- **Credits:** 13 is within your 12-16 limit.\n- **Monday restriction:** 90001 starts Mon at 10:00, exactly when your restriction ends, so it fits. Nothing else meets on Monday.\n- **Work hours:** You work Tue and Thu 12:00-5:00. 90006 meets Tue and Thu 10:00-11:40, which ends before your shift. The Thu lab runs 5:30-6:20, after your shift.\n- **Time conflicts:** There are none. 90001 meets Mon 10:00-11:15 and 90002 meets Wed 1:00-2:15.\n\n**Tradeoffs**\n- **Thursday:** It will be long. You'd have class at 10:00, work from 12:00 to 5:00, then the lab at 5:30.\n- **Afternoon preference:** The capstone is a morning class, so that preference isn't met. The afternoon section 90005 is full, with a waitlist of 3, so a spot isn't guaranteed.\n- **Seats:** 90006 has only 1 seat left, so register soon if you choose it.\n\nDo you want to keep this version? I can save it when you say so, and I won't register anything unless you ask.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

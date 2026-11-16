@@ -1,0 +1,5 @@
+{
+  "intent": "chat",
+  "target": "",
+  "message": "Hi! Could you draft Plan A with CRNs 90001, 90002, 90004, and 90010? Please check my required capstone (CAP4000) and its linked lab, my protected courses (90001 and 90002), prerequisites, credit limits (12–16), and my work hours (Tue and Thu, 12:00–5:00 pm). For this task, I want you to choose between capstone 90004 and the alternate capstone 90006, and keep the other three sections. Then explain whether the initial schedule is feasible. Please don't save or register anything."
+}

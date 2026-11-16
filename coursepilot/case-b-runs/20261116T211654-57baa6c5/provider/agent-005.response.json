@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A (90001, 90002, 90004, 90010) is feasible. I drafted it only. Nothing is saved or registered.\n\nChecks:\n- Capstone and lab: 90004 is CAP4000 and requires lab 90010, which is in the plan.\n- Protected courses: 90001 and 90002 are both kept.\n- Prerequisite: 90004 needs CS3000 or CS3500. You completed CS3000 with a B, so it is met.\n- Credits: 13 (4+4+4+1), within your 12-16 range.\n- Time conflicts: none. 90004 meets Mon/Wed 8:00-9:15. 90001 meets Mon 10:00-11:15. 90002 meets Wed 1:00-2:15 pm. Lab 90010 meets Thu 5:30-6:20 pm.\n- Work: you work Tue and Thu 12:00-5:00 pm. The lab starts at 5:30 pm, after your shift, so there is no overlap.\n- Seats: 90004 has 1 seat left, and the lab has 2.\n\nChoosing between 90004 and 90006:\n- 90006 also works. It meets Tue/Thu 10:00-11:40, before your work, and has no conflicts. It uses the same lab and also totals 13 credits. It has 1 seat left.\n- 90004 keeps your classes on Mon and Wed, plus the Thursday lab, but starts at 8:00 am. 90006 spreads your classes over Mon-Thu, with Tue and Thu mornings before work.\n- Neither fits your afternoon preference, since both are morning sections. Section 90005 (Mon/Wed 3:00-4:40 pm) would fit, but it is full with 3 people already on the waitlist, so you wouldn't have a seat.\n\nEnrollment change: you are currently enrolled in 90001, 90002 and 90003. Plan A does not include 90003, so registering it would drop that course. I would confirm that with you first.\n\nWhich capstone do you want, 90004 or 90006? I can draft a 90006 version for comparison if you'd like.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

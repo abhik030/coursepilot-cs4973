@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "target": "Plan A",
+  "sections": [
+    "90001",
+    "90002",
+    "90004",
+    "90010"
+  ],
+  "message": "Drafting Plan A (not saving or registering) with CRNs 90001, 90002, 90004, 90010.",
+  "reports": [],
+  "tool": "draft_plan"
+}

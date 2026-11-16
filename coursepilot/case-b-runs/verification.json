@@ -1,0 +1,77 @@
+{
+  "method": "Offline trace and source verification, no model calls.",
+  "checked": 5,
+  "passed": 5,
+  "runs": [
+    {
+      "id": "20261116T211319-5a298394",
+      "passed": true,
+      "issues": [],
+      "status": "error",
+      "student_turns": 1,
+      "tool_pairs": 1,
+      "archived_sources": [
+        "engine.py",
+        "summarize_case_b.py",
+        "__init__.py",
+        "tests\\test_case_b.py"
+      ]
+    },
+    {
+      "id": "20261116T211654-57baa6c5",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 2,
+      "tool_pairs": 5,
+      "archived_sources": [
+        "engine.py",
+        "summarize_case_b.py",
+        "__init__.py",
+        "tests\\test_case_b.py"
+      ]
+    },
+    {
+      "id": "20261116T211750-efc9685d",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 2,
+      "tool_pairs": 4,
+      "archived_sources": [
+        "engine.py",
+        "summarize_case_b.py",
+        "__init__.py",
+        "tests\\test_case_b.py"
+      ]
+    },
+    {
+      "id": "20261116T211841-bbcc39f2",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 2,
+      "tool_pairs": 4,
+      "archived_sources": [
+        "engine.py",
+        "summarize_case_b.py",
+        "__init__.py",
+        "tests\\test_case_b.py"
+      ]
+    },
+    {
+      "id": "20261116T211935-5bfc0776",
+      "passed": true,
+      "issues": [],
+      "status": "completed",
+      "student_turns": 2,
+      "tool_pairs": 3,
+      "archived_sources": [
+        "engine.py",
+        "summarize_case_b.py",
+        "__init__.py",
+        "tests\\test_case_b.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is drafted but not saved or registered, and it's feasible. Nothing about your enrollment has changed.\n\n**Plan A: 90001, 90002, 90004, 90010 (13 credits, feasible)**\n- **Capstone and lab:** 90004 is CAP4000, your required capstone. It requires lab 90010 (CAP4001L), and the lab is in the plan.\n- **Protected courses:** 90001 and 90002 are both included.\n- **Prerequisites:** You completed CS3000 with a B. The capstone needs CS3000 or CS3500, so that's met.\n- **Credits:** 13 is within your 12–16 limit.\n- **Time conflicts:** There are none.\n  - 90001 meets Mon 10:00–11:15.\n  - 90002 meets Wed 1:00–2:15.\n  - 90004 meets Mon and Wed 8:00–9:15.\n  - 90010 meets Thu 5:30–6:20.\n- **Work hours:** You work Tue and Thu 12:00–5:00. Nothing overlaps, and the Thu lab starts 30 minutes after your shift ends.\n- **Seats:** 90004 has 1 seat left, and so does 90006. The lab has 2.\n\n**Choosing between 90004 and 90006**\n- **90006 (Tue and Thu 10:00–11:40):** I haven't drafted this version. It also looks feasible at 13 credits. It has no conflicts and ends before work, but your Thursday would run from the 10:00 class to the 12:00 shift to the 5:30 lab.\n- **90004 (Mon and Wed 8:00–9:15):** It avoids your work days entirely, but it's an early start.\n- **Afternoon preference:** Neither option is an afternoon class. Capstone section 90005 (Mon and Wed 3:00–4:40) is in the afternoon and doesn't conflict, but it's full. It has a waitlist of 3 with room for more, so a spot isn't guaranteed.\n\nWhich capstone do you want: 90004, 90006, or the 90005 waitlist? I can draft the other version for comparison, and I won't save or register anything until you say so.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

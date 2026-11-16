@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "target": "Plan A",
+  "sections": [
+    "90001",
+    "90002",
+    "90006",
+    "90010"
+  ],
+  "message": "Revising draft Plan A to use alternate capstone 90006 because 90004 meets Monday 8:00-9:15. This is a draft only. Nothing will be saved or registered.",
+  "reports": [],
+  "tool": "draft_plan"
+}

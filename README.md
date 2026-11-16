@@ -4,7 +4,7 @@ CoursePilot studies student control over course planning and registration. The b
 
 Team: Abhi Karthik, Aditya Vij, Hudson Kass. Case A remains with its proposed owner. Case B is a runnable team draft; actual creator contribution and teammate recording are unconfirmed.
 
-**[Team submission index](SUBMISSION.md)** — Case C evidence is ready; Case B trials are being collected; Case A and teammate videos remain pending.
+**[Team submission index](SUBMISSION.md)** — Case C evidence and five Case B attempts are available; Case A and teammate videos remain pending. Case B's report discloses its post-collection scoring-label audit.
 
 **For another coding assistant:** start with [AI_HANDOFF.md](AI_HANDOFF.md). Case B is now a [runnable correction case](coursepilot/CASE_B.md); its evidence status and unconfirmed creator/recording fields are documented there.
 

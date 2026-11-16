@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from coursepilot.engine import Session,HERE
+from coursepilot.engine import Session,HERE,draft_artifact
 from coursepilot.tests.test_domain import FakeProvider,decision
 from coursepilot.summarize_case_b import analyze
 
@@ -36,6 +36,17 @@ class CaseBTests(unittest.TestCase):
         self.assertEqual(0,session.metrics()['task_success'])
         self.assertEqual(0,row['new_restriction_ignored'])
         self.assertEqual(1,row['earlier_rule_lost'])
+
+    def test_unambiguous_display_label_scores_but_conflicting_aliases_do_not(self):
+        final=['90001','90002','90006','90010']
+        with tempfile.TemporaryDirectory() as root:
+            provider=FakeProvider([decision('draft_plan','Plan A',['90001','90002','90004','90010']),decision(),
+                                   decision('draft_plan','Plan A',final),decision()])
+            session=Session(root,mode='simulated',provider=provider,case_path=HERE/'cases/hudson_b.json')
+            session.simulate()
+            self.assertEqual(1,session.metrics()['task_success'])
+            self.assertEqual(1,analyze(session.output)['initial_draft_correct'])
+        self.assertEqual({},draft_artifact({'A':{'sections':final},'Plan A':{'sections':[]}},'A'))
 
 
 if __name__=='__main__':unittest.main()

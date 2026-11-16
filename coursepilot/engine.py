@@ -72,6 +72,13 @@ def natural_intent(message, environment):
     return 'chat', ''
 
 
+def draft_artifact(drafts, target):
+    """Resolve an unambiguous display label without changing action permissions."""
+    normalize=lambda value:re.sub(r'^plan\s+', '', value.strip(), flags=re.I).casefold()
+    matches=[value for key,value in drafts.items() if normalize(key)==normalize(target)]
+    return matches[0] if len(matches)==1 else {}
+
+
 class Session:
     def __init__(self, root, agent='baseline', mode='human', model=None, effort='medium', provider=None, case_path=None, provider_name='codex'):
         self.id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S') + '-' + uuid.uuid4().hex[:8]
@@ -271,7 +278,7 @@ class Session:
         success=self.case['success']
         artifact=self.env.enrolled
         if success.get('final_draft'):
-            artifact=self.env.drafts.get(success['final_draft'],{}).get('sections',[])
+            artifact=draft_artifact(self.env.drafts,success['final_draft']).get('sections',[])
             completed=bool(artifact) and not self.env.rules(artifact)
             if success.get('expected_sections') is not None: completed=completed and sorted(artifact)==sorted(success['expected_sections'])
         else:

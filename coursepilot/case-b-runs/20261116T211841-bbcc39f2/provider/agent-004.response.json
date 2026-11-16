@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is feasible as drafted (90001, 90002, 90004, 90010). Nothing is saved or registered.\n\nChecks:\n- Capstone and lab: CAP4000 section 90004 is in the plan, with its required linked lab CAP4001L section 90010.\n- Protected courses: 90001 and 90002 are both still in the plan.\n- Prerequisites: you completed CS3000 with a B, which meets the CAP4000 requirement (CS3000 or CS3500).\n- Credits: 13 (4+4+4+1), within your 12-16 limit.\n- Time conflicts: none. Mon 8:00-9:15 CAP4000, Mon 10:00-11:15 90001, Wed 8:00-9:15 CAP4000, Wed 1:00-2:15 90002, Thu 5:30-6:20 PM lab.\n- Work hours (Tue/Thu 12:00-5:00 PM): no overlap. The Thursday lab starts 30 minutes after your shift ends.\n- Seats: 90004 has 1 seat left and 90010 has 2. 90001 and 90002 show 0 open seats, but they're protected sections, so I assumed you already hold them.\n\n90004 vs 90006: 90006 (Tue/Thu 10:00-11:40) would also be feasible, with no conflicts and 13 credits. It ends only 20 minutes before your work shifts start, and it also has just 1 seat. I recommend 90004 because it keeps your Tuesdays and Thursdays clear before work. The tradeoff is the 8:00 AM start on Mon/Wed. Neither option is an afternoon class, so your afternoon preference isn't met either way. That is a preference, not a hard constraint.\n\nWould you like to keep 90004, switch to 90006, or look at other options? I'll wait for your go-ahead before saving or registering anything.",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

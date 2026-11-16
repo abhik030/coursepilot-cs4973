@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is revised and feasible. Nothing is saved or registered.\n\n**What changed**\n- I swapped capstone 90004 for 90006. 90004 meets Mon/Wed 8:00-9:15, which falls inside your new Monday 8:00-10:00 block.\n- Plan A is now 90001, 90002, 90006 and 90010, at version 2.\n\n**Checks**\n- **Capstone and lab:** CAP4000 section 90006 is in the plan with its required lab, CAP4001L section 90010.\n- **Protected courses:** 90001 and 90002 are both still in the plan.\n- **Prerequisites:** CS3000 (B) meets the CAP4000 requirement.\n- **Credits:** 13 (4+4+4+1), within your 12-16 limit.\n- **Work and unavailable times:**\n  - **Monday 8:00-10:00:** 90001 meets Mon 10:00-11:15, so it starts right when the block ends, with no overlap.\n  - **Tue/Thu 12:00-5:00 PM:** 90006 meets Tue/Thu 10:00-11:40 AM and ends 20 minutes before your shifts. The Thursday lab runs 5:30-6:20 PM, after your shift.\n- **Class conflicts:** none. Your week is:\n  - **Mon:** 90001, 10:00-11:15\n  - **Tue:** 90006, 10:00-11:40\n  - **Wed:** 90002, 1:00-2:15 PM\n  - **Thu:** 90006, 10:00-11:40, and the lab, 5:30-6:20 PM\n- **Seats:** 90006 has 1 seat left and 90010 has 2. 90001 and 90002 show 0 open seats, but I assumed you already hold them because they're protected.\n\n**Tradeoffs**\n- There is little buffer on Tuesdays and Thursdays before work.\n- The Thursday lab is a separate evening trip.\n- Your afternoon preference is only partly met. This is a preference, not a hard constraint.\n- 90005, the Mon/Wed 3:00-4:40 PM capstone, would fit your afternoon preference. It has no open seats and a waitlist of 3, so I didn't use it.\n\nWould you like to keep this version, or look at other options?",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

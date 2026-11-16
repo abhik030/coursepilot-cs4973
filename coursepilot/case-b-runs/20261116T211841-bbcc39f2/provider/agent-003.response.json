@@ -1,0 +1,13 @@
+{
+  "kind": "tool",
+  "target": "Plan A",
+  "sections": [
+    "90001",
+    "90002",
+    "90004",
+    "90010"
+  ],
+  "message": "Drafting Plan A with your requested sections (nothing will be saved or registered).",
+  "reports": [],
+  "tool": "draft_plan"
+}

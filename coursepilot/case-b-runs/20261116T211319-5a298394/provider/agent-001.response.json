@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading the profile for prerequisites, protected courses, and work hours.",
+  "reports": [],
+  "tool": "read_profile"
+}

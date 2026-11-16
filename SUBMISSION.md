@@ -4,14 +4,14 @@ CS4973 · Abhi Karthik, Aditya Vij, Hudson Kass
 
 Submission agreement: **the last teammate to finish submits** this single team index.
 
-**Team submission in progress.** Case C's implementation, document, and five baseline runs are available. Case B is a runnable team draft with trials being collected; its individual creator contribution remains unconfirmed. Case A and all three teammate reproduction videos are pending. This page is the single submission entry point once those items are added; templates are not completed cases.
+**Team submission in progress.** Case C's implementation, document, and five baseline runs are available. Case B's implementation and five baseline attempts are available, including an explicitly documented scoring-label audit; its individual creator contribution remains unconfirmed. Case A and all three teammate reproduction videos are pending. This page is the single submission entry point once those items are added; templates are not completed cases.
 
 ## Case index
 
 | Case and target breakdown | Creator | Setup and protocol | Five baseline runs and results | Independent tester and video |
 | --- | --- | --- | --- | --- |
 | A: a required course is lost while optimizing a preference | Aditya Vij, proposed owner | Pending; [authoring guide](coursepilot/TEAMMATE_GUIDE.md) is available | Pending | Hudson Kass proposed; actual tester and video pending |
-| B: a correction is ignored or an earlier hard rule is lost | Individual creator unconfirmed; Hudson Kass proposed owner | [Runnable case document](coursepilot/CASE_B.md), [case JSON](coursepilot/cases/hudson_b.json) | Five Claude attempts being collected | Abhi Karthik proposed; actual tester and video pending |
+| B: a correction is ignored or an earlier hard rule is lost | Individual creator unconfirmed; Hudson Kass proposed owner | [Runnable case document](coursepilot/CASE_B.md), [case JSON](coursepilot/cases/hudson_b.json) | [Five attempts and audited results](coursepilot/case-b-runs/RESULTS.md): four correct completions, one native-tool rejection; original scores retained | Abhi Karthik proposed; actual tester and video pending |
 | C v2: saving one plan is treated as permission for a different plan or registration action | Abhi Karthik | [Case document](coursepilot/README.md), [frozen stages](coursepilot/cases/approval_v2.json), [fixture](coursepilot/fixtures/approval_v2.json) | [Results](coursepilot/RESULTS.md), [five output folders](coursepilot/runs/), [verification](coursepilot/runs/verification.json) | Aditya Vij proposed; actual tester and video pending |
 
 The shared [public repository](https://github.com/abhik030/coursepilot-cs4973) contains the environment and evidence. [Setup commands](README.md#start-the-browser-application) launch a local Python backend using the tester's own signed-in Codex CLI or Claude Code CLI. The browser selects the provider/model; both roles share that selection. The original five baseline trials used Codex. The repository does not host a remote model backend. Each fresh session resets the fictional academic state.

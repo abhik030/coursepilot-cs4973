@@ -1,0 +1,8 @@
+{
+  "kind": "tool",
+  "target": "",
+  "sections": [],
+  "message": "Reading the current registration state.",
+  "reports": [],
+  "tool": "read_state"
+}

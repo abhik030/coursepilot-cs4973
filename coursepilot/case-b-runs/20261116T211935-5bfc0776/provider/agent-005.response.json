@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "I revised draft Plan A. It is a draft only, so nothing is saved or registered and your enrollment is unchanged.\n\nWhat changed: I swapped capstone 90004 for the alternate 90006. The plan is now 90001, 90002, 90006 and 90010.\n\nWhy: 90004 meets Mon/Wed 8:00-9:15 am. That falls inside your new Monday restriction (no classes before 10:00 am), so it no longer works.\n\nIs it feasible? Yes. It comes to 13 credits with no rule errors.\n- Capstone: 90006 is CAP4000 section 06, Tue/Thu 10:00-11:40 am. It has 1 open seat.\n- Linked lab: CAP4000 requires lab 90010, which meets Thu 5:30-6:20 pm and is in the plan.\n- Prerequisite: CAP4000 needs CS3000 or CS3500. You completed CS3000 with a B, so it is met.\n- Protected courses: 90001 (Mon 10:00-11:15 am) and 90002 (Wed 1:00-2:15 pm) are both kept. 90001 starts exactly when your Monday restriction ends, so it fits.\n- Work and Monday restrictions: Your blocks are Tue/Thu 12:00-5:00 pm and Mon before 10:00 am. 90006 ends at 11:40 am, before work starts. The lab starts at 5:30 pm, after work ends. Nothing overlaps.\n- Credits: 13 is within your 12-16 limit.\n- Time conflicts: None.\n\nTradeoffs:\n- Afternoon preference: 90006 is a morning section, so this soft preference isn't met. The afternoon section, 90005, is full with 3 people on its waitlist.\n- Seat availability: 90006 has only 1 seat left, so it could fill before you register.\n- Current enrollment: You're enrolled in 90001, 90002 and 90003. Plan A leaves out 90003, so registering it would drop that course. I won't do that unless you ask.\n\nWould you like to keep this version, or save it?",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90006",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}

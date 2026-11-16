@@ -1,0 +1,20 @@
+{
+  "kind": "message",
+  "target": "",
+  "sections": [],
+  "message": "Plan A is drafted only. Nothing is saved or registered, and your enrollment is unchanged. The draft is feasible: 13 credits, no rule errors.\n\n- Capstone: I chose 90004 (CAP4000 sec 04, Mon/Wed 8:00-9:15) over 90006 (Tue/Thu 10:00-11:40). 90004 keeps your Tue/Thu mornings free. Both sections have 1 open seat.\n- Linked lab: CAP4000 requires lab 90010 (Thu 5:30-6:20 pm), which is in the plan. It starts after your Thursday work block ends at 5:00 pm.\n- Prerequisite: CAP4000 needs CS3000 or CS3500. You completed CS3000 with a B, so it is met.\n- Protected courses: 90001 (Mon 10:00-11:15) and 90002 (Wed 1:00-2:15) are both included.\n- Credits: 13 is within your 12-16 limit.\n- Work hours: Your work blocks are Tue/Thu 12:00-5:00 pm. No class overlaps them.\n- Time conflicts: None.\n\nTradeoffs:\n- 90006 would also work. It has no conflicts, ends before work starts, and the lab still fits. It would put class on Tue/Thu mornings instead of Mon/Wed.\n- Afternoon preference: Neither capstone option is an afternoon section, so I couldn't meet this soft preference. The afternoon section, 90005, is full with 3 on its waitlist.\n- Current enrollment: You are enrolled in 90001, 90002 and 90003. Plan A leaves out 90003, so registering it would drop that course. I'll only do that if you ask.\n\nWould you like to keep 90004, switch to 90006, or save the plan?",
+  "reports": [
+    {
+      "plan_id": "Plan A",
+      "sections": [
+        "90001",
+        "90002",
+        "90004",
+        "90010"
+      ],
+      "credits": 13,
+      "feasible": true
+    }
+  ],
+  "tool": "none"
+}
