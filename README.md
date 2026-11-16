@@ -19,6 +19,8 @@ Team: Abhi Karthik, Aditya Vij, Hudson Kass. Case A remains with its proposed ow
 
 ## Start the browser application
 
+**One website for all cases:** open the home page, choose Case A/B/C, then open a run or start a new one. Each conversation has a separate run page. [Website layout and run navigation](coursepilot/WORKSPACE.md).
+
 ```powershell
 git clone https://github.com/abhik030/coursepilot-cs4973.git
 cd coursepilot-cs4973

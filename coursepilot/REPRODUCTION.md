@@ -18,10 +18,10 @@ Proposed recorder: Aditya Vij, still to be confirmed. Use [the complete case doc
    git rev-parse HEAD
    python -m unittest discover -s coursepilot/tests -v
    python -m coursepilot.verify --output coursepilot/runs
-   python -m coursepilot --port 8766 --output coursepilot/browser-runs/reproduction-c
+   python -m coursepilot --port 8765 --output coursepilot/browser-runs/reproduction-c
    ```
 
-   The separate port avoids colliding with an existing application. Open `http://127.0.0.1:8766`. Keep the server terminal running. For an existing clone, use `git pull --ff-only` and record its commit instead of cloning over it. If access to the recorded model is unavailable, resolve it before collecting the final video; do not silently substitute another model.
+   The server hosts all case pages together; reuse the shared server if it is already running. Open `http://127.0.0.1:8765`. Keep the server terminal running. For an existing clone, use `git pull --ff-only` and record its commit instead of cloning over it. If access to the recorded model is unavailable, resolve it before collecting the final video; do not silently substitute another model.
 
 3. Select **I do — browser chat** and the **baseline** condition. Begin a fresh session. Show the initial 12-credit enrollment and the fictional student's required capstone/lab, 12–16 credit limits, and Tuesday/Thursday work hours.
 4. Use each task-guide step in order, waiting for the agent's response:

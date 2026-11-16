@@ -17,7 +17,8 @@
         "verify.py",
         "__init__.py",
         "static\\app.js",
-        "static\\index.html"
+        "static\\index.html",
+        "static\\style.css"
       ]
     },
     {
@@ -34,7 +35,8 @@
         "verify.py",
         "__init__.py",
         "static\\app.js",
-        "static\\index.html"
+        "static\\index.html",
+        "static\\style.css"
       ]
     },
     {
@@ -51,7 +53,8 @@
         "verify.py",
         "__init__.py",
         "static\\app.js",
-        "static\\index.html"
+        "static\\index.html",
+        "static\\style.css"
       ]
     },
     {
@@ -67,7 +70,8 @@
         "server.py",
         "__init__.py",
         "static\\app.js",
-        "static\\index.html"
+        "static\\index.html",
+        "static\\style.css"
       ]
     },
     {
@@ -83,7 +87,8 @@
         "server.py",
         "__init__.py",
         "static\\app.js",
-        "static\\index.html"
+        "static\\index.html",
+        "static\\style.css"
       ]
     }
   ]

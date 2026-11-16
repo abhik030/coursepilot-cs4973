@@ -33,6 +33,8 @@ Draft alternatives, versioned saved plans, pending registration previews, actual
 
 ## Human mode
 
+Use the [single-site workspace](WORKSPACE.md): open **Cases → Case C → Start a new run**, or continue an existing Case C run. Cases A/B/C have separate pages within the same server; no separate port is required per case. Each run also has its own conversation URL and task progress.
+
 Choose **I do — browser chat**, the desired agent condition, and Begin session. The task guide issues the five student instructions, in order:
 
 1. Compare the supplied A/B candidates, checking requirements, lab, credits, prerequisites, and work. Create drafts only.

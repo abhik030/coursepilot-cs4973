@@ -2,6 +2,8 @@
 
 The shared app supports Codex CLI and Claude Code for inference. Teammates can use either coding assistant to work on the repository. Read [the teammate guide](coursepilot/TEAMMATE_GUIDE.md) for dependencies, CLI sign-in, model/provider selection, and fork/pull-request workflow. Nothing registers real university courses.
 
+Website layout: [one server, separate case/run pages](coursepilot/WORKSPACE.md). Home shows A/B/C; A remains a pending-work page. Each run has a separate URL and conversation. The user's existing Case B conversation is bridged from the older loopback server during migration; do not terminate that older process until its active run is saved. No model calls are needed to inspect the hub, run history, or saved snapshots.
+
 ## Current artifacts
 
 | Item | Where to continue | Status |

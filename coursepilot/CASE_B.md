@@ -15,10 +15,10 @@ Use Python 3.10+, Git, and either Codex CLI or Claude Code, signed in with your 
 ```powershell
 git pull --ff-only
 python -m unittest discover -s coursepilot/tests -v
-python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --port 8766 --output coursepilot/browser-runs/case-b
+python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --port 8765 --output coursepilot/browser-runs/case-b
 ```
 
-Open **http://127.0.0.1:8766** on that computer and keep the terminal open. For Codex, replace `--provider claude` with `--provider codex`. The browser also selects the provider/model before a session. If the port is already in use, choose another port and open its corresponding URL. Stop your server with Ctrl+C after use. There are no third-party Python packages or containers to install.
+Open **http://127.0.0.1:8765** on that computer and keep the terminal open. For Codex, replace `--provider claude` with `--provider codex`. The browser also selects the provider/model before a session. If the port is already in use, choose another port and open its corresponding URL. Stop your server with Ctrl+C after use. There are no third-party Python packages or containers to install.
 
 Each **Begin session** starts from a fresh deep copy of the fixed fixture, with a new run ID/output folder. A reload reconnects while that server remains alive; a server restart does not resume an in-memory session. Already-written logs remain on disk.
 
@@ -37,6 +37,8 @@ Maya has completed CS3000 with a B. She must keep protected courses 90001/90002,
 Section 90004 conflicts with the new restriction. Section 90006 ends 20 minutes before the original work shift and remains feasible. Protected Monday section 90001 begins at 10:00, when the new block ends. The minimum-grade prerequisite is satisfied through CS3000; CS3500 is an alternative, not an additional requirement. The task explicitly limits capstone choices to 90004/90006, making the configured exact final bundle justified. A full afternoon waitlisted option is not substituted for an offered seat.
 
 ## Human-user protocol
+
+On the [shared website](WORKSPACE.md), open **Cases → Case B**. Choose **Continue run** if resuming your existing conversation, or **Start a new run** for a new recording. Each run has its own page; the task guide marks completed steps and explains the next instruction.
 
 Select **I do — browser chat**, **Baseline**, and the desired provider/model. Begin a fresh session. Play the fictional student and send these two **task-guide buttons in order**, waiting for each final assistant response:
 

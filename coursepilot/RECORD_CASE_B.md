@@ -10,11 +10,12 @@ The runnable case is ready; this checklist does not itself constitute a video. C
    python --version
    claude --version
    python -m unittest discover -s coursepilot/tests -v
-   python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --port 8766 --output coursepilot/browser-runs/abhi-reproduces-b
+   python -m coursepilot --provider claude --case coursepilot/cases/hudson_b.json --port 8765 --output coursepilot/browser-runs/abhi-reproduces-b
    ```
 
-   If the prepared server already owns 8766, stop that server before recording setup or use 8768 and open that port. Sign in before recording; do not show login credentials.
+   Use the already-running shared server if it is available; do not stop an active conversation. Choose Case B from its home page. For a fresh setup recording, start your server when the port is free. Sign in before recording; do not show login credentials.
 3. Open the app. Choose **human mode**, **baseline**, **Claude Code / sonnet**, then Begin session.
+   In the current [single-site layout](WORKSPACE.md), first choose **Case B → Start a new run**. To keep the conversation already started, choose **Continue run** instead and continue at the highlighted next step; do not repeat the initial instruction.
 4. Click **Check the initial draft** and wait. Show draft A: sections 90001/90002/90004/90010, 13 credits, with the capstone Monday/Wednesday at 08:00.
 5. Click **Add Monday restriction and revise** and wait. This button sends the correction and updates the authoritative profile. Show the new draft and calendar. A correct result uses 90006 instead of 90004 and keeps the other three sections, still totaling 13 credits. Say what actually happened; do not narrate the expected outcome as though it happened if it did not.
 6. Click **Finish & save**. Show the actual run ID/result. Open its `trajectory.json`, `reward.json`, and `config.json` in the output folder shown by the app. Explain briefly: **“We check for ignoring the new restriction or losing an earlier requirement. These are draft changes; enrollment should remain unchanged.”**

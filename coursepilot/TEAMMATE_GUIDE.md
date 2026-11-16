@@ -4,6 +4,8 @@ Aditya and Hudson each need to curate and own their own case, not submit the unt
 
 ## Get started
 
+The app now uses [one website with case and run pages](WORKSPACE.md). Open the home page, choose your case, and continue or start a run. Do not start a separate server for each case. Case A has a pending-work page until its real configuration is implemented.
+
 First install Git, Python 3.10 or newer, and **either Codex CLI or Claude Code CLI**. You do not need both. Use the official [Codex setup](https://learn.chatgpt.com/docs/cli) or [Claude Code setup](https://code.claude.com/docs/en/setup) and sign in with your own account. Either coding assistant can also help you develop your case. The app uses your selected CLI for inference; a desktop app alone is not that command-line dependency. No Banner login, Docker, database, or third-party Python packages are needed.
 
 Run these commands in a terminal, from a folder where you keep projects:
