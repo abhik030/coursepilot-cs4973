@@ -189,9 +189,9 @@ def handler_for(app):
                 sid = parse_qs(urlparse(self.path).query).get('id',[''])[0]
                 view=app.get_session(sid)
                 self.reply(200,view) if view else self.reply(404,{'error':'Run not found.'})
-            elif path in ('/','/runs','/cases/a','/app.js','/style.css') or path in [p for k in app.cases for p in ('/cases/'+k,'/cases/'+k+'/new')] or (path.startswith('/runs/') and path[6:] in (set(app.records)|set(app.sessions))):
-                name = {'/app.js':'app.js','/style.css':'style.css'}.get(path,'index.html')
-                mime = {'index.html':'text/html; charset=utf-8','app.js':'text/javascript; charset=utf-8','style.css':'text/css; charset=utf-8'}[name]
+            elif path in ('/','/runs','/cases/a','/app.js','/style.css','/chat.css','/chat-format.js','/presentation.js') or path in [p for k in app.cases for p in ('/cases/'+k,'/cases/'+k+'/new')] or (path.startswith('/runs/') and path[6:] in (set(app.records)|set(app.sessions))):
+                name = {p:p[1:] for p in ('/app.js','/style.css','/chat.css','/chat-format.js','/presentation.js')}.get(path,'index.html')
+                mime = 'text/html; charset=utf-8' if name.endswith('.html') else 'text/css; charset=utf-8' if name.endswith('.css') else 'text/javascript; charset=utf-8'
                 self.reply(200,(HERE/'static'/name).read_bytes(),mime)
             else: self.reply(404,{'error':'Not found'})
 

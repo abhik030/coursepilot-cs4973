@@ -2,6 +2,7 @@
 const $ = id => document.getElementById(id);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 let token='', current=null, fixture=null, selectedView='overview', lastMessageCount=-1, lastSequence=-1, polling=false, lastRenderKey='';
+let lastMessageKey='';
 let caseKey='', caseList=[], runRows=[];
 const planName=id=>/^plan\s+/i.test(id)?id:`Plan ${id}`;
 const caseLabel=id=>caseList.find(c=>c.id===id)?.label||id;
@@ -11,7 +12,7 @@ function showPage(id){for(const key of ['hub','case-lobby','history','run-worksp
 function setCaseContext(id){const c=caseList.find(c=>c.id===id)||caseList.find(c=>c.key===caseKey);if(c){caseKey=c.key;$('active-case-name').textContent=c.label;$('active-case-name').href='/cases/'+c.key;}}
 const hh = n => `${Math.floor(n/60).toString().padStart(2,'0')}:${(n%60).toString().padStart(2,'0')}`;
 const meetingText = items => items.length ? items.map(([d,a,b])=>`${d} ${hh(a)}–${hh(b)}`).join(', ') : 'No weekly meeting';
-const title = id => fixture.sections[id] ? `${fixture.sections[id].title} · ${fixture.sections[id].course}` : id;
+const title = id => fixture.sections[id] ? CoursePilotPresentation.courseName(fixture.sections[id]) : id;
 function alertError(error){$('alert').textContent=error.message||String(error);$('alert').hidden=false;}
 async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json','X-CoursePilot-Token':token}:{},body:body?JSON.stringify(body):undefined});const data=await response.json();if(!response.ok)throw Error(data.error||'Request failed');return data;}
 function render(view){
@@ -35,7 +36,7 @@ function render(view){
  $('run-error-detail').textContent=view.error||'';
  $('recover-run').hidden=!view.can_recover;
  $('run-problem-text').textContent=view.can_recover?'The provider returned a corrected response, but this run stopped on an earlier formatting error. Recover the saved revision without another model call.':'The provider stopped before finishing this turn. Your messages and outputs are saved. This run is not still loading.';
- $('run-notice').hidden=!view.notice;$('run-notice').textContent=view.notice||'';
+ $('run-notice').hidden=!view.notice;$('run-notice').textContent=view.finalized&&view.notice?.startsWith('Recovered the saved, corrected model response')?'This saved run was recovered from the corrected model response without another model call. The draft revision is complete; original error records are retained.':view.notice||'';
  $('receipt-status').textContent=`${state.permissions.filter(p=>!p.used&&!p.revoked).length} active approval(s)`;
  renderState(state);renderTasks(view.tasks,view.stage,live&&human);renderMessages(view.chat);
  $('run-summary').hidden=!(view.finalized||view.read_only);
@@ -45,7 +46,8 @@ function render(view){
 function renderState(state){
  $('summary').innerHTML=`<div class="stat"><strong>${state.registered_credits}</strong><span>Registered credits</span></div><div class="stat"><strong>${Object.keys(state.saved_plans).length}</strong><span>Saved plans · separate from enrollment</span></div><div class="stat"><strong>${state.registration_open?'Open':'Closed'}</strong><span>Registration eligibility</span></div>`;
  $('credit-range').textContent=`${state.student.min_credits}–${state.student.max_credits} credits`;
- $('requirements').innerHTML=[['Required courses',state.student.required_courses.join(', ')+'; include required linked sections.'],['Keep protected courses',state.student.protected_sections.map(title).join('; ')],['Work commitments',meetingText(state.student.work)],['Soft preferences',state.student.soft_preferences.join('; ')]].map(([a,b])=>`<div class="rule"><span class="check">·</span><div>${escape(a)}<small>${escape(b)}</small></div></div>`).join('');
+ const required=state.student.required_courses.map(code=>CoursePilotPresentation.courseName(Object.values(state.catalog).find(s=>s.course===code)||{course:code}));
+ $('requirements').innerHTML=[['Required courses',required.join(', ')+'; include the required lab.'],['Keep these courses',state.student.protected_sections.map(title).join('; ')],['Unavailable times',meetingText(state.student.work)],['Preferences',state.student.soft_preferences.join('; ')]].map(([a,b])=>`<div class="rule"><span class="check">·</span><div>${escape(a)}<small>${escape(b)}</small></div></div>`).join('');
  const selected=$('calendar-source').value;
  $('calendar-source').innerHTML='<option value="enrollment">Registered courses</option>'+Object.keys(state.drafts).map(id=>`<option value="draft:${escape(id)}">Draft ${escape(id)}</option>`).join('')+Object.keys(state.saved_plans).map(id=>`<option value="saved:${escape(id)}">Saved ${escape(id)}</option>`).join('');
  if([...$('calendar-source').options].some(o=>o.value===selected))$('calendar-source').value=selected;
@@ -69,14 +71,14 @@ function renderCalendar(){
  const days=['Mon','Tue','Wed','Thu','Fri'],start=480,scale=40/60;
  let html='<div class="time-labels">'+Array.from({length:11},(_,i)=>`<span style-placeholder="${i}">${i+8}:00</span>`).join('')+'</div>';
  // Position values are set through the DOM, rather than inline HTML styles.
- html+=days.map(day=>`<div class="day"><div class="day-label">${day}</div>${sections.flatMap(id=>fixture.sections[id].meetings.filter(m=>m[0]===day).map(([d,a,b])=>`<div class="meeting" data-start="${a}" data-end="${b}"><strong>${escape(fixture.sections[id].course)}</strong>${hh(a)}–${hh(b)}</div>`)).join('')}${fixture.student.work.filter(m=>m[0]===day).map(([d,a,b])=>`<div class="meeting work" data-start="${a}" data-end="${b}"><strong>Work</strong>${hh(a)}–${hh(b)}</div>`).join('')}</div>`).join('');
+ html+=days.map(day=>`<div class="day"><div class="day-label">${day}</div>${sections.flatMap(id=>fixture.sections[id].meetings.filter(m=>m[0]===day).map(([d,a,b])=>`<div class="meeting" title="${escape(title(id)+' · CRN '+id)}" data-start="${a}" data-end="${b}"><strong>${escape(title(id))}</strong>${hh(a)}–${hh(b)}</div>`)).join('')}${fixture.student.work.filter(m=>m[0]===day).map(([d,a,b])=>`<div class="meeting work" data-start="${a}" data-end="${b}"><strong>Unavailable</strong>${hh(a)}–${hh(b)}</div>`).join('')}</div>`).join('');
  $('calendar').innerHTML=html;
  $('calendar').querySelectorAll('.time-labels span').forEach((e,i)=>e.style.top=`${i*40-6}px`);
  $('calendar').querySelectorAll('.meeting').forEach(e=>{e.style.top=`${(Number(e.dataset.start)-start)*scale}px`;e.style.height=`${Math.max(18,(Number(e.dataset.end)-Number(e.dataset.start))*scale)}px`;});
 }
 function renderCourses(){
  if(!fixture)return;const query=$('course-filter').value.toLowerCase();
- $('courses').innerHTML=Object.entries(fixture.sections).filter(([id,s])=>`${id} ${s.course} ${s.title}`.toLowerCase().includes(query)).map(([id,s])=>`<tr><td><strong>${escape(s.title)}</strong><small>${escape(s.course)} · ${escape(s.section)} · CRN ${escape(id)}</small></td><td>${s.credits}</td><td>${escape(meetingText(s.meetings))}</td><td>${s.seats_available}</td><td>${s.waitlist_capacity?`${s.waitlist_actual} / ${s.waitlist_capacity}`:'Not offered'}</td><td><button data-detail="${escape(id)}">Details</button></td></tr>`).join('')||'<tr><td colspan="6">No matching sections.</td></tr>';
+ $('courses').innerHTML=Object.entries(fixture.sections).filter(([id,s])=>`${id} ${s.course} ${s.title}`.toLowerCase().includes(query)).map(([id,s])=>`<tr><td><strong>${escape(s.title)}</strong><small>${CoursePilotPresentation.courseCode(s)?escape(CoursePilotPresentation.courseCode(s))+' · ':''}Section ${escape(s.section)} · CRN ${escape(id)}</small></td><td>${s.credits}</td><td>${escape(meetingText(s.meetings))}</td><td>${s.seats_available}</td><td>${s.waitlist_capacity?`${s.waitlist_actual} / ${s.waitlist_capacity}`:'Not offered'}</td><td><button data-detail="${escape(id)}">Details</button></td></tr>`).join('')||'<tr><td colspan="6">No matching sections.</td></tr>';
 }
 function renderTasks(tasks,stage,enabled){
  const waiting=current?.status==='awaiting_student';const next=waiting?stage+1:stage;
@@ -85,8 +87,13 @@ function renderTasks(tasks,stage,enabled){
  $('task-list').innerHTML=(tasks||[]).map((task,i)=>`<li><button ${enabled&&!current?.busy&&i===next?'':'disabled'} data-task="${i}" class="${i===next?'current':''}">${i<next?'✓ ':''}${escape(task.title)}</button></li>`).join('');
 }
 function renderMessages(messages){
- if(messages.length===lastMessageCount)return;const nearBottom=$('messages').scrollHeight-$('messages').scrollTop-$('messages').clientHeight<100;lastMessageCount=messages.length;
- $('messages').innerHTML=messages.length?messages.map(m=>`<div class="message ${m.role==='user'?'user':'assistant'}"><span class="who">${m.role==='user'?'YOU':'ASSISTANT'}</span><div class="bubble">${escape(m.message)}${(m.reports||[]).map(r=>`<div class="report"><strong>${escape(planName(r.plan_id))}</strong> · ${escape(r.credits)} credits<br>${r.feasible?'Reported feasible':'Reported infeasible'} · ${r.sections.map(escape).join(', ')}</div>`).join('')}</div></div>`).join(''):'<div class="welcome"><h2>What would you<br>like to explore?</h2><p>Select the first task in the guide to prepare your opening message, or type your own.</p></div>';
+ const key=JSON.stringify([current?.id,messages.length,current?.status,current?.finalized,current?.metrics?.task_completed,Object.values(current?.state?.drafts||{}).map(p=>[p.id,p.version])]);
+ if(key===lastMessageKey)return;lastMessageKey=key;
+ const nearBottom=$('messages').scrollHeight-$('messages').scrollTop-$('messages').clientHeight<100;lastMessageCount=messages.length;
+ let html=messages.length?CoursePilotChat.renderMessages(messages,fixture.sections):'<div class="welcome"><h2>What would you<br>like to explore?</h2><p>Begin the run, then send the first task instruction.</p></div>';
+ const confirmed=CoursePilotPresentation.confirmation(current,fixture.initial_enrollment);
+ if(confirmed){html+=`<section class="cp-confirmation" aria-label="Verified draft result"><span class="cp-turn-label">${escape(confirmed.label)}</span><h3 class="cp-confirmation-title">${escape(confirmed.title)}</h3><p class="cp-confirmation-description">${escape(confirmed.description)}</p><ul class="cp-confirmation-items">${confirmed.items.map(item=>`<li><strong>${escape(item.label)}:</strong> ${escape(item.text)}</li>`).join('')}</ul><p class="cp-confirmation-footer">${escape(confirmed.footer)}</p></section>`;}
+ $('messages').innerHTML=html;
  if(nearBottom||messages.length<3)$('messages').scrollTop=$('messages').scrollHeight;
 }
 function setView(name){selectedView=name;document.querySelectorAll('.view').forEach(e=>e.hidden=e.id!==name+'-view');document.querySelectorAll('.nav').forEach(e=>e.classList.toggle('active',e.dataset.view===name));const titles={overview:['Your next term, in view.','Explore your options. Keep control of every change.'],courses:['Find the right section.','Check meetings, prerequisites, seats, and waitlist availability.'],plans:['Keep your options clear.','Compare drafts and review what you have chosen to save.'],enrollment:['Know what is registered.','Pending changes and waitlists remain separate from enrollment.']};$('page-heading').textContent=titles[name][0];$('page-description').textContent=titles[name][1];}
@@ -107,7 +114,7 @@ document.addEventListener('click',async e=>{
  const task=e.target.closest('[data-task]');if(task){const index=Number(task.dataset.task);const t=current.tasks[index];await send(t.message,t.intent,t.target,index);return;}
  const action=e.target.closest('[data-intent]');if(action&&!action.disabled){const intent=action.dataset.intent,id=action.dataset.target;await send(intent==='save'?`Please save ${planName(id)}.`:intent==='join_waitlist'?`Please join the waitlist for CRN ${id}.`:`Please register saved ${planName(id)}.`,intent,id);return;}
  const cal=e.target.closest('[data-calendar]');if(cal){$('calendar-source').value=cal.dataset.calendar;renderCalendar();setView('overview');return;}
- const detail=e.target.closest('[data-detail]');if(detail){const id=detail.dataset.detail,s=fixture.sections[id];$('detail-content').innerHTML=`<p class="eyebrow">FICTIONAL SECTION · CRN ${escape(id)}</p><h2>${escape(s.title)}</h2><p>${escape(s.course)} · Section ${escape(s.section)} · ${s.credits} credits</p><p><strong>Meetings</strong><br>${escape(meetingText(s.meetings))}</p><p><strong>Prerequisites</strong><br>${s.prerequisite_groups.map(group=>group.map(r=>`${escape(r.course)} (${escape(r.minimum_grade)} or better)`).join(' OR ')).join(' AND ')||'None in this fixture'}</p><p><strong>Required linked sections</strong><br>${s.requires_sections.map(escape).join(', ')||'None'}</p><p><strong>Availability</strong><br>${s.seats_available} enrollment seats; waitlist ${s.waitlist_actual} of ${s.waitlist_capacity}. A waitlist place is not an offered registration seat.</p>`;$('details').showModal();}
+ const detail=e.target.closest('[data-detail]');if(detail){const id=detail.dataset.detail,s=fixture.sections[id];$('detail-content').innerHTML=`<p class="eyebrow">FICTIONAL SECTION · CRN ${escape(id)}</p><h2>${escape(s.title)}</h2><p>${CoursePilotPresentation.courseCode(s)?escape(CoursePilotPresentation.courseCode(s))+' · ':''}Section ${escape(s.section)} · ${s.credits} credits</p><p><strong>Meetings</strong><br>${escape(meetingText(s.meetings))}</p><p><strong>Prerequisites</strong><br>${s.prerequisite_groups.map(group=>group.map(r=>`${escape(r.course)} (${escape(r.minimum_grade)} or better)`).join(' OR ')).join(' AND ')||'None in this fixture'}</p><p><strong>Required linked sections</strong><br>${s.requires_sections.map(escape).join(', ')||'None'}</p><p><strong>Availability</strong><br>${s.seats_available} enrollment seats; waitlist ${s.waitlist_actual} of ${s.waitlist_capacity}. A waitlist place is not an offered registration seat.</p>`;$('details').showModal();}
 });
 async function poll(){if(!current||polling||current.finalized||current.read_only)return;polling=true;const id=current.id;try{const data=await api('/api/session?id='+encodeURIComponent(id));if(current?.id===id)render(data);}catch(e){alertError(e);}finally{polling=false;}}
 async function boot(){try{

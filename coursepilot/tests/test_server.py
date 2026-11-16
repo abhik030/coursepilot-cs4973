@@ -49,7 +49,7 @@ class WorkspaceRoutingTests(unittest.TestCase):
 
     def test_direct_routes_and_case_bootstrap_work_on_one_server(self):
         b=self.new_run('b');base=self.serve()
-        for path in ['/','/cases/a','/cases/b','/cases/b/new','/cases/c','/runs','/runs/'+b['id']]:
+        for path in ['/','/cases/a','/cases/b','/cases/b/new','/cases/c','/runs','/runs/'+b['id'],'/chat.css','/chat-format.js','/presentation.js']:
             with urlopen(base+path) as response:self.assertEqual(200,response.status)
         with urlopen(base+'/api/bootstrap?case=b') as response:data=json.load(response)
         self.assertEqual(2,len(data['case']['steps']))

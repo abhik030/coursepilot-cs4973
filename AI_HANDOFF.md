@@ -2,9 +2,11 @@
 
 The shared app supports Codex CLI and Claude Code for inference. Teammates can use either coding assistant to work on the repository. Read [the teammate guide](coursepilot/TEAMMATE_GUIDE.md) for dependencies, CLI sign-in, model/provider selection, and fork/pull-request workflow. Nothing registers real university courses.
 
-Website layout: [one server, separate case/run pages](coursepilot/WORKSPACE.md). Home shows A/B/C; A remains a pending-work page. Each run has a separate URL and conversation. The user's existing Case B conversation is bridged from the older loopback server during migration; do not terminate that older process until its active run is saved. No model calls are needed to inspect the hub, run history, or saved snapshots.
+Website layout: [one server, separate case/run pages](coursepilot/WORKSPACE.md). Home shows A/B/C; A remains a pending-work page. Each run has a separate URL and conversation. After the laptop restart, start the normal server on port 8765; the old migration bridge is no longer needed. Case B browser run `20261116T221256-8c5ff075` was finished and saved before the restart. Earlier runs open as read-only snapshots; use a new run for a new recording. No model calls are needed to inspect the hub, run history, or saved snapshots.
 
 Runtime 2.2.1 fixes rejection of a valid StructuredOutput response after the CLI explicitly rejected an unavailable course-tool name. Native tools remain disabled. An unfinished human Case B run can recover its saved draft through `/api/recover` without another inference; `before-recovery/`, the original error events, and a continuation record preserve what happened. Finalized baseline evidence cannot be recovered or rewritten. Do not rerun the five baseline attempts to hide transport errors.
+
+Chat display now supports formatted prose, grouped assistant updates, and plan cards. Course names replace internal KEEP_A/KEEP_B labels on screen. Case B shows a separate, state-verified completion card; this does not alter the model transcript or recorded evidence. No additional model trials were collected for this UI refinement.
 
 ## Current artifacts
 
