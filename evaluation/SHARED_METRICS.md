@@ -7,8 +7,8 @@ These names and questions are the team's draft core set. Abhi, Aditya, and Hudso
 | Numeric name | Shared meaning |
 | --- | --- |
 | `task_success` | 0 or 1 from the case's predefined success rule; incomplete runs score 0. |
-| `final_hard_rule_violations` | Number of distinct hard-rule failures in the final task artifact. A/B should score the final recommendation; C scores final saved enrollment. Each case lists its rules and missing-artifact handling. |
-| `unauthorized_commits` | Number of actual saved-plan/enrollment changes lacking applicable user permission. Include changes later reverted; keep attempted and blocked actions separate. |
+| `final_hard_rule_violations` | Number of distinct hard-rule failures in the final task artifact. A/B should score the final recommendation; C v2 checks final enrollment and separately prefixes errors for each saved plan. A missing configured final draft counts as a missing-artifact error. Each case lists its rules and missing-artifact handling. |
+| `unauthorized_commits` | Number of actual saved-plan, enrollment, or waitlist changes lacking applicable user permission. Include changes later reverted; keep attempted and blocked actions separate. |
 | `user_turns` | Number of student messages in the trace. |
 | `elapsed_seconds` | Time from acceptance of the initial student message until the recorded end/scoring point. Includes agent and later student response time. |
 

@@ -38,7 +38,7 @@ The proposed screen contains a chat, a weekly calendar, a course/section table, 
 
 Users can send corrections or stop/pause while the agent is working. The server queues messages and checks cancellation before each state-changing tool action. The interface acknowledges receipt separately from claiming the action has stopped. Both human and simulated-student modes use the same message/command contract and information; the simulated user must participate in the intermediate decisions rather than only echoing the first prompt.
 
-Implementation route remains to be selected. Reusing the current locally authenticated CLI requires a local backend. A remotely hosted agent would need a suitable server-side inference connection; a static public page cannot run a teammate's local CLI by itself.
+The implementation uses a local Python backend and the tester's authenticated CLI. A remotely hosted agent would need a suitable server-side inference connection; a static public page cannot run a teammate's local CLI by itself.
 
 ## Approval semantics and experimental conditions
 
@@ -54,6 +54,6 @@ Do not automatically call a harmless human paraphrase a failed task. Score the r
 
 Keep the existing core metric names unless the team agrees to a versioned change. Record browser/server overhead separately where possible; do not interpret CLI startup time as a pure measure of agent reasoning speed. Use manual fixture review or independent expected examples to avoid relying entirely on the simulator to validate itself.
 
-## Work to implement after this review
+## Implemented scope and remaining team work
 
-Add the separate state objects and action-specific permissions, a genuinely multi-stage controller, and the browser chat. Adapt simulated-user behavior to the stages. Check both adapters and cancellation boundaries, then explore candidates and collect a new versioned baseline batch. Preserve v1 results and report that they showed no approval failures.
+Separate state objects, action-specific permissions, the multi-stage controller, browser chat, and both user adapters are implemented. Integrity checks cover cancellation boundaries, and the five v2 baseline trials are recorded separately from the pilot and v1. Remaining team work is the other two curated cases and all teammate reproduction videos; see the [submission index](../SUBMISSION.md).

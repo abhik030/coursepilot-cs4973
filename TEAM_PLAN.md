@@ -27,6 +27,8 @@ These assignments still need teammate confirmation. Case C v2 and the reusable b
 
 ## Abhi's remaining human work
 
+Case C's written handoff is complete, including setup, both modes, target breakdown, rejected alternatives, actual baseline results, shared participant probes, and the proposed-agent comparison path. The [submission index](SUBMISSION.md) and [reproduction guide](coursepilot/REPRODUCTION.md) are prepared. On November 16, Abhi reported that Aditya and Hudson had not started their cases; neither their work nor the required videos is claimed as complete.
+
 - Ask Aditya to reproduce and record browser Case C using `coursepilot/README.md`, without undocumented coaching. The five baseline trials and results are in `coursepilot/runs/` and `coursepilot/RESULTS.md`.
 - Reproduce and record Hudson's Case B once it is ready.
 - Confirm the shared metric definitions, case ownership, and final submitter with the team.
