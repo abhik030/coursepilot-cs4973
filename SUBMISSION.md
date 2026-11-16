@@ -2,6 +2,8 @@
 
 CS4973 · Abhi Karthik, Aditya Vij, Hudson Kass
 
+Submission agreement: **the last teammate to finish submits** this single team index.
+
 **Team submission in progress.** Case C's implementation, document, and five baseline runs are available. Cases A/B and all three teammate reproduction videos are pending. This page is the single submission entry point once those items are added; the templates are not completed cases.
 
 ## Case index
@@ -28,7 +30,7 @@ The baseline completed all five multi-stage trials successfully, with five stude
 
 ## Items required before submission
 
-1. Confirm each actual creator, independent tester, and final submitter. Proposed assignments above are not confirmations.
+1. Confirm each actual creator and independent tester. Proposed case assignments above are not confirmations. Record who actually finishes last and submits, following the team agreement.
 2. Add A/B's finished documents, fixed fixtures, both-mode protocols, curated/rejected-case notes, and five baseline output folders per case. Report actual breakdown counts, including zero.
 3. Add all three accessible reproduction videos, with actual recorder names. A case's recorder must be a teammate other than its creator and must use the written instructions.
 4. Confirm that all three cases use the shared core metrics and participant questions. Preserve each case's actual model/settings and any extra metrics.

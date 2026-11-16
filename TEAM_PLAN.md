@@ -6,6 +6,8 @@ Repository: https://github.com/abhik030/coursepilot-cs4973
 
 Editable handoff: https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit
 
+Submission agreement: the last teammate to finish submits the single team index. [Case B handoff instructions](coursepilot/HUDSON_CASE_B.md) are available for Hudson and Abhi.
+
 ## Proposed owners
 
 | Person | Own case | Reproduction video |
@@ -31,7 +33,7 @@ Case C's written handoff is complete, including setup, both modes, target breakd
 
 - Ask Aditya to reproduce and record browser Case C using `coursepilot/README.md`, without undocumented coaching. The five baseline trials and results are in `coursepilot/runs/` and `coursepilot/RESULTS.md`.
 - Reproduce and record Hudson's Case B once it is ready.
-- Confirm the shared metric definitions, case ownership, and final submitter with the team.
+- Confirm the shared metric definitions and case ownership; the last teammate to finish submits.
 - Add all three finished cases and videos to the final index and check grader access before submission.
 
 The current baseline results do not demonstrate an approval failure. Preserve that result honestly; no minimum breakdown rate is required. A longer interaction or different event sequence would be a separately versioned case requiring its own trials.

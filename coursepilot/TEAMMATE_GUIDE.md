@@ -24,6 +24,8 @@ Successful setup means 27 integrity tests pass and the assistant answers the fir
 
 ## Your assignment
 
+Hudson and Abhi can use [the concrete Case B handoff](HUDSON_CASE_B.md), which spells out a correction scenario, setup, final-run commands, and the separate reproduction recording.
+
 | Person | Create | Starting template | Final case filename |
 | --- | --- | --- | --- |
 | Aditya | Case A: preserve required courses while optimizing preferences | `planning_template.json` | `coursepilot/cases/aditya_a.json` |
