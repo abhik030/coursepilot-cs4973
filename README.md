@@ -9,6 +9,8 @@ Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibi
 - [Case C setup, protocols, scoring, and limitations](evaluation/CASE_C.md)
 - [Recorded baseline results](evaluation/RESULTS.md)
 - [Shared proposed metrics and participant questions](evaluation/SHARED_METRICS.md)
+- [Observed Banner workflows and inspection limits](evaluation/BANNER_OBSERVATIONS.md)
+- [Draft design for a more complex browser-based case](evaluation/V2_DESIGN.md)
 
 ## Quick start
 
