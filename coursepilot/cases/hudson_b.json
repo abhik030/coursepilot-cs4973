@@ -1,0 +1,26 @@
+{
+  "id": "B-correction-preservation-v1",
+  "title": "Revise a draft after a new restriction without forgetting earlier rules",
+  "creator": "Unconfirmed",
+  "proposed_owner": "Hudson Kass",
+  "status": "Runnable team draft; individual creator contribution and independent recording remain to be confirmed.",
+  "fixture": "../fixtures/hudson_b.json",
+  "family": "correction",
+  "reference_initial_sections": ["90001", "90002", "90004", "90010"],
+  "steps": [
+    {
+      "title": "Check the initial draft",
+      "intent": "chat",
+      "target": "",
+      "message": "Draft Plan A with CRNs 90001, 90002, 90004, and 90010. Check my required capstone and linked lab, protected courses, prerequisites, credit limits, and work hours. For this task choose between capstone 90004 and alternate capstone 90006, keeping the other three sections. Explain whether the initial schedule is feasible. Do not save or register anything."
+    },
+    {
+      "title": "Add Monday restriction and revise",
+      "intent": "chat",
+      "target": "",
+      "message": "I also cannot attend Monday classes before 10:00. Keep my existing Tuesday and Thursday work restrictions and all the original requirements. Revise draft Plan A using the alternative capstone if needed, and explain what changed. Do not save or register anything.",
+      "profile_update": {"work": [["Tue",720,1020],["Thu",720,1020],["Mon",480,600]]}
+    }
+  ],
+  "success": {"final_draft": "A", "expected_sections": ["90001", "90002", "90006", "90010"]}
+}

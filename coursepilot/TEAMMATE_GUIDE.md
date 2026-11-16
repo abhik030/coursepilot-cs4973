@@ -20,16 +20,16 @@ Before launching, check the CLI you chose: `codex --version` and `codex login st
 
 If you already cloned it, run `git pull --ff-only` first. On systems where Python is named `python3` or `py`, use that command in place of `python` consistently. Keep the server terminal open and visit **http://127.0.0.1:8765 on your own computer**. Select human mode, baseline, and **Codex CLI or Claude Code**. If only one CLI is installed, the app selects it automatically. The default model is `gpt-6.1-sol` for Codex and `sonnet` for Claude; you can edit the model field. Both the course agent and simulated student use that selection. Begin a fresh session and follow Case C's task-guide buttons to understand the workflow. Stop the server with Ctrl+C when finished. If the port is occupied, add `--port 8766` and visit that port instead.
 
-Successful setup means 27 integrity tests pass and the assistant answers the first comparison request in the browser. Tests do not need model access; an actual agent answer does. If setup fails, send Abhi the command and error text, your OS, and Python/CLI versions. Do not send sign-in credentials. Avoid editing the recorded evidence folders.
+Successful setup means all integrity tests pass and the assistant answers the first comparison request in the browser. Tests do not need model access; an actual agent answer does. If setup fails, send Abhi the command and error text, your OS, and Python/CLI versions. Do not send sign-in credentials. Avoid editing the recorded evidence folders.
 
 ## Your assignment
 
-Hudson and Abhi can use [the concrete Case B handoff](HUDSON_CASE_B.md), which spells out a correction scenario, setup, final-run commands, and the separate reproduction recording.
+Case B is now a runnable team draft: use [its case document](CASE_B.md). Hudson's and Abhi's AI helpers should start with [AI_HANDOFF.md](../AI_HANDOFF.md), which identifies existing artifacts and remaining work. The earlier [Case B brief](HUDSON_CASE_B.md) is design history, not a reason to rebuild the implemented case.
 
 | Person | Create | Starting template | Final case filename |
 | --- | --- | --- | --- |
 | Aditya | Case A: preserve required courses while optimizing preferences | `planning_template.json` | `coursepilot/cases/aditya_a.json` |
-| Hudson | Case B: incorporate a correction without forgetting earlier hard rules | `correction_template.json` | `coursepilot/cases/hudson_b.json` |
+| Hudson | Case B: review the implemented correction case and record actual contribution | Already implemented: read `CASE_B.md` | `coursepilot/cases/hudson_b.json` |
 
 For A, include a tempting preference-satisfying option that misses a hard requirement and at least one valid solution. For B, define a restriction introduced after the first draft, preserve the original rules, and independently verify a feasible revised schedule. These are the proposed assignments; confirm ownership with Abhi. You reuse the shared app and curate your own task, fixture, protocol, and outcomes.
 
@@ -40,7 +40,7 @@ Copy-Item coursepilot/cases/planning_template.json coursepilot/cases/aditya_a.js
 Copy-Item coursepilot/fixtures/approval_v2.json coursepilot/fixtures/aditya_a.json
 ```
 
-Hudson substitutes the correction template and `hudson_b.json` for both destination filenames. In your case JSON, set `fixture` to `../fixtures/aditya_a.json` or `../fixtures/hudson_b.json`, replace the template ID/name/status, then curate and check the actual scenario. A renamed template alone is not a finished case.
+The copy example is for Aditya. Hudson should use the implemented Case B files rather than copying over them. In a new case JSON, set `fixture` to the actual fixture path, replace the template ID/name/status, then curate and check the scenario. A renamed template alone is not a finished case.
 
 ## Define your case
 

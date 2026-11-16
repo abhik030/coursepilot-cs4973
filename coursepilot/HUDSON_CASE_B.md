@@ -1,5 +1,7 @@
 # Case B handoff for Hudson and Abhi
 
+**Superseded implementation brief.** The scenario has now been packaged as a runnable team draft. Use [CASE_B.md](CASE_B.md) and [AI_HANDOFF.md](../AI_HANDOFF.md) to run/review what exists; do not repeat the template-copy steps below over the implemented files. Actual creator contribution and the independent video remain unconfirmed.
+
 Proposed owner: Hudson Kass. Independent recorder: Abhi Karthik. This is a concrete starting brief, not a completed case or a claim that Hudson has already created/tested it. Hudson should review and adapt the scenario, check its valid outcomes, and finish the case document before collecting his five trials.
 
 ## The scenario

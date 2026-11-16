@@ -2,9 +2,11 @@
 
 CoursePilot studies student control over course planning and registration. The browser application now supports a multi-stage task: **compare A/B, save A, explore B without changing it, and register the original A only after the student's instruction**. All academic records and registration actions are fictional.
 
-Team: Abhi Karthik, Aditya Vij, Hudson Kass. Cases A and B remain the responsibility of their proposed owners; they are not implemented here yet.
+Team: Abhi Karthik, Aditya Vij, Hudson Kass. Case A remains with its proposed owner. Case B is a runnable team draft; actual creator contribution and teammate recording are unconfirmed.
 
-**[Team submission index](SUBMISSION.md)** — Case C evidence is ready; Cases A/B and teammate videos are still pending.
+**[Team submission index](SUBMISSION.md)** — Case C evidence is ready; Case B trials are being collected; Case A and teammate videos remain pending.
+
+**For another coding assistant:** start with [AI_HANDOFF.md](AI_HANDOFF.md). Case B is now a [runnable correction case](coursepilot/CASE_B.md); its evidence status and unconfirmed creator/recording fields are documented there.
 
 - [Team handoff and responsibilities](TEAM_PLAN.md)
 - [Shared editable team document](https://docs.google.com/document/d/1I3dnPWBtAP_rZCBOhyWOOJOh13H8v9YgnUiKL6i-Z-A/edit)
