@@ -121,6 +121,7 @@ class Session:
                     'busy': self.busy, 'finalized': self.frozen, 'error': self.error, 'stage': self.stage,
                     'case_id':self.case['id'],'case_title':self.case['title'],
                     'inference':self.provider.describe(),
+                    'notice':getattr(self,'continuation',{}).get('note',''),
                     'tasks': self.steps, 'chat': deepcopy(self.chat), 'state': self.env.snapshot(),
                     'metrics': self.metrics(), 'output_folder': str(self.output),
                     'events': [{'sequence':e['sequence'],'kind':e['kind'],'actor':e['actor'],'timestamp':e['timestamp']}
@@ -328,6 +329,7 @@ class Session:
                   'fixture_sha256':hashlib.sha256(json.dumps(self.fixture,sort_keys=True).encode()).hexdigest(),
                   'settings':{'decisions_per_student_turn':24,'student_stages':len(self.steps),'external_systems':{'model_inference':'real','academic_records_and_registration':'mocked'}},
                   'evidence_kind':'llm_evaluation' if isinstance(self.provider,PROVIDER_TYPES) else 'scripted_integrity_check'}
+        if hasattr(self,'continuation'):config['continuation']=self.continuation
         write_json(self.output/'config.json',config)
         write_json(self.output/'reward.json',self.metrics())
         write_json(self.output/'trajectory.json',{'schema_version':2,'run_id':self.id,'events':self.events})

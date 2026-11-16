@@ -9,3 +9,5 @@ Version 2.1 adds Claude Code alongside Codex and changes the provider routing an
 After the five Case B attempts, version 2.1.1 corrected an artifact lookup that treated `Plan A` as different from `A`. The pre-audit engine, version file, analysis helper, and integrity test bytes are preserved by hash. Historical rewards and model traces were not rewritten; the separate Case B audit records original and audited metrics plus the audit source fingerprints.
 
 Version 2.2 adds the shared case hub, separate run URLs/history, and an optional loopback bridge for the user's existing conversation. Pre-change server, interface, style, and version bytes are archived here. Historical inference prompts, model responses, and scoring records are unchanged.
+
+Version 2.2.1 fixes an overly strict Claude adapter that stopped before reading the CLI's corrected StructuredOutput response. Previous source bytes are archived. One unfinished human run was continued from its already-saved response, with no new inference; its pre-recovery files and original error events are retained. The five finalized Case B baseline attempts remain unchanged.

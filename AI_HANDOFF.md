@@ -4,6 +4,8 @@ The shared app supports Codex CLI and Claude Code for inference. Teammates can u
 
 Website layout: [one server, separate case/run pages](coursepilot/WORKSPACE.md). Home shows A/B/C; A remains a pending-work page. Each run has a separate URL and conversation. The user's existing Case B conversation is bridged from the older loopback server during migration; do not terminate that older process until its active run is saved. No model calls are needed to inspect the hub, run history, or saved snapshots.
 
+Runtime 2.2.1 fixes rejection of a valid StructuredOutput response after the CLI explicitly rejected an unavailable course-tool name. Native tools remain disabled. An unfinished human Case B run can recover its saved draft through `/api/recover` without another inference; `before-recovery/`, the original error events, and a continuation record preserve what happened. Finalized baseline evidence cannot be recovered or rewritten. Do not rerun the five baseline attempts to hide transport errors.
+
 ## Current artifacts
 
 | Item | Where to continue | Status |

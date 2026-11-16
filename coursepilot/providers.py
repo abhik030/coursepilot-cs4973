@@ -30,6 +30,47 @@ def make_provider(provider, output_dir, model=None, effort='medium', timeout=120
     return cls(output_dir, model, effort, timeout)
 
 
+def parse_claude_output(stdout,schema,stem):
+    """Accept schema output after a proven-unavailable course-call correction."""
+    events=[];attempts=[];models=set()
+    course_tools=set(schema.get('properties',{}).get('tool',{}).get('enum',[]))-{'none'}
+    for line in stdout.splitlines():
+        if not line.strip():continue
+        try:event=json.loads(line)
+        except json.JSONDecodeError as exc:raise ProviderError(f'Unexpected non-JSON Claude output; preserved at {stem}') from exc
+        if not isinstance(event,dict):raise ProviderError(f'Invalid Claude event; inspect {stem}')
+        events.append(event)
+        message=event.get('message') or {}
+        model=message.get('model') or (event.get('model') if event.get('subtype')=='init' else None)
+        if model and model!='<synthetic>':models.add(model)
+        for block in message.get('content',[]):
+            if block.get('type') in ('tool_use','server_tool_use') and block.get('name')!='StructuredOutput':
+                if block.get('type')=='tool_use' and block.get('name') in course_tools:
+                    attempts.append(block)
+                else:raise ProviderError(f'Native Claude tool {block.get("name")} was used; raw events preserved at {stem}.')
+        if event.get('type')=='error':raise ProviderError(f'Claude inference error; inspect {stem}')
+    endings=[e for e in events if e.get('type')=='result']
+    if len(endings)!=1 or endings[0].get('is_error') or endings[0].get('subtype')!='success':
+        raise ProviderError(f'Claude did not complete successfully; inspect {stem}')
+    final=endings[0];value=final.get('structured_output')
+    if not isinstance(value,dict):raise ProviderError(f'Claude returned no structured response; inspect {stem}')
+    if final.get('permission_denials'):raise ProviderError(f'Claude attempted a denied native tool; inspect {stem}')
+    for attempt in attempts:
+        init=next((e for e in events if e.get('type')=='system' and e.get('subtype')=='init'),{})
+        unavailable=('tools' in init and set(init['tools'])<={'StructuredOutput'} and init.get('mcp_servers')==[])
+        rejected=bool(attempt.get('id')) and any(block.get('type')=='tool_result' and block.get('tool_use_id')==attempt.get('id')
+                     and block.get('is_error') is True and isinstance(block.get('content'),str)
+                     and f'No such tool available: {attempt["name"]}' in block['content']
+                     for e in events if e.get('type')=='user' for block in (e.get('message') or {}).get('content',[]))
+        if not unavailable or not rejected:
+            raise ProviderError(f'Native Claude tool {attempt["name"]} was not proven unavailable; inspect {stem}')
+    usage=final.get('usage') or {}
+    normalized={'input_tokens':sum(usage.get(k,0) or 0 for k in ('input_tokens','cache_creation_input_tokens','cache_read_input_tokens')),
+                'output_tokens':usage.get('output_tokens',0) or 0}
+    return value,{'events':events,'usage':normalized,'raw_usage':usage,
+                  'unavailable_course_tool_attempts':[{'name':a['name'],'id':a.get('id')} for a in attempts]},models
+
+
 class ClaudeProvider:
     """Fresh Claude Code print calls, with schema output and no native course tools."""
 
@@ -56,7 +97,7 @@ class ClaudeProvider:
                 'transport': 'fresh CLI print inference with explicit full conversation',
                 'temperature': 'not set; provider default', 'user_config_loaded': False,
                 'managed_policy': 'Organization-managed policy may still apply.',
-                'native_tools': 'Disabled; only the CLI StructuredOutput schema tool is accepted.'}
+                'native_tools': 'Disabled. Proven-unavailable course-tool attempts may self-correct to StructuredOutput; raw attempts remain recorded.'}
 
     def complete(self, role, prompt, schema_path):
         self.calls[role] += 1
@@ -87,38 +128,10 @@ class ClaudeProvider:
             if 'authentication_failed' in stdout or 'OAuth session expired' in stdout:
                 raise ProviderError("Claude authentication failed. Run 'claude auth login', complete sign-in, then start a new session. Raw failure output was saved.")
             raise ProviderError(f'Claude exited {result.returncode}; inspect {stem.with_suffix(".events.jsonl")} and stderr. Check authentication, model access, and CLI version.')
-        events = []
-        for line in stdout.splitlines():
-            if not line.strip(): continue
-            try: event = json.loads(line)
-            except json.JSONDecodeError as exc:
-                raise ProviderError(f'Unexpected non-JSON Claude output; preserved at {stem}') from exc
-            if not isinstance(event, dict): raise ProviderError(f'Invalid Claude event; inspect {stem}')
-            events.append(event)
-            message = event.get('message') or {}
-            observed=message.get('model') or (event.get('model') if event.get('subtype')=='init' else None)
-            if observed and observed!='<synthetic>': self.resolved_models.add(observed)
-            for block in message.get('content', []):
-                if block.get('type') in ('tool_use', 'server_tool_use') and block.get('name') != 'StructuredOutput':
-                    raise ProviderError(f'Native Claude tool {block.get("name")} was used; raw events preserved at {stem}.')
-            if event.get('type') == 'error': raise ProviderError(f'Claude inference error; inspect {stem}')
-        endings = [e for e in events if e.get('type') == 'result']
-        if len(endings) != 1 or endings[0].get('is_error') or endings[0].get('subtype') != 'success':
-            raise ProviderError(f'Claude did not complete successfully; inspect {stem}')
-        final = endings[0]
-        value = final.get('structured_output')
-        if not isinstance(value, dict):
-            raise ProviderError(f'Claude returned no structured response; inspect {stem}')
-        if final.get('permission_denials'):
-            raise ProviderError(f'Claude attempted a denied native tool; inspect {stem}')
-        usage = final.get('usage') or {}
-        # Count cached input as input, matching Codex total input-token accounting.
-        normalized = {'input_tokens': sum(usage.get(k, 0) or 0 for k in
-                      ('input_tokens', 'cache_creation_input_tokens', 'cache_read_input_tokens')),
-                      'output_tokens': usage.get('output_tokens', 0) or 0}
+        value,metadata,models=parse_claude_output(stdout,schema,stem)
+        self.resolved_models.update(models)
         write_json(stem.with_suffix('.response.json'), value)
-        return value, {'role': role, 'request_prefix': stem.name, 'events': events, 'usage': normalized,
-                       'raw_usage': usage, 'duration_seconds': time.monotonic() - started}
+        return value, {**metadata,'role': role, 'request_prefix': stem.name,'duration_seconds':time.monotonic()-started}
 
 
 PROVIDER_TYPES = (CodexProvider, ClaudeProvider)

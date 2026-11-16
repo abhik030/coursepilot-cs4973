@@ -86,7 +86,10 @@ class App:
         return sorted(rows,key=lambda c:c['key'])
 
     def get_session(self,sid):
-        if sid in self.sessions:return {**self.sessions[sid].view(),'read_only':False}
+        if sid in self.sessions:
+            view={**self.sessions[sid].view(),'read_only':False}
+            view['can_recover']=self.recoverable(view)
+            return view
         if sid in self.legacy:
             base,_=self.legacy[sid]
             try:return {**self.remote(base,'/api/session?id='+sid),'read_only':False}
@@ -111,7 +114,25 @@ class App:
             rows=json.loads(audit.read_text(encoding='utf-8')).get('runs',[])
             match=next((row for row in rows if row['run_id']==sid),None)
             if match:view['audited_metrics']=match.get('audited_core_metrics')
+        view['notice']=config.get('continuation',{}).get('note','')
+        view['can_recover']=self.recoverable(view)
         return view
+
+    @staticmethod
+    def recoverable(view):
+        return bool(not view.get('finalized') and view.get('mode')=='human' and view.get('status')=='error'
+                    and view.get('case_id')=='B-correction-preservation-v1'
+                    and 'Native Claude tool draft_plan' in (view.get('error') or ''))
+
+    def recover(self,sid):
+        from .recovery import recover_saved_draft
+        with self.lock:
+            view=self.get_session(sid)
+            if not view or not self.recoverable(view):raise ValueError('This run has no supported saved-response recovery.')
+            folder=self.sessions[sid].output if sid in self.sessions else self.records[sid]
+            self.sessions[sid]=recover_saved_draft(folder)
+            self.legacy.pop(sid,None)
+            return self.get_session(sid)
 
     def run_list(self):
         ids=set(self.records)|set(self.sessions)
@@ -187,6 +208,7 @@ def handler_for(app):
                 data = json.loads(self.rfile.read(length))
                 if not isinstance(data,dict): raise ValueError('Expected a JSON object.')
                 if self.path == '/api/new': self.reply(200,app.create(data)); return
+                if self.path == '/api/recover':self.reply(200,app.recover(data.get('id')));return
                 if data.get('id') in app.legacy and self.path in ('/api/message','/api/finish'):
                     base,token=app.legacy[data['id']]
                     self.reply(200,app.remote(base,self.path,data,token));return

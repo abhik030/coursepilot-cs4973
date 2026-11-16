@@ -12,6 +12,7 @@
       "tool_pairs": 1,
       "archived_sources": [
         "engine.py",
+        "providers.py",
         "server.py",
         "summarize_case_b.py",
         "__init__.py",
@@ -30,6 +31,7 @@
       "tool_pairs": 5,
       "archived_sources": [
         "engine.py",
+        "providers.py",
         "server.py",
         "summarize_case_b.py",
         "__init__.py",
@@ -48,6 +50,7 @@
       "tool_pairs": 4,
       "archived_sources": [
         "engine.py",
+        "providers.py",
         "server.py",
         "summarize_case_b.py",
         "__init__.py",
@@ -66,6 +69,7 @@
       "tool_pairs": 4,
       "archived_sources": [
         "engine.py",
+        "providers.py",
         "server.py",
         "summarize_case_b.py",
         "__init__.py",
@@ -84,6 +88,7 @@
       "tool_pairs": 3,
       "archived_sources": [
         "engine.py",
+        "providers.py",
         "server.py",
         "summarize_case_b.py",
         "__init__.py",

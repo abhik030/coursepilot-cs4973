@@ -97,6 +97,8 @@ Run this same case in the controlled condition using the browser selector or `--
 
 ## What the recording needs
 
+If the page says **Run stopped**, it is no longer waiting for an answer. The output is saved. For the older formatting issue, **Recover saved revision** can apply the corrected response that the CLI already returned, without another model call. A recovery notice stays visible, and the original error/files are retained. Keep that notice in any recording of the recovered run. This recovery is limited to unfinished human draft runs; it does not change the five recorded baseline attempts.
+
 The assignment asks for a teammate other than the actual case creator to record setup and a human-mode run using this document. Abhi is the proposed recorder; the actual creator/tester details and video link still need to be filled in accurately.
 
 Show the documented setup being performed, the browser session, the initial draft, the correction, and the revised draft/calendar. Click Finish & save and show the run ID plus `trajectory.json`, `reward.json`, and `config.json`. Use a separate browser-run directory. Explain what actually happened, including any error, and briefly show the five-run result table. This recording is not participant testing and does not need survey answers.

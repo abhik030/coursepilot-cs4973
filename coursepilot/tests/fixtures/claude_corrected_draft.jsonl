@@ -1,0 +1,6 @@
+{"type":"system","subtype":"init","tools":["StructuredOutput"],"mcp_servers":[],"model":"claude-test"}
+{"type":"assistant","message":{"content":[{"type":"tool_use","id":"unavailable-draft","name":"draft_plan","input":{"sections":"[90001,90002,90006,90010]"}}]}}
+{"type":"user","message":{"content":[{"type":"tool_result","tool_use_id":"unavailable-draft","is_error":true,"content":"<tool_use_error>Error: No such tool available: draft_plan</tool_use_error>"}]}}
+{"type":"assistant","message":{"content":[{"type":"tool_use","id":"structured","name":"StructuredOutput","input":{"kind":"tool","tool":"draft_plan","target":"Plan A","sections":["90001","90002","90006","90010"],"message":"Revising the draft to meet the Monday restriction.","reports":[]}}]}}
+{"type":"user","message":{"content":[{"type":"tool_result","tool_use_id":"structured","content":"Structured output provided successfully"}]}}
+{"type":"result","subtype":"success","is_error":false,"structured_output":{"kind":"tool","tool":"draft_plan","target":"Plan A","sections":["90001","90002","90006","90010"],"message":"Revising the draft to meet the Monday restriction.","reports":[]},"usage":{"input_tokens":10,"output_tokens":5},"duration_ms":500}

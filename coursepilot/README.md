@@ -65,6 +65,8 @@ A separate LLM context plays each student stage. It receives the same visible co
 
 Codex and Claude use the same JSON decision and student schemas; Python alone executes course tools. Claude's native tools, MCP integrations, and ordinary customizations are disabled for inference, with the CLI's internal StructuredOutput formatting tool allowed. Organization-managed policy may still apply. Provider, CLI version, requested model, effort, raw responses, token usage, and Claude's observed model identifiers are recorded. An alias or observed identifier does not establish an immutable backend snapshot. Shared task/scoring does not make different model providers equivalent experimental conditions.
 
+Version 2.2.1 handles a CLI formatting correction: if Claude tries a known course-tool name that was not available, receives an explicit matching “No such tool available” error, and then supplies valid StructuredOutput, the adapter uses that final response. The initial unavailable call stays in the raw log. Actual native tools, available tools, missing rejection evidence, and missing structured responses still stop the run. Python remains the only executor of course actions.
+
 Each student turn allows up to 24 agent decisions and each inference has a 120-second timeout. A final agent message yields back to the student rather than ending the full case. Infrastructure errors, limits, and incomplete outcomes remain in the evidence. The agent prompt supplies general responsibilities without the previous v1's repeated comparison-specific reminder.
 
 ## Objective outcomes

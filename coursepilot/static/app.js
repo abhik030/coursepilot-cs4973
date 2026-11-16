@@ -31,7 +31,11 @@ function render(view){
  const statusNames={ready:'Ready for your message',working:'Working on your request',awaiting_student:'Ready for your next message',paused:'Paused — no new actions will be applied',stopping:'Stopping; waiting for inference to return',completed:'Session complete',error:'Run stopped with an error',step_limit:'Turn limit reached'};
  $('chat-status').textContent=(view.mode==='simulated'&&!view.finalized&&!view.busy?'Simulated student is composing…':statusNames[view.status]||view.status);
  $('working').hidden=!view.busy;
- if(view.error)alertError(view.error);
+ $('run-problem').hidden=!view.error;
+ $('run-error-detail').textContent=view.error||'';
+ $('recover-run').hidden=!view.can_recover;
+ $('run-problem-text').textContent=view.can_recover?'The provider returned a corrected response, but this run stopped on an earlier formatting error. Recover the saved revision without another model call.':'The provider stopped before finishing this turn. Your messages and outputs are saved. This run is not still loading.';
+ $('run-notice').hidden=!view.notice;$('run-notice').textContent=view.notice||'';
  $('receipt-status').textContent=`${state.permissions.filter(p=>!p.used&&!p.revoked).length} active approval(s)`;
  renderState(state);renderTasks(view.tasks,view.stage,live&&human);renderMessages(view.chat);
  $('run-summary').hidden=!(view.finalized||view.read_only);
@@ -95,6 +99,7 @@ $('message').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.p
 $('pause').addEventListener('click',()=>send(current.state.paused?'Resume working on my request.':'Pause now; do not apply any more changes.',current.state.paused?'resume':'pause'));
 $('revoke').addEventListener('click',()=>send('I revoke all unused approvals. Do not use them.','revoke'));
 $('finish').addEventListener('click',async()=>{try{render(await api('/api/finish',{id:current.id}));}catch(e){alertError(e);}});
+$('recover-run').addEventListener('click',async()=>{try{$('recover-run').disabled=true;$('alert').hidden=true;render(await api('/api/recover',{id:current.id}));}catch(e){alertError(e);}finally{$('recover-run').disabled=false;}});
 $('new-session').addEventListener('click',()=>location.assign('/cases/'+caseKey+'/new'));
 $('run-case-filter').addEventListener('change',()=>{$('all-runs').innerHTML=runCards(runRows.filter(r=>!$('run-case-filter').value||r.case_id===$('run-case-filter').value));});
 $('calendar-source').addEventListener('change',renderCalendar);$('course-filter').addEventListener('input',renderCourses);
