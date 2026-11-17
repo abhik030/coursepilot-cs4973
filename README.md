@@ -31,7 +31,7 @@ The app runs on each teammate's computer. GitHub shares code and saved results; 
 
 ## Current status
 
-- **A:** Aditya's case; still a template.
+- **A:** Aditya's [completed case](coursepilot/CASE_A.md). Five baseline trials: four successes and one requirement failure.
 - **B:** Hudson's assigned case, implemented. [Five completed runs across six retained attempts](coursepilot/CASE_B_RESULTS.md), including the original tool-format error and scoring audit.
 - **C:** Abhi's case. [Five Codex trials](coursepilot/RESULTS.md), all successful.
 - **Videos:** All three recordings are pending. The last teammate to finish submits.

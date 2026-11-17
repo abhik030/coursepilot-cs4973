@@ -6,7 +6,7 @@ python -m coursepilot --provider claude --output coursepilot/browser-runs
 
 Open **http://127.0.0.1:8765/**. Use `--provider codex` for Codex defaults; choose either installed provider before a new run.
 
-- **Cases:** A is pending; B and C are ready.
+- **Cases:** A, B, and C are ready. Restart the server after pulling A's files if it still shows A as pending.
 - **Case page:** Start a run or open a previous one.
 - **Run page:** One conversation, schedule, task guide, and result.
 - **All runs:** Browse trials and browser runs by case.

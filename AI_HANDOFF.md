@@ -4,7 +4,7 @@ Reuse this checkout. Read the relevant case document and [teammate guide](course
 
 | Case | Status | Next work |
 | --- | --- | --- |
-| A: Aditya | Template only | Implement, document, check, collect five trials |
+| A: Aditya | [Implemented with five completed trials](coursepilot/CASE_A.md#results); four successful, one requirement failure | Hudson reviews/records A |
 | B: Hudson's assigned case | [Implemented](coursepilot/CASE_B.md); [five completed runs / six attempts](coursepilot/CASE_B_RESULTS.md) | Abhi reviews/records B |
 | C: Abhi | [Implemented](coursepilot/README.md); [five successful trials](coursepilot/RESULTS.md) | Aditya reviews/records C |
 

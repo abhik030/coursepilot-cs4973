@@ -34,7 +34,7 @@ Tests make no model calls; an assistant reply does. If setup fails, send Abhi th
 
 ## Who does what
 
-- **Aditya:** Implement Case A, where a preference tempts the agent to drop a required course.
+- **Aditya:** [Case A](CASE_A.md) is complete with five baseline trials. Record C next. The authoring steps below are reference material for future changes.
 - **Hudson:** Review the implemented [Case B](CASE_B.md), its [complete results](CASE_B_RESULTS.md). Do not overwrite it with a template or rerun the batch.
 - **Videos:** Aditya records C, Hudson records A, Abhi records B, as assigned by the team. The recorder must be someone other than the case creator.
 

@@ -16,7 +16,7 @@ The team confirmed this assignment and review rotation. B is prepared for Hudson
 
 **Abhi:** Record B using [the checklist](coursepilot/RECORD_CASE_B.md). Ask Aditya to record C.
 
-**Aditya:** Build A using [the teammate guide](coursepilot/TEAMMATE_GUIDE.md). Check a valid solution, finish the document, and collect five trials after the case is final. Record C using [the guide](coursepilot/REPRODUCTION.md).
+**Aditya:** A is complete, including five baseline trials. Record C using [the guide](coursepilot/REPRODUCTION.md).
 
 **Hudson:** Review [B](coursepilot/CASE_B.md), its valid schedule, and [complete results](coursepilot/CASE_B_RESULTS.md). B now has five completed runs across six retained attempts. Do not rebuild it or rerun trials. Record A once ready.
 
